@@ -73,6 +73,13 @@ refer, income, earn, win, money, opportunity, jobs, leads, referral, passive inc
 - $500k+ earnings distributed
 - Various earning opportunities ($50-$5,000 range)
 
+## Branding & Logo
+- **Logo**: Yellow "in." logo located at `/lovable-uploads/6329e638-4181-45fb-a380-468c5fb1ee43.png`
+- **Logo Usage**: Used as favicon, social sharing image, and brand identifier
+- **Logo Color**: Matches the design system's bright yellow (#f9fd8f) accent color
+- **File Format**: PNG with transparent background
+- **Usage Guidelines**: Primary brand mark for all external-facing materials, social media, and browser identification
+
 ## Target Audience
 Primary: Consumers/individuals with networks who want to earn passive income
 Secondary: Companies seeking qualified referrals from trusted sources
