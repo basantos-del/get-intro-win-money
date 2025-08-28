@@ -1,5 +1,15 @@
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
+
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToWaitlist = () => {
     const element = document.getElementById('waitlist');
     if (element) {
@@ -8,14 +18,38 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Video background */}
-      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-        <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
-      </video>
-      
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30"></div>
+
+  // Calculate video scale and border radius based on scroll
+  const maxScroll = 300; // Max scroll distance for full effect
+  const scrollProgress = Math.min(scrollY / maxScroll, 1);
+  const videoScale = 1 - (scrollProgress * 0.1); // Scale from 1 to 0.9
+  const borderRadius = scrollProgress * 24; // Border radius from 0 to 24px
+  const containerPadding = scrollProgress * 20; // Padding from 0 to 20px
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#f8f7f5' }}>
+      {/* Video container with dynamic padding and background */}
+      <div 
+        className="absolute inset-0 transition-all duration-500 ease-out"
+        style={{
+          padding: `${containerPadding}px`,
+        }}
+      >
+        <div 
+          className="relative w-full h-full overflow-hidden transition-all duration-500 ease-out"
+          style={{
+            transform: `scale(${videoScale})`,
+            borderRadius: `${borderRadius}px`,
+          }}
+        >
+          {/* Video background */}
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+      </div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="fade-in-up">
@@ -51,6 +85,7 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-foreground/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default HeroSection;
