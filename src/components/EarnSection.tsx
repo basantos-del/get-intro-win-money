@@ -1,7 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import jobReferralImage from '@/assets/job-referral.jpg';
-import productReferralImage from '@/assets/product-referral.jpg';
-import houseReferralImage from '@/assets/house-referral.jpg';
 
 const EarnSection = () => {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
@@ -31,19 +28,19 @@ const EarnSection = () => {
 
   const earnCards = [
     {
-      image: jobReferralImage,
+      image: '/pexels-divinetechygirl-1181540.jpg',
       title: 'Refer a friend for a job',
       description: 'Connect talented friends with cool opportunities',
       earning: 'Earn up to $1,000',
     },
     {
-      image: productReferralImage,
+      image: '/pexels-fabriziovelez-14061042.jpg',
       title: 'Refer a friend for a product',
       description: 'Share products you love with your network',
       earning: 'Earn up to $200',
     },
     {
-      image: houseReferralImage,
+      image: '/pexels-arthur-arata-924593727-20468184.jpg',
       title: 'Refer home movers',
       description: 'Connect homeowners with trusted real estate professionals',
       earning: 'Earn up to $250',
@@ -79,6 +76,7 @@ const EarnSection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-[#f9fd8f]/20" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="text-lg font-bold mb-1">{card.earning}</div>
                 </div>
