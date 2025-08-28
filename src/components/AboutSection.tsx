@@ -4,7 +4,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in-up">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-4xl md:text-6xl text-foreground mb-8 leading-tight">
               You're an intro away from saving the money you needed
             </h2>
             

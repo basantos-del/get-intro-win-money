@@ -14,6 +14,7 @@ Intro is a marketplace platform that connects referral programs from businesses 
 - **CTA Button Color**: #1d1d1d with #f8f7f5 text
 - **Shadow Color**: #f9fd8f (bright yellow for cards, buttons, nav, footer)
 - **Font**: Aileron
+- **Typography**: Section titles are non-bold for a softer, more elegant appearance
 - **Style**: Round corners, gradient shadows, thin outer edges on cards
 - **Animations**: Subtle, performant micro-interactions and hover states
 
