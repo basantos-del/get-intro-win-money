@@ -145,8 +145,7 @@ All colors MUST be HSL for consistency.
   
   /* Button System */
   .intro-button-primary {
-    @apply bg-primary text-primary-foreground rounded-button font-medium;
-    background: var(--gradient-cta);
+    @apply bg-accent text-accent-foreground rounded-button font-medium;
     box-shadow: var(--shadow-button);
     transition: var(--transition-smooth);
   }
