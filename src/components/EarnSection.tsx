@@ -57,7 +57,7 @@ const EarnSection = () => {
             Earn for every match
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Turn your network into income with diverse referral opportunities
+            Turn your match-making skills into income with diverse referral opportunities
           </p>
         </div>
 
