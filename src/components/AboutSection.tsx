@@ -5,11 +5,11 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in-up">
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
-              You're an intro away from saving the money you needed.
+              You're an intro away from saving the money you needed
             </h2>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Intro is a platform that connects companies with referral opportunities to people like you - who know people.
+              The marketplace where referral programs meet people who know people
             </p>
           </div>
           
@@ -28,8 +28,8 @@ const AboutSection = () => {
             
             <div className="intro-card p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">$500k+</div>
-              <div className="text-lg font-medium text-foreground mb-2">Earnings Distributed</div>
-              <div className="text-muted-foreground">To our community members</div>
+              <div className="text-lg font-medium text-foreground mb-2">Accummulate Earnings</div>
+              <div className="text-muted-foreground">Available for community members</div>
             </div>
           </div>
         </div>
