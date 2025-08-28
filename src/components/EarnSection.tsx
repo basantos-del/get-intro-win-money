@@ -65,7 +65,7 @@ const EarnSection = () => {
           {earnCards.map((card, index) => (
             <div
               key={index}
-              className={`intro-card overflow-hidden group cursor-pointer transition-all duration-700 ${
+              className={`intro-card overflow-hidden transition-all duration-700 ${
                 visibleCards[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-8'
@@ -75,7 +75,7 @@ const EarnSection = () => {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-[#f9fd8f]/10" />
