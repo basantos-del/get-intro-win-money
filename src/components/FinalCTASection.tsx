@@ -88,7 +88,7 @@ const FinalCTASection = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         >
-          <source src="/853874-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          <source src="/14292877_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30" />
       </div>
