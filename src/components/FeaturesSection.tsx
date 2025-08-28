@@ -39,9 +39,9 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Features List */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col justify-center">
             {features.map((feature, index) => (
               <div
                 key={index}
