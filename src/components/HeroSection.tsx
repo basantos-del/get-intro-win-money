@@ -30,7 +30,7 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            You know <span className="italic font-bold" style={{ color: '#f9fd8f' }}>people</span>,<br />
+            You know people,<br />
             <span className="text-accent-foreground">we know opportunities</span>
           </h1>
           
