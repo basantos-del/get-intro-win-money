@@ -112,7 +112,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_waitlist_counts: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          company_count: number
+          member_count: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
