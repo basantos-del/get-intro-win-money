@@ -7,17 +7,17 @@ const FeaturesSection = () => {
     {
       icon: Zap,
       title: 'Fast Referral',
-      description: 'Submit referrals in seconds. No complicated forms or lengthy procedures.',
+      description: 'Submit referrals in seconds. No complicated forms or lengthy procedures',
     },
     {
       icon: Calendar,
       title: 'Daily Opportunities',
-      description: 'Fresh referral opportunities delivered daily. Never miss a chance to earn.',
+      description: 'Fresh referral opportunities delivered daily. Never miss a chance to earn',
     },
     {
       icon: Wallet,
       title: 'Easy Withdrawal',
-      description: 'Instant payouts to your preferred payment method. Track your earnings in real-time.',
+      description: 'Instant payouts to your preferred method. Track your earnings real-time',
     },
   ];
 
