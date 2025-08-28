@@ -43,19 +43,31 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-foreground hover:text-accent-foreground transition-colors duration-200 font-medium"
+                className={`transition-colors duration-300 font-medium ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-accent-foreground' 
+                    : 'text-white hover:text-white/80'
+                }`}
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('features')}
-                className="text-foreground hover:text-accent-foreground transition-colors duration-200 font-medium"
+                className={`transition-colors duration-300 font-medium ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-accent-foreground' 
+                    : 'text-white hover:text-white/80'
+                }`}
               >
                 Features
               </button>
               <button
                 onClick={() => scrollToSection('earn')}
-                className="text-foreground hover:text-accent-foreground transition-colors duration-200 font-medium"
+                className={`transition-colors duration-300 font-medium ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-accent-foreground' 
+                    : 'text-white hover:text-white/80'
+                }`}
               >
                 Earn
               </button>
