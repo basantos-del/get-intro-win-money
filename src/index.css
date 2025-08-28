@@ -60,6 +60,10 @@ All colors MUST be HSL for consistency.
     --shadow-button: 0 4px 16px -4px hsl(61 100% 89% / 0.3);
     --shadow-glow: 0 0 0 1px hsl(61 100% 89% / 0.2);
     
+    /* Enhanced card effects */
+    --shadow-enhanced: 0 8px 25px -5px hsl(61 100% 89% / 0.2), 0 8px 16px -8px hsl(61 100% 89% / 0.3);
+    --glow-accent: 0 0 0 1px hsl(61 100% 89% / 0.15), 0 0 20px hsl(61 100% 89% / 0.1);
+    
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -135,6 +139,14 @@ All colors MUST be HSL for consistency.
   .intro-card:hover {
     box-shadow: var(--shadow-card-hover);
     transform: translateY(-2px);
+  }
+  
+  /* Enhanced card for special sections */
+  .intro-card-enhanced {
+    @apply bg-card border border-card-border rounded-card;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-enhanced), var(--glow-accent);
+    transition: var(--transition-smooth);
   }
   
   /* Button System */

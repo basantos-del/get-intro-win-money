@@ -65,10 +65,10 @@ const EarnSection = () => {
           {earnCards.map((card, index) => (
             <div
               key={index}
-              className={`intro-card overflow-hidden transition-all duration-700 ${
+              className={`intro-card-enhanced overflow-hidden transition-all duration-700 ${
                 visibleCards[index] 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-8 scale-95'
               }`}
             >
               <div className="aspect-[3/4] relative overflow-hidden">
@@ -79,8 +79,11 @@ const EarnSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-[#f9fd8f]/10" />
+                <div className="absolute inset-2 bg-gradient-to-t from-transparent via-transparent to-[#f9fd8f]/5 rounded-xl" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="text-lg font-bold mb-1">{card.earning}</div>
+                  <div className="text-lg font-bold mb-1 px-3 py-1 bg-[#f9fd8f]/20 backdrop-blur-sm rounded-lg border border-[#f9fd8f]/30">
+                    {card.earning}
+                  </div>
                 </div>
               </div>
               
