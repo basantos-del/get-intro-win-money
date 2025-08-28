@@ -97,7 +97,7 @@ const FinalCTASection = () => {
             Let's get social again
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join our community and start earning through meaningful connections
+            Join our community and start earning through completed machmakings
           </p>
         </div>
 
@@ -167,7 +167,7 @@ const FinalCTASection = () => {
             
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground">
-                Earn $50 bonus when your friend joins our platform
+                Gain access to exclusive referral opportunities when your friend joins our platform
               </p>
             </div>
           </div>
