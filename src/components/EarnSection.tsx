@@ -107,7 +107,7 @@ const EarnSection = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
                 <div className="text-lg font-bold text-foreground">Tech Jobs</div>
-                <div className="text-sm text-muted-foreground">$300-800</div>
+                <div className="text-sm text-muted-foreground">$300-1500</div>
               </div>
               <div>
                 <div className="text-lg font-bold text-foreground">SaaS Products</div>
@@ -118,8 +118,8 @@ const EarnSection = () => {
                 <div className="text-sm text-muted-foreground">$100-500</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-foreground">Investments</div>
-                <div className="text-sm text-muted-foreground">$500-2000</div>
+                <div className="text-lg font-bold text-foreground">User Testing</div>
+                <div className="text-sm text-muted-foreground">$20-200</div>
               </div>
             </div>
           </div>
