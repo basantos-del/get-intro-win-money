@@ -35,7 +35,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed px-6 py-3 rounded-lg inline-block" style={{ backgroundColor: '#f9fd8f' }}>
-            Build passive income. Give your friends an intro
+            Build passive income. Give your friends an <span className="font-bold">intro</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
