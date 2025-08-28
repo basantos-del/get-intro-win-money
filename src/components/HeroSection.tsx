@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import heroBackground from '@/assets/hero-bg.jpg';
 
 const HeroSection = () => {
   const scrollToWaitlist = () => {
@@ -13,13 +12,18 @@ const HeroSection = () => {
     <section 
       id="hero" 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      </video>
+      
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-background/20"></div>
       
