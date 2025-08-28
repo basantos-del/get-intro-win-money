@@ -8,10 +8,10 @@ const FeaturesSection = () => {
   
   const features = [
     {
-      icon: Zap,
-      title: 'Fast Referral',
-      description: 'Submit referrals in seconds. No complicated forms or lengthy procedures',
-      image: '/Fast_referral.png',
+      icon: Wallet,
+      title: 'Easy Withdrawal',
+      description: 'Instant payouts to your preferred method. Track your earnings real-time',
+      image: '/Easy_withdrawal.png',
     },
     {
       icon: Calendar,
@@ -20,10 +20,10 @@ const FeaturesSection = () => {
       image: '/Daily_opportunities.png',
     },
     {
-      icon: Wallet,
-      title: 'Easy Withdrawal',
-      description: 'Instant payouts to your preferred method. Track your earnings real-time',
-      image: '/Easy_withdrawal.png',
+      icon: Zap,
+      title: 'Fast Referral',
+      description: 'Submit referrals in seconds. No complicated forms or lengthy procedures',
+      image: '/Fast_referral.png',
     },
   ];
 
