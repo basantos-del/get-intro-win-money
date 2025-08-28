@@ -47,14 +47,32 @@ const FinalCTASection = () => {
 
     setIsLoading({ ...isLoading, referral: true });
     
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('refer_friend')
+        .insert([{ 
+          name: referralData.name, 
+          email: referralData.email 
+        }]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Thank you for the referral!",
         description: "We'll reach out to them soon and you'll earn a bonus when they join!",
       });
       setReferralData({ name: '', email: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to submit referral. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading({ ...isLoading, referral: false });
-    }, 1000);
+    }
   };
 
   return (
