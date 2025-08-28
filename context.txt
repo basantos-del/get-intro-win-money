@@ -1,0 +1,78 @@
+# Intro - Referral Marketplace Platform
+
+## Product Overview
+Intro is a marketplace platform that connects referral programs from businesses with consumers who have networks of people. The primary focus is on attracting consumers (members) to use the product and earn passive income through referrals.
+
+## Core Value Proposition
+- **For Members**: Turn your network into passive income by referring friends for jobs, products, and opportunities
+- **For Companies**: Access qualified referrals from trusted networks
+- **Tagline**: "You know people, we know opportunities"
+
+## Design System
+- **Background Color**: #f8f7f5 (warm off-white)
+- **Text Color**: #1d1d1d (dark charcoal)
+- **CTA Button Color**: #1d1d1d with #f8f7f5 text
+- **Shadow Color**: #f9fd8f (bright yellow for cards, buttons, nav, footer)
+- **Font**: Aileron
+- **Style**: Round corners, gradient shadows, thin outer edges on cards
+- **Animations**: Subtle, performant micro-interactions and hover states
+
+## Website Sections
+
+### Hero Section
+- Title: "You know people, we know opportunities."
+- Description: "Your 5 minutes day app to build a nice passive income. Give your friends an intro."
+- CTA: Join the waitlist
+- Background: Custom generated hero image
+
+### Waitlist (2 types)
+- **Members**: 2,356 already joined
+- **Companies**: 232 already joined
+- Countdown timer: 10 days from launch
+- Early access buttons for both
+
+### About
+- Title: "You're an intro away from saving the money you needed."
+- Description: "Intro is a platform that connects companies with referral opportunities to people like you - who know people."
+
+### Features (3 cards)
+1. **Fast Referral** (Lightning icon) - Submit referrals in seconds
+2. **Daily Opportunities** (Calendar icon) - Fresh opportunities delivered daily
+3. **Easy Withdrawal** (Wallet icon) - Instant payouts to preferred payment method
+
+### Earn (3 cards with images)
+1. **Refer a friend for a job** - Earn up to $1,000
+2. **Refer a friend for a product** - Earn up to $200
+3. **Refer someone who will sell their house** - Earn up to $5,000
+4. **Other daily opportunities** - Various earning ranges
+
+### Final Call to Action
+- Title: "Let's get social again"
+- Dual forms: Member waitlist + Referral form
+- Background video placeholder
+
+### Footer
+- Background: #f9fd8f (bright yellow)
+- Links: Join waitlist, Earn (anchors to opportunities section)
+
+## SEO Keywords
+refer, income, earn, win, money, opportunity, jobs, leads, referral, passive income, network, friends
+
+## Technical Features
+- Responsive design
+- Smooth scrolling navigation with anchors
+- Countdown timer functionality
+- Form submissions with toast notifications
+- Staggered animations on scroll
+- Portuguese localization support
+- SEO optimized with proper meta tags
+
+## Key Metrics Displayed
+- 2,356+ members joined
+- 232+ companies joined  
+- $500k+ earnings distributed
+- Various earning opportunities ($50-$5,000 range)
+
+## Target Audience
+Primary: Consumers/individuals with networks who want to earn passive income
+Secondary: Companies seeking qualified referrals from trusted sources

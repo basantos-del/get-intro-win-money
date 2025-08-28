@@ -1,0 +1,129 @@
+{
+  "navigation": {
+    "about": "Sobre",
+    "features": "Funcionalidades",
+    "earn": "Ganhar",
+    "joinWaitlist": "Juntar-se à Lista de Espera"
+  },
+  "hero": {
+    "title": "Tu conheces pessoas,",
+    "titleAccent": "nós conhecemos oportunidades.",
+    "description": "A tua aplicação de 5 minutos por dia para construir um rendimento passivo. Apresenta os teus amigos.",
+    "cta": "Juntar-se à Lista de Espera",
+    "joinedCount": "pessoas já se juntaram"
+  },
+  "waitlist": {
+    "title": "Junta-te à Revolução",
+    "description": "Sê dos primeiros a experienciar o futuro das redes de referência",
+    "countdown": "Obtém Acesso Antecipado Em:",
+    "members": {
+      "title": "Para Membros",
+      "description": "Começa a ganhar rendimento passivo através da tua rede",
+      "count": "membros juntaram-se",
+      "cta": "Obter Acesso Antecipado"
+    },
+    "companies": {
+      "title": "Para Empresas",
+      "description": "Conecta-te com referências qualificadas de redes confiáveis",
+      "count": "empresas juntaram-se",
+      "cta": "Obter Acesso Antecipado"
+    }
+  },
+  "about": {
+    "title": "Estás a uma apresentação de poupares o dinheiro que precisavas.",
+    "description": "Intro é uma plataforma que conecta empresas com oportunidades de referência a pessoas como tu - que conhecem pessoas.",
+    "stats": {
+      "members": "Membros Ativos",
+      "membersDesc": "Construindo rendimento passivo através de referências",
+      "companies": "Empresas Parceiras",
+      "companiesDesc": "À procura de referências de qualidade",
+      "earnings": "Ganhos Distribuídos",
+      "earningsDesc": "Aos membros da nossa comunidade"
+    }
+  },
+  "features": {
+    "title": "Fazer uma apresentação nunca foi tão fácil",
+    "description": "A nossa plataforma foi desenhada para tornar as referências sem esforço e recompensadoras",
+    "fastReferral": {
+      "title": "Referência Rápida",
+      "description": "Submete referências em segundos com o nosso processo simplificado. Sem formulários complicados ou procedimentos longos."
+    },
+    "dailyOpportunities": {
+      "title": "Oportunidades Diárias",
+      "description": "Oportunidades de referência frescas entregues diariamente. Nunca percas uma hipótese de ganhar com a tua rede."
+    },
+    "easyWithdrawal": {
+      "title": "Levantamento Fácil",
+      "description": "Pagamentos instantâneos para o teu método de pagamento preferido. Acompanha os teus ganhos em tempo real."
+    }
+  },
+  "earn": {
+    "title": "Ganha por cada referência vencedora",
+    "description": "Transforma a tua rede em rendimento com oportunidades de referência diversas",
+    "jobReferral": {
+      "title": "Refere um amigo para um emprego",
+      "description": "Conecta indivíduos talentosos com grandes oportunidades",
+      "earning": "Ganha até 1.000€"
+    },
+    "productReferral": {
+      "title": "Refere um amigo para um produto",
+      "description": "Partilha produtos que adoras com a tua rede",
+      "earning": "Ganha até 200€"
+    },
+    "houseReferral": {
+      "title": "Refere alguém que vai vender a sua casa",
+      "description": "Conecta proprietários com profissionais imobiliários de confiança",
+      "earning": "Ganha até 5.000€"
+    },
+    "otherOpportunities": {
+      "title": "Outras oportunidades diárias",
+      "description": "De startups tech a negócios estabelecidos, descobre novas formas de ganhar todos os dias através do nosso mercado crescente de oportunidades de referência."
+    }
+  },
+  "finalCTA": {
+    "title": "Vamos ser sociais novamente",
+    "description": "Junta-te à nossa comunidade e começa a ganhar através de conexões significativas",
+    "joinCommunity": {
+      "title": "Junta-te à Nossa Comunidade",
+      "placeholder": "Insere o teu email para começar",
+      "cta": "Juntar-se à Lista de Espera",
+      "description": "Sê o primeiro a saber quando lançamos e obtém acesso antecipado exclusivo"
+    },
+    "referFriend": {
+      "title": "Refere um Amigo",
+      "namePlaceholder": "Nome do amigo",
+      "emailPlaceholder": "Email do amigo",
+      "cta": "Enviar Referência",
+      "description": "Ganha 50€ de bónus quando o teu amigo se juntar à nossa plataforma"
+    }
+  },
+  "footer": {
+    "description": "O mercado onde programas de referência encontram pessoas que conhecem pessoas. Transforma a tua rede em rendimento passivo.",
+    "quickLinks": "Links Rápidos",
+    "getStarted": "Começar",
+    "readyToEarn": "Pronto para ganhar?",
+    "joinWaitlistCta": "Junta-te à nossa lista de espera →",
+    "copyright": "© 2024 Intro. Todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "contact": "Contacto"
+  },
+  "toasts": {
+    "memberWaitlist": {
+      "title": "Bem-vindo ao Intro!",
+      "description": "Foste adicionado à nossa lista de espera de membros. Notificar-te-emos quando lançarmos!"
+    },
+    "companyWaitlist": {
+      "title": "Obrigado pelo teu interesse!",
+      "description": "Foste adicionado à nossa lista de espera de empresas. Entraremos em contacto em breve!"
+    },
+    "finalWaitlist": {
+      "title": "Bem-vindo a bordo!",
+      "description": "Agora estás na nossa lista de espera. Prepara-te para começar a ganhar!"
+    },
+    "referral": {
+      "title": "Obrigado pela referência!",
+      "description": "Entraremos em contacto com eles em breve e ganharás um bónus quando se juntarem!"
+    }
+  }
+}

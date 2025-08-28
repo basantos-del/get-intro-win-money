@@ -1,0 +1,150 @@
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+import CountdownTimer from './CountdownTimer';
+import { Users, Building2 } from 'lucide-react';
+
+const WaitlistSection = () => {
+  const [memberEmail, setMemberEmail] = useState('');
+  const [companyEmail, setCompanyEmail] = useState('');
+  const [isLoading, setIsLoading] = useState({ member: false, company: false });
+  const { toast } = useToast();
+
+  const handleMemberSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!memberEmail) return;
+
+    setIsLoading({ ...isLoading, member: true });
+    
+    // Simulate API call
+    setTimeout(() => {
+      toast({
+        title: "Welcome to Intro!",
+        description: "You've been added to our members waitlist. We'll notify you when we launch!",
+      });
+      setMemberEmail('');
+      setIsLoading({ ...isLoading, member: false });
+    }, 1000);
+  };
+
+  const handleCompanySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!companyEmail) return;
+
+    setIsLoading({ ...isLoading, company: true });
+    
+    // Simulate API call
+    setTimeout(() => {
+      toast({
+        title: "Thank you for your interest!",
+        description: "You've been added to our companies waitlist. We'll be in touch soon!",
+      });
+      setCompanyEmail('');
+      setIsLoading({ ...isLoading, company: false });
+    }, 1000);
+  };
+
+  return (
+    <section id="waitlist" className="intro-section bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Join the Revolution
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Be among the first to experience the future of referral networking
+          </p>
+        </div>
+
+        <div className="mb-16">
+          <CountdownTimer />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Members Waitlist */}
+          <div className="intro-card p-8 stagger-animation">
+            <div className="flex items-center justify-center mb-6">
+              <div className="p-3 bg-accent rounded-full">
+                <Users className="w-8 h-8 text-accent-foreground" />
+              </div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-center text-foreground mb-4">
+              For Members
+            </h3>
+            
+            <p className="text-muted-foreground text-center mb-6">
+              Start earning passive income through your network
+            </p>
+            
+            <div className="text-center mb-6">
+              <div className="text-3xl font-bold text-foreground">2,356</div>
+              <div className="text-sm text-muted-foreground">members joined</div>
+            </div>
+            
+            <form onSubmit={handleMemberSubmit} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={memberEmail}
+                onChange={(e) => setMemberEmail(e.target.value)}
+                className="w-full"
+                required
+              />
+              <Button
+                type="submit"
+                className="intro-button-primary w-full"
+                disabled={isLoading.member}
+              >
+                {isLoading.member ? 'Joining...' : 'Get Early Access'}
+              </Button>
+            </form>
+          </div>
+
+          {/* Companies Waitlist */}
+          <div className="intro-card p-8 stagger-animation">
+            <div className="flex items-center justify-center mb-6">
+              <div className="p-3 bg-accent rounded-full">
+                <Building2 className="w-8 h-8 text-accent-foreground" />
+              </div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-center text-foreground mb-4">
+              For Companies
+            </h3>
+            
+            <p className="text-muted-foreground text-center mb-6">
+              Connect with qualified referrals from trusted networks
+            </p>
+            
+            <div className="text-center mb-6">
+              <div className="text-3xl font-bold text-foreground">232</div>
+              <div className="text-sm text-muted-foreground">companies joined</div>
+            </div>
+            
+            <form onSubmit={handleCompanySubmit} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="Company email"
+                value={companyEmail}
+                onChange={(e) => setCompanyEmail(e.target.value)}
+                className="w-full"
+                required
+              />
+              <Button
+                type="submit"
+                className="intro-button-primary w-full"
+                disabled={isLoading.company}
+              >
+                {isLoading.company ? 'Joining...' : 'Get Early Access'}
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WaitlistSection;
