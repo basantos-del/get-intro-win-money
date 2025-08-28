@@ -9,10 +9,11 @@
     <meta name="author" content="Intro" />
     <link rel="canonical" href="https://useintro.co" />
     
-    <!-- Aileron Font -->
+    <!-- Aileron Font - Non-blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Aileron:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Aileron:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
     <meta property="og:title" content="Intro - Your Network, Your Income | Refer Friends & Earn Money" />
     <meta property="og:description" content="Join Intro marketplace to refer friends for jobs, products, and opportunities. Earn passive income through your network." />
