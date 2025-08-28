@@ -74,7 +74,7 @@ const FeaturesSection = () => {
               <img
                 src={features[activeFeature].image}
                 alt={features[activeFeature].title}
-                className="max-w-full h-auto transition-all duration-500 ease-in-out"
+                className="max-w-[50%] h-auto transition-all duration-500 ease-in-out"
               />
               <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                 <p className="text-muted-foreground leading-relaxed">
