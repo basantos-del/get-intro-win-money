@@ -61,7 +61,7 @@ const EarnSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {earnCards.map((card, index) => (
             <div
               key={index}
@@ -71,7 +71,7 @@ const EarnSection = () => {
                   : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="aspect-[3/4] relative overflow-hidden">
+              <div className="aspect-[4/3] sm:aspect-[3/4] relative overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
