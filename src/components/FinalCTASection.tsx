@@ -50,7 +50,7 @@ const FinalCTASection = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         >
           <source src="/853874-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
