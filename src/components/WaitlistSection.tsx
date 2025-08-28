@@ -82,10 +82,10 @@ const WaitlistSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Join the Revolution
+            Join Intro
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Be among the first to experience the future of referral networking
+            Be among the first to experience the future of matchmaking
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Start earning passive income through your network
+              Start earning passive income through completed matchmaking
             </p>
             
             <div className="text-center mb-6">
@@ -147,7 +147,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Connect with qualified referrals from trusted networks
+              Connect with qualified referrals from vetted networks
             </p>
             
             <div className="text-center mb-6">
