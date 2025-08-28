@@ -39,31 +39,42 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Features List */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`intro-card p-6 cursor-pointer transition-all duration-300 ${
+                className={`p-4 cursor-pointer transition-all duration-300 rounded-lg ${
                   activeFeature === index 
-                    ? 'bg-accent/20 border-accent shadow-lg' 
+                    ? 'bg-accent text-accent-foreground' 
                     : 'hover:bg-accent/10'
                 }`}
                 onMouseEnter={() => setActiveFeature(index)}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 mb-3">
                   <div className={`p-3 rounded-full transition-all duration-300 ${
                     activeFeature === index 
-                      ? 'bg-accent scale-110' 
-                      : 'bg-accent/80'
+                      ? 'bg-accent-foreground/20' 
+                      : 'bg-accent'
                   }`}>
-                    <feature.icon className="w-6 h-6 text-accent-foreground" />
+                    <feature.icon className={`w-6 h-6 ${
+                      activeFeature === index 
+                        ? 'text-accent-foreground' 
+                        : 'text-accent-foreground'
+                    }`} />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">
+                  <h3 className="text-xl font-bold">
                     {feature.title}
                   </h3>
                 </div>
+                <p className={`text-sm leading-relaxed ml-14 ${
+                  activeFeature === index 
+                    ? 'text-accent-foreground/80' 
+                    : 'text-muted-foreground'
+                }`}>
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -76,11 +87,6 @@ const FeaturesSection = () => {
                 alt={features[activeFeature].title}
                 className="max-w-[50%] h-auto transition-all duration-500 ease-in-out"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-                <p className="text-muted-foreground leading-relaxed">
-                  {features[activeFeature].description}
-                </p>
-              </div>
             </div>
           </div>
         </div>
