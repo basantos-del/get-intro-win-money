@@ -23,7 +23,7 @@ const FeaturesSection = () => {
     <section id="features" className="intro-section bg-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Making an intro has never been so easy
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
