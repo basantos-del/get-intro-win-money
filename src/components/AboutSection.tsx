@@ -23,12 +23,12 @@ const AboutSection = () => {
             <div className="intro-card p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">232</div>
               <div className="text-lg font-medium text-foreground mb-2">Partner Companies</div>
-              <div className="text-muted-foreground">Seeking quality referrals</div>
+              <div className="text-muted-foreground">Seeking quality referrals through intro</div>
             </div>
             
             <div className="intro-card p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">$500k+</div>
-              <div className="text-lg font-medium text-foreground mb-2">Accummulate Earnings</div>
+              <div className="text-lg font-medium text-foreground mb-2">Accummulated Earnings</div>
               <div className="text-muted-foreground">Available for community members</div>
             </div>
           </div>
