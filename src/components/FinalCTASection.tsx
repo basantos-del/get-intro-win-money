@@ -3,12 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const FinalCTASection = () => {
   const [waitlistEmail, setWaitlistEmail] = useState('');
   const [referralData, setReferralData] = useState({ name: '', email: '' });
   const [isLoading, setIsLoading] = useState({ waitlist: false, referral: false });
   const { toast } = useToast();
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,7 +78,7 @@ const FinalCTASection = () => {
   };
 
   return (
-    <section id="final-cta" className="intro-section bg-accent/10 relative overflow-hidden">
+    <section id="final-cta" className="intro-section bg-accent/10 relative overflow-hidden" ref={elementRef}>
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -92,8 +94,8 @@ const FinalCTASection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+        <div className={`text-center mb-16 animate-on-scroll animate-slide-up ${isVisible ? 'visible' : ''}`}>
+          <h2 className="text-4xl md:text-6xl text-foreground mb-6">
             Let's get social again
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -104,7 +106,7 @@ const FinalCTASection = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Waitlist Form */}
           <div className="intro-card p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            <h3 className="text-2xl text-foreground mb-6 text-center">
               Join Our Community
             </h3>
             
@@ -135,7 +137,7 @@ const FinalCTASection = () => {
 
           {/* Referral Form */}
           <div className="intro-card p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            <h3 className="text-2xl text-foreground mb-6 text-center">
               Refer a Friend
             </h3>
             
@@ -176,7 +178,7 @@ const FinalCTASection = () => {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center space-x-2 text-muted-foreground">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            <span className="font-bold">Join 2,588+ people building passive income through referrals</span>
+            <span>Join 2,588+ people building passive income through referrals</span>
           </div>
         </div>
       </div>

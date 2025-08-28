@@ -168,6 +168,14 @@ All colors MUST be HSL for consistency.
     animation: fadeInRight 0.8s ease-out forwards;
   }
   
+  .fade-in-scale {
+    animation: fadeInScale 0.7s ease-out forwards;
+  }
+  
+  .slide-in-up {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
   .stagger-animation {
     animation: fadeInUp 0.6s ease-out forwards;
   }
@@ -175,6 +183,58 @@ All colors MUST be HSL for consistency.
   .stagger-animation:nth-child(2) { animation-delay: 0.1s; }
   .stagger-animation:nth-child(3) { animation-delay: 0.2s; }
   .stagger-animation:nth-child(4) { animation-delay: 0.3s; }
+  
+  /* Entrance Animation States */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-on-scroll.animate-fade-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .animate-on-scroll.animate-fade-left {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  .animate-on-scroll.animate-fade-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .animate-on-scroll.animate-fade-right {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  
+  .animate-on-scroll.animate-fade-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .animate-on-scroll.animate-scale {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  
+  .animate-on-scroll.animate-scale.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  
+  .animate-on-scroll.animate-slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .animate-on-scroll.animate-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInUp {
@@ -207,5 +267,27 @@ All colors MUST be HSL for consistency.
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

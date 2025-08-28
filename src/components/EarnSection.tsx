@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const EarnSection = () => {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { elementRef: titleRef, isVisible: titleVisible } = useIntersectionObserver({ threshold: 0.3 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,8 +52,8 @@ const EarnSection = () => {
   return (
     <section id="earn" className="intro-section bg-background" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className={`text-center mb-16 animate-on-scroll animate-fade-right ${titleVisible ? 'visible' : ''}`} ref={titleRef}>
+          <h2 className="text-4xl md:text-5xl text-foreground mb-6">
             Earn for every winning referral
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

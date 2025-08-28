@@ -1,6 +1,8 @@
 import { Zap, Calendar, Wallet } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const FeaturesSection = () => {
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
   const features = [
     {
       icon: Zap,
@@ -20,9 +22,9 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="intro-section bg-muted/20">
+    <section id="features" className="intro-section bg-muted/20" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 animate-on-scroll animate-scale ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Making an intro has never been so easy
           </h2>

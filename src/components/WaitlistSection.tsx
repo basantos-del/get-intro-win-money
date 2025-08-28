@@ -5,12 +5,14 @@ import { useToast } from '@/hooks/use-toast';
 import CountdownTimer from './CountdownTimer';
 import { Users, Building2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const WaitlistSection = () => {
   const [memberEmail, setMemberEmail] = useState('');
   const [companyEmail, setCompanyEmail] = useState('');
   const [isLoading, setIsLoading] = useState({ member: false, company: false });
   const { toast } = useToast();
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
 
   const handleMemberSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,9 +80,9 @@ const WaitlistSection = () => {
   };
 
   return (
-    <section id="waitlist" className="intro-section bg-background">
+    <section id="waitlist" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Join Intro
           </h2>

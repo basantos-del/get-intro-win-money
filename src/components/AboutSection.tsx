@@ -1,9 +1,13 @@
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+
 const AboutSection = () => {
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
+
   return (
-    <section id="about" className="intro-section bg-background">
+    <section id="about" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="fade-in-up">
+          <div className={`animate-on-scroll animate-fade-left ${isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
               You're an intro away from saving the money you needed
             </h2>
