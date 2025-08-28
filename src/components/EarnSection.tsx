@@ -61,17 +61,17 @@ const EarnSection = () => {
           </p>
         </div>
 
-        <div className="flex overflow-x-auto gap-4 pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0">
+        <div className="flex overflow-x-auto gap-3 pb-4 px-4 -mx-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 md:snap-none">
           {earnCards.map((card, index) => (
             <div
               key={index}
-              className={`intro-card overflow-hidden transition-all duration-700 flex-shrink-0 w-72 md:w-auto md:flex-shrink ${
+              className={`intro-card overflow-hidden transition-all duration-700 flex-shrink-0 w-64 snap-center md:w-auto md:flex-shrink md:snap-align-none ${
                 visibleCards[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="aspect-[3/4] sm:aspect-[3/4] relative overflow-hidden">
+              <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
