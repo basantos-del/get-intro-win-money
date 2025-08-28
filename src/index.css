@@ -132,6 +132,12 @@ All colors MUST be HSL for consistency.
     transition: var(--transition-smooth);
   }
   
+  .intro-card-accent {
+    @apply bg-accent border border-card-border rounded-card text-accent-foreground;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
   .intro-card:hover {
     box-shadow: var(--shadow-card-hover);
     transform: translateY(-2px);
