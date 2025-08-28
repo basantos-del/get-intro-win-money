@@ -178,7 +178,7 @@ const FinalCTASection = () => {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center space-x-2 text-muted-foreground">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            <span>Join 2,588+ people building passive income through referrals</span>
+            <span className="text-white">Join 2,588+ people building passive income through referrals</span>
           </div>
         </div>
       </div>
