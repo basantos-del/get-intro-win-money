@@ -30,8 +30,8 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            You know people,<br />
-            <span className="text-accent-foreground">we know opportunities</span>
+            You know <span className="font-normal">people</span>,<br />
+            <span className="text-accent-foreground">we know <span className="font-normal">opportunities</span></span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed px-6 py-3 rounded-lg inline-block" style={{ backgroundColor: '#f9fd8f' }}>
