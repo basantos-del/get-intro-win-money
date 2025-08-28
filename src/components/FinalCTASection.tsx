@@ -98,7 +98,7 @@ const FinalCTASection = () => {
           <h2 className="text-4xl md:text-6xl text-foreground mb-6">
             Let's get social again
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             Join our community and start earning through completed machmakings
           </p>
         </div>
