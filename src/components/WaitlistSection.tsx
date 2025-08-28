@@ -95,7 +95,7 @@ const WaitlistSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Members Waitlist */}
-          <div className="intro-card p-8 stagger-animation">
+          <div className="intro-card p-8 stagger-animation" style={{ boxShadow: 'var(--shadow-yellow-subtle)' }}>
             <div className="flex items-center justify-center mb-6">
               <div className="p-3 bg-accent rounded-full">
                 <Users className="w-8 h-8 text-accent-foreground" />
@@ -135,7 +135,7 @@ const WaitlistSection = () => {
           </div>
 
           {/* Companies Waitlist */}
-          <div className="intro-card p-8 stagger-animation">
+          <div className="intro-card p-8 stagger-animation" style={{ boxShadow: 'var(--shadow-yellow-subtle)' }}>
             <div className="flex items-center justify-center mb-6">
               <div className="p-3 bg-accent rounded-full">
                 <Building2 className="w-8 h-8 text-accent-foreground" />
