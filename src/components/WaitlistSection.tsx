@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import CountdownTimer from './CountdownTimer';
 import { Users, Building2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const WaitlistSection = () => {
   const [memberEmail, setMemberEmail] = useState('');
@@ -17,15 +18,29 @@ const WaitlistSection = () => {
 
     setIsLoading({ ...isLoading, member: true });
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('waitlist_members')
+        .insert([{ email: memberEmail }]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Welcome to Intro!",
         description: "You've been added to our members waitlist. We'll notify you when we launch!",
       });
       setMemberEmail('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to join waitlist. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading({ ...isLoading, member: false });
-    }, 1000);
+    }
   };
 
   const handleCompanySubmit = async (e: React.FormEvent) => {
@@ -34,15 +49,32 @@ const WaitlistSection = () => {
 
     setIsLoading({ ...isLoading, company: true });
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('waitlist_companies')
+        .insert([{ 
+          contact_email: companyEmail,
+          company_name: 'TBD' // Will be updated when we collect more info
+        }]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Thank you for your interest!",
         description: "You've been added to our companies waitlist. We'll be in touch soon!",
       });
       setCompanyEmail('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to join waitlist. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading({ ...isLoading, company: false });
-    }, 1000);
+    }
   };
 
   return (
