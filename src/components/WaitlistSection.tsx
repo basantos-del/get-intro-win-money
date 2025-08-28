@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
@@ -11,8 +11,46 @@ const WaitlistSection = () => {
   const [memberEmail, setMemberEmail] = useState('');
   const [companyEmail, setCompanyEmail] = useState('');
   const [isLoading, setIsLoading] = useState({ member: false, company: false });
+  const [counts, setCounts] = useState({ member_count: 0, company_count: 0 });
   const { toast } = useToast();
   const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+
+  // Fetch waitlist counts from secure function
+  useEffect(() => {
+    const fetchCounts = async () => {
+      try {
+        const { data, error } = await supabase
+          .rpc('get_public_waitlist_counts');
+        
+        if (error) {
+          console.error('Error fetching waitlist counts:', error);
+          return;
+        }
+        
+        if (data && data.length > 0) {
+          setCounts(data[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching waitlist counts:', error);
+      }
+    };
+
+    fetchCounts();
+  }, []);
+
+  // Update counts after successful submission
+  const updateCounts = async () => {
+    try {
+      const { data, error } = await supabase
+        .rpc('get_public_waitlist_counts');
+      
+      if (!error && data && data.length > 0) {
+        setCounts(data[0]);
+      }
+    } catch (error) {
+      console.error('Error updating waitlist counts:', error);
+    }
+  };
 
   const handleMemberSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +72,7 @@ const WaitlistSection = () => {
         description: "You've been added to our members waitlist. We'll notify you when we launch!",
       });
       setMemberEmail('');
+      updateCounts(); // Update counts after successful submission
     } catch (error) {
       toast({
         title: "Error",
@@ -68,6 +107,7 @@ const WaitlistSection = () => {
         description: "You've been added to our companies waitlist. We'll be in touch soon!",
       });
       setCompanyEmail('');
+      updateCounts(); // Update counts after successful submission
     } catch (error) {
       toast({
         title: "Error",
@@ -113,7 +153,7 @@ const WaitlistSection = () => {
             </p>
             
             <div className="text-center mb-6">
-              <div className="text-3xl font-bold text-foreground">2,588</div>
+              <div className="text-3xl font-bold text-foreground">{counts.member_count.toLocaleString()}</div>
               <div className="text-sm text-muted-foreground">members joined</div>
             </div>
             
@@ -153,7 +193,7 @@ const WaitlistSection = () => {
             </p>
             
             <div className="text-center mb-6">
-              <div className="text-3xl font-bold text-foreground">232</div>
+              <div className="text-3xl font-bold text-foreground">{counts.company_count.toLocaleString()}</div>
               <div className="text-sm text-muted-foreground">companies joined</div>
             </div>
             

@@ -112,6 +112,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_public_waitlist_counts: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          company_count: number
+          member_count: number
+        }[]
+      }
       get_waitlist_counts: {
         Args: Record<PropertyKey, never>
         Returns: {
