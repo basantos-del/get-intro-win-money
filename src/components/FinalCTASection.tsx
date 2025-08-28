@@ -95,7 +95,7 @@ const FinalCTASection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 animate-on-scroll animate-slide-up ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl md:text-6xl text-foreground mb-6">
+          <h2 className="text-4xl md:text-6xl text-foreground mb-6 font-bold">
             Let's get social again
           </h2>
           <p className="text-xl text-white max-w-2xl mx-auto">
