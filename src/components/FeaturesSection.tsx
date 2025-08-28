@@ -39,36 +39,36 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Features List */}
-          <div className="space-y-6 flex flex-col justify-center">
+          <div className="space-y-4 lg:space-y-6 flex flex-col justify-center">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`p-4 cursor-pointer transition-all duration-300 rounded-lg ${
+                className={`p-3 lg:p-4 cursor-pointer transition-all duration-300 rounded-lg ${
                   activeFeature === index 
                     ? 'bg-accent text-accent-foreground' 
                     : 'hover:bg-accent/10'
                 }`}
                 onMouseEnter={() => setActiveFeature(index)}
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className={`p-3 rounded-full transition-all duration-300 ${
+                <div className="flex items-center gap-3 lg:gap-4 mb-2 lg:mb-3">
+                  <div className={`p-2 lg:p-3 rounded-full transition-all duration-300 ${
                     activeFeature === index 
                       ? 'bg-accent-foreground/20' 
                       : 'bg-accent'
                   }`}>
-                    <feature.icon className={`w-6 h-6 ${
+                    <feature.icon className={`w-5 h-5 lg:w-6 lg:h-6 ${
                       activeFeature === index 
                         ? 'text-accent-foreground' 
                         : 'text-accent-foreground'
                     }`} />
                   </div>
-                  <h3 className="text-xl font-bold">
+                  <h3 className="text-lg lg:text-xl font-bold">
                     {feature.title}
                   </h3>
                 </div>
-                <p className={`text-sm leading-relaxed ml-14 ${
+                <p className={`text-sm leading-relaxed ml-11 lg:ml-14 ${
                   activeFeature === index 
                     ? 'text-accent-foreground/80' 
                     : 'text-muted-foreground'
@@ -80,12 +80,12 @@ const FeaturesSection = () => {
           </div>
 
           {/* Mockup Display */}
-          <div className="relative min-h-[500px] flex items-center justify-center">
-            <div className="relative">
+          <div className="relative min-h-[400px] lg:min-h-[500px] flex items-center justify-center">
+            <div className="relative flex justify-center">
               <img
                 src={features[activeFeature].image}
                 alt={features[activeFeature].title}
-                className="max-w-[50%] h-auto transition-all duration-500 ease-in-out"
+                className="max-w-[80%] lg:max-w-[50%] h-auto transition-all duration-500 ease-in-out"
               />
             </div>
           </div>
