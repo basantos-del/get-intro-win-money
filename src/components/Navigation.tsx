@@ -24,17 +24,14 @@ const Navigation = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'backdrop-blur-sm shadow-intro-card' 
-          : ''
+          ? 'bg-background/95 backdrop-blur-sm shadow-intro-card' 
+          : 'bg-transparent'
       }`}
-      style={{ 
-        backgroundColor: isScrolled ? '#f9fd8f95' : '#f9fd8f80'
-      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-foreground">intro</h1>
+            <h1 className="text-2xl font-bold" style={{ color: '#f9fd8f' }}>intro</h1>
           </div>
           
           <div className="hidden md:block">
