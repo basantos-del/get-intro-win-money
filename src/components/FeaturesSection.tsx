@@ -80,13 +80,36 @@ const FeaturesSection = () => {
           </div>
 
           {/* Mockup Display */}
-          <div className="relative min-h-[400px] lg:min-h-[500px] flex items-center justify-center">
+          <div className="relative min-h-[400px] lg:min-h-[500px] flex flex-col items-center justify-center">
             <div className="relative flex justify-center">
               <img
                 src={features[activeFeature].image}
                 alt={features[activeFeature].title}
                 className="max-w-[80%] lg:max-w-[50%] h-auto transition-all duration-500 ease-in-out"
               />
+            </div>
+            
+            {/* Mobile Navigation Arrows */}
+            <div className="flex items-center justify-center gap-8 mt-6 md:hidden">
+              <button
+                onClick={() => setActiveFeature(activeFeature > 0 ? activeFeature - 1 : features.length - 1)}
+                className="p-2 rounded-full hover:bg-muted/20 transition-colors"
+                aria-label="Previous feature"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              <button
+                onClick={() => setActiveFeature(activeFeature < features.length - 1 ? activeFeature + 1 : 0)}
+                className="p-2 rounded-full hover:bg-muted/20 transition-colors"
+                aria-label="Next feature"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
