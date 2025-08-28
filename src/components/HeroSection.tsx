@@ -1,26 +1,16 @@
 import { Button } from '@/components/ui/button';
-
 const HeroSection = () => {
   const scrollToWaitlist = () => {
     const element = document.getElementById('waitlist');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
+      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
         <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
       </video>
       
@@ -34,16 +24,14 @@ const HeroSection = () => {
             <span className="text-white">we know opportunities</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed px-6 py-3 rounded-lg inline-block" style={{ backgroundColor: '#f9fd8f' }}>
+          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
+          backgroundColor: '#f9fd8f'
+        }}>
             Build passive income. Give your friends an <span className="font-bold">intro</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button
-              onClick={scrollToWaitlist}
-              size="lg"
-              className="intro-button-primary px-12 py-4 text-lg font-semibold"
-            >
+            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold">
               Join the Waitlist
             </Button>
             
@@ -57,12 +45,12 @@ const HeroSection = () => {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: '#f9fd8f' }}>
+        <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{
+        borderColor: '#f9fd8f'
+      }}>
           <div className="w-1 h-3 bg-foreground/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
