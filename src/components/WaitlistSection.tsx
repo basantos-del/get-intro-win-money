@@ -111,7 +111,7 @@ const WaitlistSection = () => {
             </p>
             
             <div className="text-center mb-6">
-              <div className="text-3xl font-bold text-foreground">2,356</div>
+              <div className="text-3xl font-bold text-foreground">2,588</div>
               <div className="text-sm text-muted-foreground">members joined</div>
             </div>
             
@@ -147,7 +147,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Connect with qualified referrals from vetted networks
+              Connect with qualified referrals from vetted Members
             </p>
             
             <div className="text-center mb-6">
