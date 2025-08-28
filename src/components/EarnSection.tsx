@@ -33,7 +33,7 @@ const EarnSection = () => {
     {
       image: jobReferralImage,
       title: 'Refer a friend for a job',
-      description: 'Connect talented individuals with great opportunities',
+      description: 'Connect talented friends with cool opportunities',
       earning: 'Earn up to $1,000',
     },
     {
@@ -44,9 +44,9 @@ const EarnSection = () => {
     },
     {
       image: houseReferralImage,
-      title: 'Refer someone who will sell their house',
+      title: 'Refer home movers',
       description: 'Connect homeowners with trusted real estate professionals',
-      earning: 'Earn up to $5,000',
+      earning: 'Earn up to $250',
     },
   ];
 
