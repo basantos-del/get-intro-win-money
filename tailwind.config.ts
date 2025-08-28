@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'aileron': ['Aileron', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				'script': ['Kaushan Script', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
