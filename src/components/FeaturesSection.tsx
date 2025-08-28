@@ -7,12 +7,12 @@ const FeaturesSection = () => {
     {
       icon: Zap,
       title: 'Fast Referral',
-      description: 'Submit referrals in seconds with our streamlined process. No complicated forms or lengthy procedures.',
+      description: 'Submit referrals in seconds. No complicated forms or lengthy procedures.',
     },
     {
       icon: Calendar,
       title: 'Daily Opportunities',
-      description: 'Fresh referral opportunities delivered daily. Never miss a chance to earn from your network.',
+      description: 'Fresh referral opportunities delivered daily. Never miss a chance to earn.',
     },
     {
       icon: Wallet,
@@ -29,7 +29,7 @@ const FeaturesSection = () => {
             Making an intro has never been so easy
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our platform is designed to make referrals effortless and rewarding
+            Intro is designed to make referrals effortless and rewarding
           </p>
         </div>
 
