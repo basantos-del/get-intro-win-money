@@ -25,7 +25,7 @@ const HeroSection = () => {
       </video>
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="fade-in-up">
