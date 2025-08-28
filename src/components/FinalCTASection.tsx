@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const FinalCTASection = () => {
   const [waitlistEmail, setWaitlistEmail] = useState('');
@@ -15,14 +16,29 @@ const FinalCTASection = () => {
 
     setIsLoading({ ...isLoading, waitlist: true });
     
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('waitlist_members')
+        .insert([{ email: waitlistEmail }]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Welcome aboard!",
         description: "You're now on our waitlist. Get ready to start earning!",
       });
       setWaitlistEmail('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to join waitlist. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading({ ...isLoading, waitlist: false });
-    }, 1000);
+    }
   };
 
   const handleReferralSubmit = async (e: React.FormEvent) => {
