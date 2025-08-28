@@ -46,7 +46,7 @@ All colors MUST be HSL for consistency.
     
     /* Design Tokens */
     --radius: 1rem; /* Round corners */
-    --radius-card: 1.5rem; /* Card specific radius */
+    --radius-card: 0.75rem; /* Card specific radius */
     --radius-button: 0.75rem;
     
     /* Gradients */
