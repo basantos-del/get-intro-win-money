@@ -21,7 +21,7 @@ const AboutSection = () => {
             <div className="intro-card p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">2,588</div>
               <div className="text-lg font-medium text-foreground mb-2">Waitlist Members</div>
-              <div className="text-muted-foreground">Building passive income through referrals</div>
+              <div className="text-muted-foreground">Building extra income through referrals</div>
             </div>
             
             <div className="intro-card p-8 stagger-animation">

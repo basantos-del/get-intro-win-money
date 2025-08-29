@@ -111,7 +111,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Start earning passive income through completed matchmaking
+              Start earning extra income through completed matchmaking
             </p>
             
             <div className="text-center mb-6">

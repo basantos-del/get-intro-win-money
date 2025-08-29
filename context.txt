@@ -1,10 +1,10 @@
 # Intro - Referral Marketplace Platform
 
 ## Product Overview
-Intro is a marketplace platform that connects referral programs from businesses with consumers who have networks of people. The primary focus is on attracting consumers (members) to use the product and earn passive income through referrals.
+Intro is a marketplace platform that connects referral programs from businesses with consumers who have networks of people. The primary focus is on attracting consumers (members) to use the product and earn extra income through referrals.
 
 ## Core Value Proposition
-- **For Members**: Turn your network into passive income by referring friends for jobs, products, and opportunities
+- **For Members**: Turn your network into extra income by referring friends for jobs, products, and opportunities
 - **For Companies**: Access qualified referrals from trusted networks
 - **Tagline**: "You know people, we know opportunities"
 
@@ -21,7 +21,7 @@ Intro is a marketplace platform that connects referral programs from businesses 
 
 ### Hero Section
 - Title: "You know people, we know opportunities."
-- Description: "Your 5 minutes day app to build a nice passive income. Give your friends an intro."
+- Description: "Your 5 minutes day app to build a nice extra income. Give your friends an intro."
 - CTA: Join the waitlist
 - Background: Custom generated hero image
 
@@ -56,7 +56,7 @@ Intro is a marketplace platform that connects referral programs from businesses 
 - Links: Join waitlist, Earn (anchors to opportunities section)
 
 ## SEO Keywords
-refer, income, earn, win, money, opportunity, jobs, leads, referral, passive income, network, friends
+refer, income, earn, win, money, opportunity, jobs, leads, referral, extra income, network, friends
 
 ## Technical Features
 - Responsive design
@@ -81,5 +81,5 @@ refer, income, earn, win, money, opportunity, jobs, leads, referral, passive inc
 - **Usage Guidelines**: Primary brand mark for all external-facing materials, social media, and browser identification
 
 ## Target Audience
-Primary: Consumers/individuals with networks who want to earn passive income
+Primary: Consumers/individuals with networks who want to earn extra income
 Secondary: Companies seeking qualified referrals from trusted sources

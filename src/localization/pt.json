@@ -8,7 +8,7 @@
   "hero": {
     "title": "Tu conheces pessoas,",
     "titleAccent": "nós conhecemos oportunidades.",
-    "description": "A tua aplicação de 5 minutos por dia para construir um rendimento passivo. Apresenta os teus amigos.",
+    "description": "A tua aplicação de 5 minutos por dia para construir um rendimento extra. Apresenta os teus amigos.",
     "cta": "Juntar-se à Lista de Espera",
     "joinedCount": "pessoas já se juntaram"
   },
@@ -18,7 +18,7 @@
     "countdown": "Obtém Acesso Antecipado Em:",
     "members": {
       "title": "Para Membros",
-      "description": "Começa a ganhar rendimento passivo através da tua rede",
+      "description": "Começa a ganhar rendimento extra através da tua rede",
       "count": "membros juntaram-se",
       "cta": "Obter Acesso Antecipado"
     },
@@ -34,7 +34,7 @@
     "description": "Intro é uma plataforma que conecta empresas com oportunidades de referência a pessoas como tu - que conhecem pessoas.",
     "stats": {
       "members": "Membros Ativos",
-      "membersDesc": "Construindo rendimento passivo através de referências",
+      "membersDesc": "Construindo rendimento extra através de referências",
       "companies": "Empresas Parceiras",
       "companiesDesc": "À procura de referências de qualidade",
       "earnings": "Ganhos Distribuídos",
@@ -98,7 +98,7 @@
     }
   },
   "footer": {
-    "description": "O mercado onde programas de referência encontram pessoas que conhecem pessoas. Transforma a tua rede em rendimento passivo.",
+    "description": "O mercado onde programas de referência encontram pessoas que conhecem pessoas. Transforma a tua rede em rendimento extra.",
     "quickLinks": "Links Rápidos",
     "getStarted": "Começar",
     "readyToEarn": "Pronto para ganhar?",
