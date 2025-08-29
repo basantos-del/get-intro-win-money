@@ -11,16 +11,45 @@ const queryClient = new QueryClient();
 
 const HashHandler = () => {
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const elementId = hash.substring(1);
+    const scrollToElement = (elementId: string, retries = 0) => {
       const element = document.getElementById(elementId);
       if (element) {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+        });
+      } else if (retries < 10) {
+        // Retry up to 10 times with increasing delay
+        setTimeout(() => scrollToElement(elementId, retries + 1), 200 + retries * 100);
+      } else {
+        // Fallback: scroll to waitlist section if members-waitlist not found
+        if (elementId === 'members-waitlist') {
+          const waitlistSection = document.getElementById('waitlist');
+          if (waitlistSection) {
+            requestAnimationFrame(() => {
+              waitlistSection.scrollIntoView({ behavior: 'smooth' });
+            });
+          }
+        }
       }
-    }
+    };
+
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const elementId = hash.substring(1);
+        scrollToElement(elementId);
+      }
+    };
+
+    // Handle initial hash on page load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
   return null;
 };
