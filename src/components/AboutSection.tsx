@@ -12,7 +12,7 @@ const AboutSection = () => {
               You're an intro away from saving the money you needed
             </h2>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               The marketplace where referral programs meet people who know people
             </p>
           </div>
