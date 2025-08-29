@@ -27,7 +27,7 @@ All colors MUST be HSL for consistency.
     --secondary-foreground: 0 0% 11.4%;
     
     /* Accent & Highlight */
-    --accent: 61 100% 89%; /* #f9fd8f - highlight yellow */
+    --accent: 63 96% 78%; /* #f9fd8f - highlight yellow */
     --accent-foreground: 0 0% 11.4%;
     
     /* Interactive States */
