@@ -99,7 +99,7 @@ const WaitlistSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Members Waitlist */}
-          <div className="intro-card-accent p-8 stagger-animation">
+          <div id="members-waitlist" className="intro-card-accent p-8 stagger-animation">
             <div className="flex items-center justify-center mb-6">
               <div className="p-3 bg-accent rounded-full">
                 <Users className="w-8 h-8 text-accent-foreground" />
