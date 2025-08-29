@@ -45,7 +45,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <h3 className="text-lg font-semibold text-foreground">Get early access to exclusive opportunities in:</h3>
+      <h3 className="text-sm md:text-lg font-semibold text-foreground text-center">Get early access to exclusive opportunities in:</h3>
       <div className="flex gap-3 md:gap-4">
         <TimeBlock value={timeLeft.days} label="Days" />
         <TimeBlock value={timeLeft.hours} label="Hours" />
