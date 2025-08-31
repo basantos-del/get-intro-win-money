@@ -1,3 +1,5 @@
+import { Instagram } from 'lucide-react';
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -41,11 +43,20 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold text-accent-foreground mb-4">Get Started</h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <p className="text-accent-foreground/80">Ready to earn?</p>
               <button onClick={() => scrollToSection('waitlist')} className="text-accent-foreground font-medium hover:underline">
                 Join our waitlist →
               </button>
+              <a 
+                href="https://www.instagram.com/useintro.co/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
+                <Instagram size={20} />
+                <span>Follow us on Instagram</span>
+              </a>
             </div>
           </div>
         </div>
