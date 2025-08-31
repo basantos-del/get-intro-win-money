@@ -42,7 +42,7 @@ const HeroSection = () => {
           }}
         >
           {/* Video background */}
-          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
             <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
           </video>
           
