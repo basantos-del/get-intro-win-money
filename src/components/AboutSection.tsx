@@ -7,17 +7,26 @@ const AboutSection = () => {
   } = useIntersectionObserver({
     threshold: 0.3
   });
-
-  const waitlistCount = useCountUp({ end: 2588, isVisible, delay: 200 });
-  const companiesCount = useCountUp({ end: 232, isVisible, delay: 600 });
-  const earningsCount = useCountUp({ end: 500, isVisible, delay: 1000 });
+  const waitlistCount = useCountUp({
+    end: 2588,
+    isVisible,
+    delay: 200
+  });
+  const companiesCount = useCountUp({
+    end: 232,
+    isVisible,
+    delay: 600
+  });
+  const earningsCount = useCountUp({
+    end: 500,
+    isVisible,
+    delay: 1000
+  });
   return <section id="about" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className={`animate-on-scroll animate-fade-left ${isVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
-              You're an intro away from saving the money you needed
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">You're an intro away from making the money you needed</h2>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">The place where referral programs meet people who know people</p>
           </div>
