@@ -96,9 +96,22 @@ const FinalCTASection = () => {
     }
   };
   return <section id="final-cta" className="intro-section bg-accent/10 relative overflow-hidden" ref={elementRef}>
-      {/* Video Background */}
+      {/* Video Background - Lazy loaded for better TTI */}
       <div className="absolute inset-0">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+        <video 
+          loop 
+          muted 
+          playsInline 
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
+          ref={(video) => {
+            if (video && isVisible) {
+              video.play().catch(() => {
+                // Fallback if autoplay is blocked
+              });
+            }
+          }}
+        >
           <source src="/5237049-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
       </div>

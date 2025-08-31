@@ -13,6 +13,7 @@ export const useCountUp = ({ end, duration = 2000, delay = 0, isVisible = false 
   useEffect(() => {
     if (!isVisible) return;
 
+    // Defer animation start to improve TTI
     const timer = setTimeout(() => {
       let startTime: number;
       
