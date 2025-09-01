@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      city_suggestions: {
+        Row: {
+          city_name: string
+          created_at: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          city_name: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          city_name?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      opportunity_type_suggestions: {
+        Row: {
+          created_at: string
+          id: string
+          opportunity_type: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          opportunity_type: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          opportunity_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       refer_friend: {
         Row: {
           created_at: string

@@ -4,10 +4,126 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Footer from '@/components/Footer';
 
 const FAQ = () => {
   const [activeCategory, setActiveCategory] = useState('about-intro');
+  const [cityInput, setCityInput] = useState('');
+  const [opportunityInput, setOpportunityInput] = useState('');
+  const [citySubmitting, setCitySubmitting] = useState(false);
+  const [opportunitySubmitting, setOpportunitySubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleCitySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!cityInput.trim()) return;
+
+    setCitySubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('city_suggestions')
+        .insert({ city_name: cityInput.trim() });
+
+      if (error) throw error;
+
+      toast({
+        title: "City suggestion submitted!",
+        description: "Thank you for your suggestion. We'll consider it for future expansion.",
+      });
+      setCityInput('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit your suggestion. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setCitySubmitting(false);
+    }
+  };
+
+  const handleOpportunitySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!opportunityInput.trim()) return;
+
+    setOpportunitySubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('opportunity_type_suggestions')
+        .insert({ opportunity_type: opportunityInput.trim() });
+
+      if (error) throw error;
+
+      toast({
+        title: "Opportunity type submitted!",
+        description: "Thank you for your suggestion. We'll consider adding this opportunity type.",
+      });
+      setOpportunityInput('');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit your suggestion. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setOpportunitySubmitting(false);
+    }
+  };
+
+  const renderFAQContent = (faq: any, index: number) => {
+    const isCityQuestion = faq.question === 'In which cities operates?';
+    const isOpportunityQuestion = faq.question === 'What kind of opportunities can I discover in intro?';
+
+    return (
+      <AccordionContent className="px-4 pb-4 pt-2">
+        <p className="text-muted-foreground leading-relaxed mb-4">{faq.answer}</p>
+        
+        {isCityQuestion && (
+          <form onSubmit={handleCitySubmit} className="space-y-3">
+            <Input
+              type="text"
+              placeholder="Enter your city name..."
+              value={cityInput}
+              onChange={(e) => setCityInput(e.target.value)}
+              className="w-full"
+              disabled={citySubmitting}
+            />
+            <Button 
+              type="submit" 
+              className="intro-button-cta"
+              disabled={citySubmitting || !cityInput.trim()}
+            >
+              {citySubmitting ? 'Submitting...' : 'Submit City'}
+            </Button>
+          </form>
+        )}
+        
+        {isOpportunityQuestion && (
+          <form onSubmit={handleOpportunitySubmit} className="space-y-3">
+            <Input
+              type="text"
+              placeholder="Enter opportunity type (e.g., Job referrals, Product reviews...)..."
+              value={opportunityInput}
+              onChange={(e) => setOpportunityInput(e.target.value)}
+              className="w-full"
+              disabled={opportunitySubmitting}
+            />
+            <Button 
+              type="submit" 
+              className="intro-button-cta"
+              disabled={opportunitySubmitting || !opportunityInput.trim()}
+            >
+              {opportunitySubmitting ? 'Submitting...' : 'Submit Opportunity Type'}
+            </Button>
+          </form>
+        )}
+      </AccordionContent>
+    );
+  };
 
   const categories = [
     { id: 'about-intro', label: 'About Intro', count: 4 },
@@ -157,9 +273,7 @@ const FAQ = () => {
                     <AccordionTrigger className="text-left hover:no-underline hover:bg-accent/50 px-4 py-4 rounded-lg transition-colors">
                       <span className="font-medium text-foreground pr-4">{faq.question}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-4 pt-2">
-                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                    </AccordionContent>
+                    {renderFAQContent(faq, index)}
                   </AccordionItem>
                 ))}
               </Accordion>
