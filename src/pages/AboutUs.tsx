@@ -216,45 +216,95 @@ const AboutUs = () => {
           </h1>
         </div>
 
-        {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Image */}
-          <div className="order-2 lg:order-1 animate-fade-in">
-            <img
-              src="/lovable-uploads/9a914b7c-fb2c-459a-8bc9-4e48fe62d7d6.png"
-              alt="Let's get social again"
-              className="w-full h-auto rounded-lg shadow-intro-card object-cover max-h-[50vh]"
-            />
+        {/* Top Badge Filters */}
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
+          {categories.map((category) => (
+            <Badge
+              key={category.id}
+              variant={activeCategory === category.id ? "default" : "outline"}
+              className={`cursor-pointer transition-all hover:shadow-md px-4 py-2 ${
+                activeCategory === category.id 
+                  ? 'bg-primary text-primary-foreground shadow-lg' 
+                  : 'hover:bg-accent'
+              }`}
+              onClick={() => setActiveCategory(category.id)}
+            >
+              {category.label}
+            </Badge>
+          ))}
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Left Sidebar - Categories */}
+          <div className="lg:w-1/4">
+            <div className="intro-card p-6 sticky top-8 hidden lg:block">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`w-full flex items-center justify-between p-3 rounded-lg transition-all text-left ${
+                      activeCategory === category.id
+                        ? 'bg-primary text-primary-foreground shadow-md'
+                        : 'hover:bg-accent text-foreground'
+                    }`}
+                  >
+                    <span className="font-medium">{category.label}</span>
+                    <Badge
+                      variant="secondary"
+                      className={`text-xs ${
+                        activeCategory === category.id
+                          ? 'bg-primary-foreground text-primary'
+                          : 'bg-destructive text-destructive-foreground'
+                      }`}
+                    >
+                      {category.count}
+                    </Badge>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-          
-          {/* Content */}
-          <div className="order-1 lg:order-2 animate-fade-in">
-            <div className="mb-8">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Intro is a referral marketplace that connects opportunities with people who know people.
-              </p>
+
+          {/* Main Content - FAQ Accordion */}
+          <div className="lg:w-3/4">
+            <div className="intro-card p-6">
+              <div className="flex items-center gap-3 mb-6">
+                <h2 className="text-2xl font-bold text-foreground">
+                  {categories.find(cat => cat.id === activeCategory)?.label}
+                </h2>
+                <Badge variant="secondary" className="bg-destructive text-destructive-foreground">
+                  {categories.find(cat => cat.id === activeCategory)?.count}
+                </Badge>
+              </div>
+
+              <Accordion type="single" collapsible className="w-full">
+                {faqs[activeCategory as keyof typeof faqs]?.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                    <AccordionTrigger className="text-left hover:no-underline hover:bg-accent/50 px-4 py-4 rounded-lg transition-colors">
+                      <span className="font-medium text-foreground pr-4">{faq.question}</span>
+                    </AccordionTrigger>
+                    {renderFAQContent(faq, index)}
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-            
-            {/* Timeline */}
-            <div className="space-y-6">
-              {[
-                "Companies post opportunities.",
-                "Members can follow up and refer a friend.",
-                "If the referral is a success, we call it a match.",
-                "Matches are what pay you good money."
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4 animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-intro-card">
-                    <span className="text-primary-foreground font-semibold text-sm">{index + 1}</span>
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <p className="text-foreground font-medium leading-relaxed">
-                      {item}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="mt-16 text-center">
+          <div className="intro-card p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Still have questions?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Can't find what you're looking for? Reach out to our support team and we'll get back to you.
+            </p>
+            <button className="intro-button-cta">
+              Contact Support
+            </button>
           </div>
         </div>
 
