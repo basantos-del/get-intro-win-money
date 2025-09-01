@@ -199,9 +199,6 @@ const FAQ = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Find answers to common questions about Intro's referral marketplace
-          </p>
         </div>
 
         {/* Top Badge Filters */}
