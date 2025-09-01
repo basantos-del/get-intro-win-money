@@ -92,6 +92,47 @@ const AboutUs = () => {
           </div>
         </div>
 
+        {/* New Image Section */}
+        <div className="mt-16 w-full animate-fade-in overflow-hidden">
+          <img
+            src="/lovable-uploads/637b3177-f2f8-4248-8697-700d92b84f45.png"
+            alt="Your network, you're net worth"
+            className="w-full h-auto object-cover scale-95 -mb-8"
+          />
+        </div>
+
+        {/* Additional Content Sections */}
+        <div className="max-w-2xl mx-auto text-left py-16">
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                Our Mission
+              </h3>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                We're on a mission to reimagine how referrals work for both members and businesses. Our goal is to create the top referral marketplace, offering tons of opportunities for members to earn and new ways for businesses to leverage referral programs.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                How it works
+              </h3>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                Businesses post opportunities on intro. We carefully review and categorize each one, then connect them with members who are the right fit. Our core power lies in reimagining these connections, helping you unlock new daily opportunities.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                Why join Us?
+              </h3>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                intro is designed to help you build the future you want. We know chasing your goals isn't easy, so we've built a platform that not only helps you earn cash through referrals but also opens doors to new possibilities. You join intro because you're social; you stay because you have bigger plans for yourself.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Section */}
         <div className="mt-16 text-center">
           <div className="intro-card p-8 max-w-2xl mx-auto">
