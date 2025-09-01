@@ -318,7 +318,7 @@ const FAQ = () => {
         </div>
         
         {/* Join Waitlist CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center animate-bounce">
           <Button 
             onClick={handleJoinWaitlist}
             className="intro-button-cta text-lg px-8 py-4"
