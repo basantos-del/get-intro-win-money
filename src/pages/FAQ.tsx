@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 const FAQ = () => {
   const [activeCategory, setActiveCategory] = useState('about-intro');
@@ -190,6 +191,7 @@ const FAQ = () => {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
