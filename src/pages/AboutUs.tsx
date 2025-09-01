@@ -221,7 +221,7 @@ const AboutUs = () => {
           {/* Image */}
           <div className="order-2 lg:order-1 animate-fade-in">
             <img
-              src="/lovable-uploads/63d92715-c0eb-4119-9f13-2dd6c22e9553.png"
+              src="/lovable-uploads/9a914b7c-fb2c-459a-8bc9-4e48fe62d7d6.png"
               alt="Let's get social again"
               className="w-full h-auto rounded-lg shadow-intro-card object-cover"
             />
