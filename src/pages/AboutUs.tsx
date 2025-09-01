@@ -235,38 +235,6 @@ const AboutUs = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Image Section */}
-          <div className="lg:w-1/3">
-            <img
-              src="/lovable-uploads/6c4a3b51-f06d-4a1b-b827-d569b30520f5.png"
-              alt="Let's get social again"
-              className="w-full h-auto object-cover rounded-lg"
-            />
-          </div>
-
-          {/* Text Content Section */}
-          <div className="lg:w-2/3">
-            <div className="intro-card p-8">
-              <p className="text-foreground text-lg leading-relaxed mb-6">
-                Intro is a referral marketplace that connects opportunities with people who know people.
-              </p>
-              
-              <div className="space-y-4 mb-6">
-                <p className="text-foreground">Companies post opportunities.</p>
-                <p className="text-foreground">Members can follow up and refer a friend.</p>
-                <p className="text-foreground">If the referral is a success, we call it a match.</p>
-                <p className="text-foreground">Matches are what pay you good money.</p>
-              </div>
-
-              <p className="text-foreground text-lg leading-relaxed">
-                Intro was born to provide everyone with a chance to earn extra money. Level up your networking game. No AI-talk, but real earning opportunities.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-8 mt-8">
-          
           {/* Left Sidebar - Categories */}
           <div className="lg:w-1/4">
             <div className="intro-card p-6 sticky top-8 hidden lg:block">
