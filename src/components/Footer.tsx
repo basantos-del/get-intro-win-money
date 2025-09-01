@@ -69,6 +69,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-accent-foreground mb-4">Company</h4>
             <div className="space-y-2">
+              <Link 
+                to="/about-us"
+                className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
+                About Us
+              </Link>
               <button 
                 onClick={handleFAQsClick}
                 className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
