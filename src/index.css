@@ -157,7 +157,7 @@ All colors MUST be HSL for consistency.
   
   /* Section Spacing */
   .intro-section {
-    @apply py-16 lg:py-24;
+    @apply py-8 lg:py-12;
   }
   
   /* Animation Classes */
