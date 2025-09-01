@@ -53,7 +53,7 @@ const AboutUs = () => {
             
             <div className="space-y-4">
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Companies post opportunities. Members can follow up and refer a friend. If the referral is a success, we call it a match. Matches are what pay you good money.
+                Companies post <strong>opportunities</strong>. Members can follow up and refer a friend. If the referral is a success, we call it a match. Matches are what pay you good money.
               </p>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
