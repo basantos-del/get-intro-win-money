@@ -78,7 +78,7 @@ const EarnSection = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-4 left-4 right-4 text-foreground">
-                  <div className="text-lg font-bold mb-1 bg-background/90 px-2 py-1 rounded">{card.earning}</div>
+                  <div className="text-lg font-bold mb-1 text-white">{card.earning}</div>
                 </div>
               </div>
               
