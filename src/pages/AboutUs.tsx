@@ -95,8 +95,8 @@ const AboutUs = () => {
         {/* New Image Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <img
-            src="/lovable-uploads/637b3177-f2f8-4248-8697-700d92b84f45.png"
-            alt="Your network, you're net worth"
+            src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
+            alt="Your network is your net worth"
             className="w-full h-auto object-cover scale-95 -mb-8"
           />
         </div>
