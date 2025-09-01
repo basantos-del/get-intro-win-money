@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,7 +12,7 @@ const Footer = () => {
   };
   return <footer className="bg-accent py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="text-3xl font-bold text-accent-foreground mb-4">intro</h3>
@@ -40,7 +41,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact */}
+          {/* Company */}
+          <div>
+            <h4 className="text-lg font-semibold text-accent-foreground mb-4">Company</h4>
+            <div className="space-y-2">
+              <Link to="/faqs" className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200">
+                FAQs
+              </Link>
+            </div>
+          </div>
+
+          {/* Get Started */}
           <div>
             <h4 className="text-lg font-semibold text-accent-foreground mb-4">Get Started</h4>
             <div className="space-y-3">
