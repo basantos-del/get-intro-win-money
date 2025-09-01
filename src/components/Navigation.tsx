@@ -7,9 +7,10 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isFAQPage = location.pathname === '/faqs';
+  const isAboutPage = location.pathname === '/about-us';
   
-  // Always show scrolled state on FAQ page for better readability
-  const shouldShowScrolledState = isFAQPage || isScrolled;
+  // Always show scrolled state on FAQ and About pages for better readability
+  const shouldShowScrolledState = isFAQPage || isAboutPage || isScrolled;
 
   useEffect(() => {
     let ticking = false;
@@ -29,8 +30,8 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on FAQ page, navigate to main page first then scroll
-    if (isFAQPage) {
+    // If we're on FAQ or About page, navigate to main page first then scroll
+    if (isFAQPage || isAboutPage) {
       navigate('/', { replace: true });
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -77,14 +78,14 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => navigate('/about-us')}
                 className={`transition-colors duration-300 font-medium ${
                   shouldShowScrolledState 
                     ? 'text-foreground hover:text-accent-foreground' 
                     : 'text-white hover:text-white/80'
-                }`}
+                } ${isAboutPage ? 'text-accent' : ''}`}
               >
-                About
+                About Us
               </button>
               <button
                 onClick={() => scrollToSection('features')}
