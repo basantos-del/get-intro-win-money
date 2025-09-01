@@ -142,7 +142,10 @@ const AboutUs = () => {
             <p className="text-muted-foreground mb-6">
               We know we're just getting to know each other
             </p>
-            <Button className="intro-button-primary">
+            <Button 
+              onClick={() => navigate('/faqs')}
+              className="intro-button-primary"
+            >
               Check our FAQs
             </Button>
           </div>
