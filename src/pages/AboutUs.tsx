@@ -167,6 +167,10 @@ const AboutUs = () => {
           </Button>
         </div>
       </div>
+      
+      {/* Mobile-only scroll overlay bar at bottom */}
+      <div className="fixed bottom-0 left-0 right-0 h-20 bg-white/50 pointer-events-none z-10 md:hidden"></div>
+      
       <Footer />
     </div>
   );
