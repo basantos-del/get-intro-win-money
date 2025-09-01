@@ -6,91 +6,103 @@ import CountdownTimer from './CountdownTimer';
 import { Users, Building2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-
 const WaitlistSection = () => {
   const [memberEmail, setMemberEmail] = useState('');
   const [companyEmail, setCompanyEmail] = useState('');
-  const [isLoading, setIsLoading] = useState({ member: false, company: false });
+  const [isLoading, setIsLoading] = useState({
+    member: false,
+    company: false
+  });
   // Static dummy counts
-  const counts = { member_count: 2588, company_count: 232 };
-  const { toast } = useToast();
-  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
-
+  const counts = {
+    member_count: 2588,
+    company_count: 232
+  };
+  const {
+    toast
+  } = useToast();
+  const {
+    elementRef,
+    isVisible
+  } = useIntersectionObserver({
+    threshold: 0.2
+  });
   const handleMemberSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!memberEmail) return;
-
-    setIsLoading({ ...isLoading, member: true });
-    
+    setIsLoading({
+      ...isLoading,
+      member: true
+    });
     try {
-      const { error } = await supabase
-        .from('waitlist_members')
-        .insert([{ email: memberEmail }]);
-
+      const {
+        error
+      } = await supabase.from('waitlist_members').insert([{
+        email: memberEmail
+      }]);
       if (error) {
         throw error;
       }
-
       toast({
         title: "Welcome to Intro!",
-        description: "You've been added to our members waitlist. We'll notify you when we launch!",
+        description: "You've been added to our members waitlist. We'll notify you when we launch!"
       });
       setMemberEmail('');
     } catch (error) {
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to join waitlist. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
-      setIsLoading({ ...isLoading, member: false });
+      setIsLoading({
+        ...isLoading,
+        member: false
+      });
     }
   };
-
   const handleCompanySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!companyEmail) return;
-
-    setIsLoading({ ...isLoading, company: true });
-    
+    setIsLoading({
+      ...isLoading,
+      company: true
+    });
     try {
-      const { error } = await supabase
-        .from('waitlist_companies')
-        .insert([{ 
-          contact_email: companyEmail,
-          company_name: 'TBD' // Will be updated when we collect more info
-        }]);
-
+      const {
+        error
+      } = await supabase.from('waitlist_companies').insert([{
+        contact_email: companyEmail,
+        company_name: 'TBD' // Will be updated when we collect more info
+      }]);
       if (error) {
         throw error;
       }
-
       toast({
         title: "Thank you for your interest!",
-        description: "You've been added to our companies waitlist. We'll be in touch soon!",
+        description: "You've been added to our companies waitlist. We'll be in touch soon!"
       });
       setCompanyEmail('');
     } catch (error) {
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to join waitlist. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
-      setIsLoading({ ...isLoading, company: false });
+      setIsLoading({
+        ...isLoading,
+        company: false
+      });
     }
   };
-
-  return (
-    <section id="waitlist" className="intro-section bg-background" ref={elementRef}>
+  return <section id="waitlist" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Join intro, it's free 
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Be among the first to experience the future of matchmaking
-          </p>
+          
         </div>
 
         <div className="mb-16">
@@ -120,19 +132,8 @@ const WaitlistSection = () => {
             </div>
             
             <form onSubmit={handleMemberSubmit} className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={memberEmail}
-                onChange={(e) => setMemberEmail(e.target.value)}
-                className="w-full"
-                required
-              />
-              <Button
-                type="submit"
-                className="intro-button-primary w-full"
-                disabled={isLoading.member}
-              >
+              <Input type="email" placeholder="Enter your email" value={memberEmail} onChange={e => setMemberEmail(e.target.value)} className="w-full" required />
+              <Button type="submit" className="intro-button-primary w-full" disabled={isLoading.member}>
                 {isLoading.member ? 'Joining...' : 'Get Early Access'}
               </Button>
             </form>
@@ -160,27 +161,14 @@ const WaitlistSection = () => {
             </div>
             
             <form onSubmit={handleCompanySubmit} className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Company email"
-                value={companyEmail}
-                onChange={(e) => setCompanyEmail(e.target.value)}
-                className="w-full"
-                required
-              />
-              <Button
-                type="submit"
-                className="intro-button-primary w-full"
-                disabled={isLoading.company}
-              >
+              <Input type="email" placeholder="Company email" value={companyEmail} onChange={e => setCompanyEmail(e.target.value)} className="w-full" required />
+              <Button type="submit" className="intro-button-primary w-full" disabled={isLoading.company}>
                 {isLoading.company ? 'Joining...' : 'Get Early Access'}
               </Button>
             </form>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WaitlistSection;
