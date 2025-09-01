@@ -8,7 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
 
 const FAQ = () => {
   const [activeCategory, setActiveCategory] = useState('about-intro');
@@ -17,6 +19,18 @@ const FAQ = () => {
   const [citySubmitting, setCitySubmitting] = useState(false);
   const [opportunitySubmitting, setOpportunitySubmitting] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleJoinWaitlist = () => {
+    navigate('/', { replace: true });
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('waitlist');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const handleCitySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -193,7 +207,8 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <Navigation />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -300,6 +315,16 @@ const FAQ = () => {
             alt="Where matchmaking earns you money"
             className="w-full h-auto object-cover scale-95 -mb-8"
           />
+        </div>
+        
+        {/* Join Waitlist CTA */}
+        <div className="mt-16 text-center">
+          <Button 
+            onClick={handleJoinWaitlist}
+            className="intro-button-cta text-lg px-8 py-4"
+          >
+            Join the Waitlist
+          </Button>
         </div>
       </div>
       <Footer />
