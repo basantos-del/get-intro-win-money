@@ -236,7 +236,7 @@ const AboutUs = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Image Section */}
-          <div className="lg:w-1/6">
+          <div className="lg:w-1/3">
             <img
               src="/lovable-uploads/6c4a3b51-f06d-4a1b-b827-d569b30520f5.png"
               alt="Let's get social again"
