@@ -89,7 +89,7 @@ const FAQ = () => {
   };
   const renderFAQContent = (faq: any, index: number) => {
     const isCityQuestion = faq.question === 'In which cities operates?';
-    const isOpportunityQuestion = faq.question === 'What kind of opportunities can I discover in intro?';
+    const isOpportunityQuestion = faq.question === 'What kind of opportunities can I discover on intro?';
     return <AccordionContent className="px-4 pb-4 pt-2">
         <p className="text-muted-foreground leading-relaxed mb-4">{faq.answer}</p>
         
