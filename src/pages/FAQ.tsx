@@ -225,7 +225,7 @@ const FAQ = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Sidebar - Categories */}
           <div className="lg:w-1/4">
-            <div className="intro-card p-6 sticky top-8">
+            <div className="intro-card p-6 sticky top-8 hidden lg:block">
               <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
               <div className="space-y-2">
                 {categories.map((category) => (
