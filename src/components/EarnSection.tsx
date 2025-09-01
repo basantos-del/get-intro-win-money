@@ -30,7 +30,7 @@ const EarnSection = () => {
 
   const earnCards = [
     {
-      image: '/intro_insta (16).png',
+      image: '/lovable-uploads/8207dfb1-7b4a-4198-81d2-84bbed8fa418.png',
       title: 'Refer a friend for a job',
       description: 'Connect talented friends with cool opportunities',
       earning: 'Earn up to $1,000',
