@@ -33,7 +33,7 @@ const CountdownTimer = () => {
   }, []);
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-    <div className="intro-card p-4 text-center min-w-[80px]">
+    <div className="p-4 text-center min-w-[80px]">
       <div className="text-2xl md:text-3xl font-bold text-foreground">
         {value.toString().padStart(2, '0')}
       </div>
