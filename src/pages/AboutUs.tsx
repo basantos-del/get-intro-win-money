@@ -140,7 +140,7 @@ const AboutUs = () => {
               Still have questions?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Can't find what you're looking for?
+              We know we're just getting to know each other
             </p>
             <Button className="intro-button-primary">
               Check our FAQs
