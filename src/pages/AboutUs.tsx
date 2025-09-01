@@ -68,7 +68,7 @@ const AboutUs = () => {
           <img
             src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
             alt="A referral marketplace for people who know people"
-            className="w-full h-auto object-cover scale-75 -mb-8"
+            className="w-full h-auto object-cover scale-95 -mb-8"
           />
         </div>
 
@@ -97,7 +97,7 @@ const AboutUs = () => {
           <img
             src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
             alt="Your network is your net worth"
-            className="w-full h-auto object-cover scale-75 -mb-8"
+            className="w-full h-auto object-cover scale-95 -mb-8"
           />
         </div>
 
@@ -153,7 +153,7 @@ const AboutUs = () => {
           <img
             src="/lovable-uploads/e10e4128-0adb-4523-a77d-116d7c8103d4.png"
             alt="Where matchmaking earns you money"
-            className="w-full h-auto object-cover scale-75 -mb-8"
+            className="w-full h-auto object-cover scale-95 -mb-8"
           />
         </div>
         
