@@ -20,10 +20,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
     <!-- Preload critical video for hero section LCP -->
-    <link rel="preload" href="/853889-hd_1920_1080_25fps.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="/853889-hd_1920_1080_25fps.mp4" as="video" type="video/mp4" crossorigin>
     
-    <!-- Modulepreload for critical JS bundle -->
+    <!-- Modulepreload for critical JS bundle and dependencies -->
     <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/App.tsx">
+    <link rel="modulepreload" href="/src/components/HeroSection.tsx">
     
     <!-- Inter Font - Fully non-blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,14 +83,14 @@
         </div>
       </nav>
       
-      <!-- Hero content placeholder -->
-      <div style="text-align: center; max-width: 768px; padding: 0 16px;">
-        <h1 style="font-size: 3rem; font-weight: bold; color: #1d1d1d; margin: 0 0 24px 0; line-height: 1.1;">
-          You know people,<br />we know opportunities
-        </h1>
-        <p style="font-size: 1.25rem; background: #f9fd8f; color: #1d1d1d; padding: 12px 24px; border-radius: 8px; margin: 0 0 48px 0; display: inline-block;">
-          Build extra income. Give your friends an <strong>intro</strong>
-        </p>
+      <!-- Lightweight hero placeholder to minimize LCP interference -->
+      <div style="text-align: center; max-width: 768px; padding: 0 16px; visibility: hidden;">
+        <div style="font-size: 3rem; font-weight: bold; color: #1d1d1d; margin: 0 0 24px 0; line-height: 1.1;">
+          Loading...
+        </div>
+        <div style="font-size: 1.25rem; background: #f9fd8f; color: #1d1d1d; padding: 12px 24px; border-radius: 8px; margin: 0 0 48px 0; display: inline-block;">
+          Build extra income. Give your friends an intro
+        </div>
         <div style="background: #1d1d1d; color: #f8f7f5; padding: 16px 48px; border-radius: 8px; font-size: 1.125rem; font-weight: 600; display: inline-block;">
           Join the Waitlist
         </div>
@@ -96,18 +98,43 @@
     </div>
     
     <script>
-      // Hide skeleton when React app loads
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          const skeleton = document.getElementById('loading-skeleton');
-          const root = document.getElementById('root');
-          if (root && root.children.length > 0 && skeleton) {
-            skeleton.style.opacity = '0';
-            skeleton.style.transition = 'opacity 0.3s ease';
-            setTimeout(() => skeleton.remove(), 300);
-          }
-        }, 100);
-      });
+      // Optimized skeleton removal for better LCP
+      let skeletonRemoved = false;
+      
+      function removeSkeleton() {
+        if (skeletonRemoved) return;
+        const skeleton = document.getElementById('loading-skeleton');
+        const root = document.getElementById('root');
+        
+        if (skeleton && root && root.children.length > 0) {
+          skeletonRemoved = true;
+          skeleton.style.opacity = '0';
+          skeleton.style.transition = 'opacity 0.15s ease';
+          setTimeout(() => {
+            if (skeleton.parentNode) {
+              skeleton.remove();
+            }
+          }, 150);
+        }
+      }
+      
+      // Multiple triggers for faster skeleton removal
+      window.addEventListener('DOMContentLoaded', removeSkeleton);
+      
+      // Check for React app mount more frequently
+      const checkInterval = setInterval(function() {
+        const root = document.getElementById('root');
+        if (root && root.children.length > 0) {
+          clearInterval(checkInterval);
+          removeSkeleton();
+        }
+      }, 16); // Check every frame
+      
+      // Fallback removal after reasonable time
+      setTimeout(function() {
+        clearInterval(checkInterval);
+        removeSkeleton();
+      }, 2000);
     </script>
     
     <div id="root"></div>
