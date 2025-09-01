@@ -135,7 +135,7 @@ const AboutUs = () => {
 
         {/* Contact Section */}
         <div className="mt-16 text-center">
-          <div className="intro-card p-8 max-w-2xl mx-auto">
+          <div className="p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Still have questions?
             </h3>
