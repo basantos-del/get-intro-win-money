@@ -32,19 +32,19 @@ const AboutSection = () => {
           </div>
           
           <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="intro-card p-8 stagger-animation">
+            <div className="p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">{waitlistCount.toLocaleString()}</div>
               <div className="text-lg font-medium text-foreground mb-2">Waitlist Members</div>
               <div className="text-muted-foreground">Building extra income through referrals</div>
             </div>
             
-            <div className="intro-card p-8 stagger-animation">
+            <div className="p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">{companiesCount}</div>
               <div className="text-lg font-medium text-foreground mb-2">Partner Companies</div>
               <div className="text-muted-foreground">Seeking quality referrals through intro</div>
             </div>
             
-            <div className="intro-card p-8 stagger-animation">
+            <div className="p-8 stagger-animation">
               <div className="text-4xl font-bold text-foreground mb-4">${earningsCount}k+</div>
               <div className="text-lg font-medium text-foreground mb-2">Accummulated Earnings</div>
               <div className="text-muted-foreground">Available for community members</div>
