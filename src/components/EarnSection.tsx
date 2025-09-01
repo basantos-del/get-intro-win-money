@@ -30,19 +30,19 @@ const EarnSection = () => {
 
   const earnCards = [
     {
-      image: '/pexels-divinetechygirl-1181540.jpg',
+      image: '/lovable-uploads/0b2da4f4-6a3a-49da-b829-08f0a205e2a0.png',
       title: 'Refer a friend for a job',
       description: 'Connect talented friends with cool opportunities',
       earning: 'Earn up to $1,000',
     },
     {
-      image: '/pexels-fabriziovelez-14061042.jpg',
+      image: '/lovable-uploads/048b51f4-b332-4dfc-9157-eae58bafcc49.png',
       title: 'Refer a friend for a product',
       description: 'Share products you love with your network',
       earning: 'Earn up to $200',
     },
     {
-      image: '/pexels-arthur-arata-924593727-20468184.jpg',
+      image: '/lovable-uploads/019abdf9-55a1-4ec0-92c6-279b733cedf0.png',
       title: 'Refer home movers',
       description: 'Connect homeowners with trusted real estate professionals',
       earning: 'Earn up to $250',
@@ -77,10 +77,8 @@ const EarnSection = () => {
                   alt={card.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[#f9fd8f]/10" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="text-lg font-bold mb-1">{card.earning}</div>
+                <div className="absolute bottom-4 left-4 right-4 text-foreground">
+                  <div className="text-lg font-bold mb-1 bg-background/90 px-2 py-1 rounded">{card.earning}</div>
                 </div>
               </div>
               
