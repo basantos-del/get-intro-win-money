@@ -2,9 +2,14 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const AboutUs = () => {
   const navigate = useNavigate();
+  const { elementRef, isVisible } = useIntersectionObserver({
+    threshold: 0.3,
+    triggerOnce: true
+  });
 
   const handleJoinWaitlist = () => {
     navigate('/', { replace: true });
@@ -26,6 +31,32 @@ const AboutUs = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             the referral marketplace
           </h1>
+        </div>
+
+        {/* About Content with Scroll Reveal */}
+        <div 
+          ref={elementRef}
+          className={`max-w-4xl mx-auto text-center py-16 transition-all duration-1000 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="space-y-6">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Intro is a referral marketplace that connects opportunities with people who know people.
+            </p>
+            
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Companies post opportunities. Members can follow up and refer a friend. If the referral is a success, we call it a match. Matches are what pay you good money.
+              </p>
+              
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Intro was born to provide everyone with a chance to earn extra money. Level up your networking game. No AI-talk nonsense, just real earning opportunities.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Contact Section */}
