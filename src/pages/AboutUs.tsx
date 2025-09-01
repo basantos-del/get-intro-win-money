@@ -72,7 +72,7 @@ const AboutUs = () => {
           />
         </div>
 
-        {/* Second Text Section with Scroll Reveal */}
+        {/* Second Text Section with Blur Reveal */}
         <div 
           ref={secondElementRef}
           className={`max-w-2xl mx-auto text-left py-16 transition-all duration-1000 ${
@@ -82,11 +82,19 @@ const AboutUs = () => {
           }`}
         >
           <div className="space-y-6">
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className={`text-xl md:text-2xl text-muted-foreground leading-relaxed transition-all duration-1000 ${
+              secondIsVisible 
+                ? 'blur-none' 
+                : 'blur-sm'
+            }`}>
               You've done dozen of intros before. You've always been that kind of matchmaker friend. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to pay off.
             </p>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className={`text-xl md:text-2xl text-muted-foreground leading-relaxed transition-all duration-1500 delay-300 ${
+              secondIsVisible 
+                ? 'blur-none opacity-100' 
+                : 'blur-md opacity-50'
+            }`}>
               But we're not any kind of referral marketplace. We're not just easy money. A reference is not of any worth if it does not make a match. That's why your Referrals must make a match. Once that happens, you're paid.
             </p>
           </div>
