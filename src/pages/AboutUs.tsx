@@ -10,6 +10,10 @@ const AboutUs = () => {
     threshold: 0.3,
     triggerOnce: true
   });
+  const { elementRef: secondElementRef, isVisible: secondIsVisible } = useIntersectionObserver({
+    threshold: 0.3,
+    triggerOnce: true
+  });
 
   const handleJoinWaitlist = () => {
     navigate('/', { replace: true });
@@ -56,6 +60,35 @@ const AboutUs = () => {
                 Intro was born to provide everyone with a chance to earn extra money. Level up your networking game. No AI-talk nonsense, just real earning opportunities.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Image Section */}
+        <div className="mt-16 w-full animate-fade-in overflow-hidden">
+          <img
+            src="/lovable-uploads/b00d4694-146b-4e23-a8b6-8902f1068464.png"
+            alt="A referral marketplace for people who know people"
+            className="w-full h-auto object-cover scale-95 -mb-8"
+          />
+        </div>
+
+        {/* Second Text Section with Scroll Reveal */}
+        <div 
+          ref={secondElementRef}
+          className={`max-w-2xl mx-auto text-left py-16 transition-all duration-1000 ${
+            secondIsVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="space-y-6">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              You've done dozen of intros before. You've always been that kind of matchmaker friend. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to pay off.
+            </p>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              But we're not any kind of referral marketplace. We're not just easy money. A reference is not of any worth if it does not make a match. That's why your Referrals must make a match. Once that happens, you're paid.
+            </p>
           </div>
         </div>
 
