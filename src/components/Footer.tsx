@@ -1,13 +1,37 @@
 import { Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isFAQPage = location.pathname === '/faqs';
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+    // If we're on FAQ page, navigate to main page first then scroll
+    if (isFAQPage) {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // We're on main page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleFAQsClick = () => {
+    if (isFAQPage) {
+      // Already on FAQ page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to FAQ page
+      navigate('/faqs');
     }
   };
   return <footer className="bg-accent py-16">
@@ -45,9 +69,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-accent-foreground mb-4">Company</h4>
             <div className="space-y-2">
-              <Link to="/faqs" className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200">
+              <button 
+                onClick={handleFAQsClick}
+                className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
                 FAQs
-              </Link>
+              </button>
             </div>
           </div>
 
