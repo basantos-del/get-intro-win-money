@@ -142,8 +142,8 @@ const AboutUs = () => {
             <p className="text-muted-foreground mb-6">
               Can't find what you're looking for? Reach out to our support team and we'll get back to you.
             </p>
-            <button className="intro-button-cta">
-              Contact Support
+            <button className="intro-button-primary">
+              Check our FAQs
             </button>
           </div>
         </div>
