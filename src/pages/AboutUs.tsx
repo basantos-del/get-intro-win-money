@@ -140,7 +140,7 @@ const AboutUs = () => {
               Still have questions?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Can't find what you're looking for? Reach out to our support team and we'll get back to you.
+              Can't find what you're looking for?
             </p>
             <Button className="intro-button-primary">
               Check our FAQs
