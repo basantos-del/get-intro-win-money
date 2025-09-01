@@ -40,7 +40,7 @@ const AboutUs = () => {
         {/* About Content with Scroll Reveal */}
         <div 
           ref={elementRef}
-          className={`max-w-2xl mx-auto text-left py-16 transition-all duration-1000 ${
+          className={`max-w-2xl mx-auto text-left pt-16 pb-8 transition-all duration-1000 ${
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
