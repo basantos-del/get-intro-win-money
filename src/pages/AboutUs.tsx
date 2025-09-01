@@ -36,23 +36,23 @@ const AboutUs = () => {
         {/* About Content with Scroll Reveal */}
         <div 
           ref={elementRef}
-          className={`max-w-4xl mx-auto text-center py-16 transition-all duration-1000 ${
+          className={`max-w-2xl mx-auto text-left py-16 transition-all duration-1000 ${
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}
         >
           <div className="space-y-6">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               Intro is a referral marketplace that connects opportunities with people who know people.
             </p>
             
             <div className="space-y-4">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Companies post opportunities. Members can follow up and refer a friend. If the referral is a success, we call it a match. Matches are what pay you good money.
               </p>
               
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Intro was born to provide everyone with a chance to earn extra money. Level up your networking game. No AI-talk nonsense, just real earning opportunities.
               </p>
             </div>
