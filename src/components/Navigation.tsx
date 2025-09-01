@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isFAQPage = location.pathname === '/faqs';
+  
+  // Always show scrolled state on FAQ page for better readability
+  const shouldShowScrolledState = isFAQPage || isScrolled;
 
   useEffect(() => {
     let ticking = false;
@@ -31,7 +37,7 @@ const Navigation = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        shouldShowScrolledState 
           ? 'bg-background/95 backdrop-blur-sm shadow-intro-card' 
           : 'bg-transparent'
       }`}
@@ -41,7 +47,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <h1 
               className="text-2xl font-bold transition-colors duration-300" 
-              style={{ color: isScrolled ? '#000000' : '#f9fd8f' }}
+              style={{ color: shouldShowScrolledState ? '#000000' : '#f9fd8f' }}
             >
               intro
             </h1>
@@ -52,7 +58,7 @@ const Navigation = () => {
               <button
                 onClick={() => scrollToSection('about')}
                 className={`transition-colors duration-300 font-medium ${
-                  isScrolled 
+                  shouldShowScrolledState 
                     ? 'text-foreground hover:text-accent-foreground' 
                     : 'text-white hover:text-white/80'
                 }`}
@@ -62,7 +68,7 @@ const Navigation = () => {
               <button
                 onClick={() => scrollToSection('features')}
                 className={`transition-colors duration-300 font-medium ${
-                  isScrolled 
+                  shouldShowScrolledState 
                     ? 'text-foreground hover:text-accent-foreground' 
                     : 'text-white hover:text-white/80'
                 }`}
@@ -72,7 +78,7 @@ const Navigation = () => {
               <button
                 onClick={() => scrollToSection('earn')}
                 className={`transition-colors duration-300 font-medium ${
-                  isScrolled 
+                  shouldShowScrolledState 
                     ? 'text-foreground hover:text-accent-foreground' 
                     : 'text-white hover:text-white/80'
                 }`}
@@ -86,7 +92,7 @@ const Navigation = () => {
             <Button
               onClick={() => scrollToSection('waitlist')}
               className={`px-6 py-2 transition-colors duration-300 ${
-                isScrolled 
+                shouldShowScrolledState 
                   ? 'bg-[#f9fd8f] text-black hover:bg-[#f9fd8f]/90' 
                   : 'intro-button-primary'
               }`}
