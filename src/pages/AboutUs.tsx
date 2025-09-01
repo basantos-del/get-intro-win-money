@@ -66,9 +66,9 @@ const AboutUs = () => {
         {/* Image Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <img
-            src="/lovable-uploads/b00d4694-146b-4e23-a8b6-8902f1068464.png"
+            src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
             alt="A referral marketplace for people who know people"
-            className="w-full h-auto object-cover scale-95 -mb-8"
+            className="w-full h-auto object-cover scale-85 -mb-8"
           />
         </div>
 
