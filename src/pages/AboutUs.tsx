@@ -169,7 +169,7 @@ const AboutUs = () => {
       </div>
       
       {/* Mobile-only scroll overlay bar at bottom */}
-      <div className="fixed bottom-0 left-0 right-0 h-20 bg-white/50 pointer-events-none z-10 md:hidden"></div>
+      <div className="fixed bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/80 to-transparent pointer-events-none z-10 md:hidden"></div>
       
       <Footer />
     </div>
