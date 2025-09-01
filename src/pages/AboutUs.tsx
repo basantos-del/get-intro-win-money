@@ -223,7 +223,7 @@ const AboutUs = () => {
             <img
               src="/lovable-uploads/9a914b7c-fb2c-459a-8bc9-4e48fe62d7d6.png"
               alt="Let's get social again"
-              className="w-full h-auto rounded-lg shadow-intro-card object-cover"
+              className="w-full h-auto rounded-lg shadow-intro-card object-cover max-h-[50vh]"
             />
           </div>
           
