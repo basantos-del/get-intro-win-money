@@ -180,6 +180,15 @@ const FAQ = () => {
             </button>
           </div>
         </div>
+
+        {/* Full Width Image Section */}
+        <div className="mt-16 w-full animate-fade-in">
+          <img
+            src="/lovable-uploads/c87dab29-5f64-49aa-bd17-0040b75b0c38.png"
+            alt="Where matchmaking earns you money"
+            className="w-full h-auto object-cover"
+          />
+        </div>
       </div>
     </div>
   );
