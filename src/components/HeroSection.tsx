@@ -50,13 +50,15 @@ const HeroSection = () => {
           style={{
             transform: `scale(${videoScale})`,
             borderRadius: `${borderRadius}px`,
-            zIndex: 10,
           }}
         >
           {/* Fallback background */}
           <div 
-            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40"
-            style={{ zIndex: 1 }}
+            className="absolute inset-0"
+            style={{ 
+              background: 'linear-gradient(135deg, #2d2d2d, #1a1a1a)',
+              zIndex: 1 
+            }}
           />
           
           {/* Video background */}
@@ -66,8 +68,13 @@ const HeroSection = () => {
             loop 
             playsInline 
             preload="auto"
+            width="100%"
+            height="100%"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: 2 }}
+            style={{ 
+              zIndex: 2,
+              display: 'block'
+            }}
             onLoadStart={() => {
               console.log('Video load started');
               if ((window as any).removeSkeletonOnVideoLoad) {
@@ -89,6 +96,9 @@ const HeroSection = () => {
             onError={(e) => {
               console.error('Video error:', e);
               console.log('Video fallback: using background gradient');
+            }}
+            onLoadedData={() => {
+              console.log('Video data loaded');
             }}
           >
             <source src="/intro-video.mp4" type="video/mp4" />
