@@ -126,7 +126,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-2">
+            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
               Join the Waitlist
               <ArrowRight className="h-5 w-5 text-white" />
             </Button>
