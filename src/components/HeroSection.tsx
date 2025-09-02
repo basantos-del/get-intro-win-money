@@ -61,7 +61,7 @@ const HeroSection = () => {
             preload="metadata" 
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            <source src="/Intro (1).mp4" type="video/mp4" />
           </video>
           
           {/* Overlay for better text readability */}
