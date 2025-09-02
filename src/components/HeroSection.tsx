@@ -60,6 +60,31 @@ const HeroSection = () => {
             playsInline 
             preload="metadata" 
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ zIndex: 1 }}
+            onLoadStart={() => {
+              console.log('Video load started');
+              // Trigger skeleton removal when video starts loading
+              if ((window as any).removeSkeletonOnVideoLoad) {
+                (window as any).removeSkeletonOnVideoLoad();
+              }
+            }}
+            onCanPlay={() => {
+              console.log('Video can play');
+              // Ensure skeleton is removed when video is ready
+              if ((window as any).removeSkeletonOnVideoLoad) {
+                (window as any).removeSkeletonOnVideoLoad();
+              }
+            }}
+            onPlay={() => {
+              console.log('Video started playing');
+              // Final trigger when video actually starts playing
+              if ((window as any).removeSkeletonOnVideoLoad) {
+                (window as any).removeSkeletonOnVideoLoad();
+              }
+            }}
+            onError={(e) => {
+              console.error('Video error:', e);
+            }}
           >
             <source src="/Intro (1).mp4" type="video/mp4" />
           </video>

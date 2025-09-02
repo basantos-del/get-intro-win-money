@@ -98,7 +98,7 @@
     </div>
     
     <script>
-      // Optimized skeleton removal for better LCP
+      // Aggressive skeleton removal for immediate video display
       let skeletonRemoved = false;
       
       function removeSkeleton() {
@@ -106,35 +106,55 @@
         const skeleton = document.getElementById('loading-skeleton');
         const root = document.getElementById('root');
         
-        if (skeleton && root && root.children.length > 0) {
+        if (skeleton) {
           skeletonRemoved = true;
+          console.log('Removing loading skeleton');
           skeleton.style.opacity = '0';
-          skeleton.style.transition = 'opacity 0.15s ease';
+          skeleton.style.transition = 'opacity 0.1s ease';
           setTimeout(() => {
             if (skeleton.parentNode) {
               skeleton.remove();
+              console.log('Loading skeleton removed');
             }
-          }, 150);
+          }, 100);
+        }
+      }
+
+      // Immediate removal on any content load
+      function forceRemoveIfNeeded() {
+        const root = document.getElementById('root');
+        if (root && root.children.length > 0) {
+          removeSkeleton();
         }
       }
       
-      // Multiple triggers for faster skeleton removal
+      // Multiple aggressive triggers
       window.addEventListener('DOMContentLoaded', removeSkeleton);
+      window.addEventListener('load', removeSkeleton);
+      document.addEventListener('readystatechange', removeSkeleton);
       
-      // Check for React app mount more frequently
-      const checkInterval = setInterval(function() {
-        const root = document.getElementById('root');
-        if (root && root.children.length > 0) {
-          clearInterval(checkInterval);
-          removeSkeleton();
-        }
-      }, 16); // Check every frame
+      // Very frequent checks for React app mount
+      const checkInterval = setInterval(forceRemoveIfNeeded, 10); // Check every 10ms
       
-      // Fallback removal after reasonable time
+      // Reduced fallback timeout - force removal after 800ms
       setTimeout(function() {
         clearInterval(checkInterval);
         removeSkeleton();
-      }, 2000);
+        console.log('Skeleton removal fallback triggered');
+      }, 800);
+
+      // Global function for video to trigger skeleton removal
+      window.removeSkeletonOnVideoLoad = function() {
+        console.log('Video load triggered skeleton removal');
+        removeSkeleton();
+      };
+
+      // Visibility change detection
+      document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+          removeSkeleton();
+        }
+      });
     </script>
     
     <div id="root"></div>
