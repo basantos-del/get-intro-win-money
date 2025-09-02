@@ -75,8 +75,8 @@ const FinalCTASection = () => {
         throw error;
       }
       toast({
-        title: "Thank you for the referral!",
-        description: "We'll reach out to them soon and you'll earn a bonus when they join!"
+        title: "Thank you for dropping by!",
+        description: "We'll reach out to you soon!"
       });
       setReferralData({
         name: '',
@@ -150,15 +150,15 @@ const FinalCTASection = () => {
           {/* Referral Form */}
           <div className="intro-card p-8">
             <h3 className="text-2xl text-foreground mb-6 text-center">
-              Refer a Friend
+              I'm an influencer
             </h3>
             
             <form onSubmit={handleReferralSubmit} className="space-y-4">
-              <Input type="text" placeholder="Friend's name" value={referralData.name} onChange={e => setReferralData({
+              <Input type="text" placeholder="My name" value={referralData.name} onChange={e => setReferralData({
               ...referralData,
               name: e.target.value
             })} className="w-full" required />
-              <Input type="email" placeholder="Friend's email" value={referralData.email} onChange={e => setReferralData({
+              <Input type="email" placeholder="My email" value={referralData.email} onChange={e => setReferralData({
               ...referralData,
               email: e.target.value
             })} className="w-full" required />
@@ -169,7 +169,7 @@ const FinalCTASection = () => {
             
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground">
-                Gain access to exclusive referral opportunities when your friend joins our platform
+                Partner with intro by share intro on your platforms.
               </p>
             </div>
           </div>
