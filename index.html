@@ -83,18 +83,8 @@
         </div>
       </nav>
       
-      <!-- Lightweight hero placeholder to minimize LCP interference -->
-      <div style="text-align: center; max-width: 768px; padding: 0 16px; visibility: hidden;">
-        <div style="font-size: 3rem; font-weight: bold; color: #1d1d1d; margin: 0 0 24px 0; line-height: 1.1;">
-          Loading...
-        </div>
-        <div style="font-size: 1.25rem; background: #f9fd8f; color: #1d1d1d; padding: 12px 24px; border-radius: 8px; margin: 0 0 48px 0; display: inline-block;">
-          Build extra income. Give your friends an intro
-        </div>
-        <div style="background: #1d1d1d; color: #f8f7f5; padding: 16px 48px; border-radius: 8px; font-size: 1.125rem; font-weight: 600; display: inline-block;">
-          Join the Waitlist
-        </div>
-      </div>
+      <!-- Minimal skeleton content to avoid LCP interference -->
+      <div style="display: none;"></div>
     </div>
     
     <script>
@@ -121,20 +111,20 @@
       // Multiple triggers for faster skeleton removal
       window.addEventListener('DOMContentLoaded', removeSkeleton);
       
-      // Check for React app mount more frequently
+      // Immediate removal on any content detection
       const checkInterval = setInterval(function() {
         const root = document.getElementById('root');
         if (root && root.children.length > 0) {
           clearInterval(checkInterval);
           removeSkeleton();
         }
-      }, 16); // Check every frame
+      }, 8); // Check twice per frame for faster detection
       
-      // Fallback removal after reasonable time
+      // Aggressive fallback removal
       setTimeout(function() {
         clearInterval(checkInterval);
         removeSkeleton();
-      }, 2000);
+      }, 500);
     </script>
     
     <div id="root"></div>
