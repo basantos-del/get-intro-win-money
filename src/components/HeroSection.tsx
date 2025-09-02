@@ -61,8 +61,14 @@ const HeroSection = () => {
             preload="metadata" 
             aria-label="person waiting for metro"
             className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Video failed to load:', e);
+              console.log('Video src:', e.currentTarget.currentSrc);
+            }}
+            onLoadStart={() => console.log('Video loading started')}
+            onCanPlay={() => console.log('Video can play')}
           >
-            <source src="/Intro%20(1).mp4" type="video/mp4" />
+            <source src="/Intro (1).mp4" type="video/mp4" />
           </video>
           
           {/* Overlay for better text readability */}
