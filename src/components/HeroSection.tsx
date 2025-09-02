@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
@@ -125,8 +126,9 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold">
+            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-2">
               Join the Waitlist
+              <ArrowRight className="h-5 w-5 text-white" />
             </Button>
             
             <div className="flex items-center gap-2 text-muted-foreground">
