@@ -50,51 +50,56 @@ const HeroSection = () => {
           style={{
             transform: `scale(${videoScale})`,
             borderRadius: `${borderRadius}px`,
+            zIndex: 10,
           }}
         >
+          {/* Fallback background */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40"
+            style={{ zIndex: 1 }}
+          />
+          
           {/* Video background */}
           <video 
             autoPlay 
             muted 
             loop 
             playsInline 
-            preload="metadata" 
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: 1 }}
+            style={{ zIndex: 2 }}
             onLoadStart={() => {
               console.log('Video load started');
-              // Trigger skeleton removal when video starts loading
               if ((window as any).removeSkeletonOnVideoLoad) {
                 (window as any).removeSkeletonOnVideoLoad();
               }
             }}
             onCanPlay={() => {
               console.log('Video can play');
-              // Ensure skeleton is removed when video is ready
               if ((window as any).removeSkeletonOnVideoLoad) {
                 (window as any).removeSkeletonOnVideoLoad();
               }
             }}
             onPlay={() => {
               console.log('Video started playing');
-              // Final trigger when video actually starts playing
               if ((window as any).removeSkeletonOnVideoLoad) {
                 (window as any).removeSkeletonOnVideoLoad();
               }
             }}
             onError={(e) => {
               console.error('Video error:', e);
+              console.log('Video fallback: using background gradient');
             }}
           >
-            <source src="/Intro (1).mp4" type="video/mp4" />
+            <source src="/intro-video.mp4" type="video/mp4" />
           </video>
           
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/30" style={{ zIndex: 3 }}></div>
         </div>
       </div>
       
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ zIndex: 20 }}>
         <div className="fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 md:mb-16 leading-tight">
             You know people,<br />
