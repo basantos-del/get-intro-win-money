@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isFAQPage = location.pathname === '/faqs';
@@ -27,6 +30,20 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle clicking outside dropdown to close it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsAboutDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -77,16 +94,50 @@ const Navigation = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button
-                onClick={() => scrollToSection('about')}
-                className={`transition-colors duration-300 font-medium ${
-                  shouldShowScrolledState 
-                    ? 'text-foreground hover:text-accent-foreground' 
-                    : 'text-white hover:text-white/80'
-                }`}
-              >
-                About
-              </button>
+              {/* About Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                  className={`flex items-center gap-1 transition-colors duration-300 font-medium ${
+                    shouldShowScrolledState 
+                      ? 'text-foreground hover:text-accent-foreground' 
+                      : 'text-white hover:text-white/80'
+                  }`}
+                >
+                  About
+                  <ChevronDown 
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      isAboutDropdownOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+                
+                {/* Dropdown Menu */}
+                {isAboutDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-intro-card z-50">
+                    <div className="py-2">
+                      <button
+                        onClick={() => {
+                          navigate('/about-us');
+                          setIsAboutDropdownOpen(false);
+                        }}
+                        className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      >
+                        About Us
+                      </button>
+                      <button
+                        onClick={() => {
+                          navigate('/faqs');
+                          setIsAboutDropdownOpen(false);
+                        }}
+                        className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      >
+                        FAQs
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
               <button
                 onClick={() => scrollToSection('features')}
                 className={`transition-colors duration-300 font-medium ${
