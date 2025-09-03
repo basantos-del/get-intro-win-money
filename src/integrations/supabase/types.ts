@@ -35,6 +35,135 @@ export type Database = {
         }
         Relationships: []
       }
+      connections: {
+        Row: {
+          connected_member_id: string
+          connection_strength: string
+          created_at: string
+          id: string
+          member_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          connected_member_id: string
+          connection_strength: string
+          created_at?: string
+          id?: string
+          member_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          connected_member_id?: string
+          connection_strength?: string
+          created_at?: string
+          id?: string
+          member_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      earnings: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          member_id: string
+          opportunity_id: string
+          paid_at: string | null
+          referral_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          member_id: string
+          opportunity_id: string
+          paid_at?: string | null
+          referral_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          member_id?: string
+          opportunity_id?: string
+          paid_at?: string | null
+          referral_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "earnings_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "earnings_referral_id_fkey"
+            columns: ["referral_id"]
+            isOneToOne: false
+            referencedRelation: "referrals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      opportunities: {
+        Row: {
+          business_id: string
+          created_at: string
+          current_matches: number | null
+          description: string | null
+          expires_at: string | null
+          id: string
+          max_matches: number | null
+          opportunity_type: string
+          payout_amount: number
+          requirements: Json | null
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          business_id: string
+          created_at?: string
+          current_matches?: number | null
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          max_matches?: number | null
+          opportunity_type: string
+          payout_amount: number
+          requirements?: Json | null
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          business_id?: string
+          created_at?: string
+          current_matches?: number | null
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          max_matches?: number | null
+          opportunity_type?: string
+          payout_amount?: number
+          requirements?: Json | null
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       opportunity_type_suggestions: {
         Row: {
           created_at: string
@@ -53,6 +182,51 @@ export type Database = {
           id?: string
           opportunity_type?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          cv_file_url: string | null
+          date_of_birth: string | null
+          email: string
+          full_name: string | null
+          id: string
+          profile_photo_url: string | null
+          selected_brands: string[] | null
+          selected_categories: string[] | null
+          updated_at: string
+          user_id: string
+          user_type: string
+        }
+        Insert: {
+          created_at?: string
+          cv_file_url?: string | null
+          date_of_birth?: string | null
+          email: string
+          full_name?: string | null
+          id?: string
+          profile_photo_url?: string | null
+          selected_brands?: string[] | null
+          selected_categories?: string[] | null
+          updated_at?: string
+          user_id: string
+          user_type: string
+        }
+        Update: {
+          created_at?: string
+          cv_file_url?: string | null
+          date_of_birth?: string | null
+          email?: string
+          full_name?: string | null
+          id?: string
+          profile_photo_url?: string | null
+          selected_brands?: string[] | null
+          selected_categories?: string[] | null
+          updated_at?: string
+          user_id?: string
+          user_type?: string
         }
         Relationships: []
       }
@@ -79,6 +253,47 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      referrals: {
+        Row: {
+          created_at: string
+          id: string
+          opportunity_id: string
+          referred_member_id: string
+          referrer_id: string
+          review_notes: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          opportunity_id: string
+          referred_member_id: string
+          referrer_id: string
+          review_notes?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          opportunity_id?: string
+          referred_member_id?: string
+          referrer_id?: string
+          review_notes?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referrals_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       waitlist_companies: {
         Row: {
