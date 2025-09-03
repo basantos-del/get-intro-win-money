@@ -196,23 +196,25 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
       if (error) return { error };
 
-      // Update the profile with additional data after signup
+      // Create the profile with initial data after signup
       if (data.user && !error) {
-        const profileUpdates: any = {};
+        const profileData: any = {
+          user_id: data.user.id,
+          email: data.user.email,
+          user_type: userData.accountType || 'member',
+          onboarding_completed: false
+        };
         
-        if (userData.firstName) profileUpdates.first_name = userData.firstName;
-        if (userData.lastName) profileUpdates.last_name = userData.lastName;
-        if (userData.dateOfBirth) profileUpdates.date_of_birth = userData.dateOfBirth.toISOString().split('T')[0];
-        if (userData.profilePhoto) profileUpdates.profile_photo_url = userData.profilePhoto;
-        if (userData.selectedBrands) profileUpdates.selected_brands = userData.selectedBrands;
-        if (userData.selectedCategories) profileUpdates.selected_categories = userData.selectedCategories;
-        if (userData.accountType) profileUpdates.user_type = userData.accountType;
-        if (userData.onboardingCompleted !== undefined) profileUpdates.onboarding_completed = userData.onboardingCompleted;
+        if (userData.firstName) profileData.first_name = userData.firstName;
+        if (userData.lastName) profileData.last_name = userData.lastName;
+        if (userData.dateOfBirth) profileData.date_of_birth = userData.dateOfBirth.toISOString().split('T')[0];
+        if (userData.profilePhoto) profileData.profile_photo_url = userData.profilePhoto;
+        if (userData.selectedBrands) profileData.selected_brands = userData.selectedBrands;
+        if (userData.selectedCategories) profileData.selected_categories = userData.selectedCategories;
 
         await supabase
           .from('profiles')
-          .update(profileUpdates)
-          .eq('user_id', data.user.id);
+          .upsert(profileData);
       }
 
       return { error: null };
