@@ -4,9 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { AppProvider } from "@/contexts/AppContext";
 import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
+import Onboarding from "./pages/onboarding/Onboarding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -73,19 +75,22 @@ const HashHandler = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <HashHandler />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/faqs" element={<FAQ />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AppProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <HashHandler />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/faqs" element={<FAQ />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AppProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
