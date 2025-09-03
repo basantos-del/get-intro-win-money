@@ -104,7 +104,7 @@ const Navigation = () => {
                       : 'text-white hover:text-white/80'
                   }`}
                 >
-                  About
+                  Company
                   <ChevronDown 
                     className={`h-4 w-4 transition-transform duration-200 ${
                       isAboutDropdownOpen ? 'rotate-180' : ''
