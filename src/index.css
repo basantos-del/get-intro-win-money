@@ -9,60 +9,56 @@ All colors MUST be HSL for consistency.
 
 @layer base {
   :root {
-    /* Dark Mode First - Brand Colors */
-    --background: 0 0% 6%; /* Dark background #0f0f0f */
-    --foreground: 45 26% 97%; /* Light text #f8f7f5 */
+    /* Brand Colors */
+    --background: 45 26% 97%; /* #f8f7f5 */
+    --foreground: 0 0% 11.4%; /* #1d1d1d */
     
-    /* Card System - Dark theme */
-    --card: 0 0% 12%; /* Dark cards #1f1f1f */
-    --card-foreground: 45 26% 97%; /* Light text on cards */
-    --card-border: 0 0% 20%; /* Dark border */
+    /* Card System */
+    --card: 0 0% 100%; /* White cards with subtle transparency */
+    --card-foreground: 0 0% 11.4%; /* #1d1d1d */
+    --card-border: 45 26% 95%;
     
-    /* Primary CTA System with brand accent */
-    --primary: 63 96% 78%; /* #f9fd8f - accent yellow */
-    --primary-foreground: 0 0% 11.4%; /* #1d1d1d */
+    /* Primary CTA System */
+    --primary: 0 0% 11.4%; /* #1d1d1d */
+    --primary-foreground: 45 26% 97%; /* #f8f7f5 */
     
     /* Secondary Elements */
-    --secondary: 0 0% 15%; /* Dark secondary */
-    --secondary-foreground: 45 26% 97%;
+    --secondary: 45 26% 95%;
+    --secondary-foreground: 0 0% 11.4%;
     
     /* Accent & Highlight */
-    --accent: 0 0% 18%; /* Dark accent background */
-    --accent-foreground: 45 26% 97%;
+    --accent: 63 96% 78%; /* #f9fd8f - highlight yellow */
+    --accent-foreground: 0 0% 11.4%;
     
     /* Interactive States */
-    --muted: 0 0% 15%; /* Dark muted */
-    --muted-foreground: 0 0% 55%; /* Muted text */
+    --muted: 45 20% 92%;
+    --muted-foreground: 0 0% 45%;
     
     /* Form Elements */
-    --input: 0 0% 18%; /* Dark inputs */
-    --input-border: 0 0% 25%;
-    --ring: 63 96% 78%; /* Accent ring */
+    --input: 0 0% 100%;
+    --input-border: 45 15% 85%;
+    --ring: 61 100% 75%;
     
     /* System Colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%; /* Dark borders */
-    
-    /* Popover */
-    --popover: 0 0% 12%;
-    --popover-foreground: 45 26% 97%;
+    --border: 45 15% 88%;
     
     /* Design Tokens */
     --radius: 1rem; /* Round corners */
     --radius-card: 0.75rem; /* Card specific radius */
     --radius-button: 0.75rem;
     
-    /* Gradients - Dark theme */
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 12% / 0.9), hsl(0 0% 8% / 0.8));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 4%));
-    --gradient-cta: linear-gradient(135deg, hsl(63 96% 78%), hsl(61 100% 75%));
+    /* Gradients */
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(45 20% 98% / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsl(45 26% 97%), hsl(45 30% 95%));
+    --gradient-cta: linear-gradient(135deg, hsl(0 0% 11.4%), hsl(0 0% 8%));
     
-    /* Shadows with #f9fd8f base - adjusted for dark theme */
-    --shadow-card: 0 8px 32px -8px hsl(63 96% 78% / 0.1);
-    --shadow-card-hover: 0 12px 40px -8px hsl(63 96% 78% / 0.15);
-    --shadow-button: 0 4px 16px -4px hsl(63 96% 78% / 0.2);
-    --shadow-glow: 0 0 0 1px hsl(63 96% 78% / 0.2);
+    /* Shadows with #f9fd8f base */
+    --shadow-card: 0 8px 32px -8px hsl(61 100% 89% / 0.15);
+    --shadow-card-hover: 0 12px 40px -8px hsl(61 100% 89% / 0.25);
+    --shadow-button: 0 4px 16px -4px hsl(61 100% 89% / 0.3);
+    --shadow-glow: 0 0 0 1px hsl(61 100% 89% / 0.2);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -147,9 +143,9 @@ All colors MUST be HSL for consistency.
     transform: translateY(-2px);
   }
   
-  /* Button System - Updated for dark theme */
+  /* Button System */
   .intro-button-primary {
-    @apply bg-primary text-primary-foreground rounded-button font-medium;
+    @apply bg-accent text-accent-foreground rounded-button font-medium;
     box-shadow: var(--shadow-button);
     transition: var(--transition-smooth);
   }

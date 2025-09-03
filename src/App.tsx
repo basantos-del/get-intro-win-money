@@ -4,17 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { AppProvider } from "@/contexts/AppContext";
 import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
-import Onboarding from "./pages/onboarding/Onboarding";
-import MemberHome from "./pages/member/dashboard/Home";
-import MemberNetwork from "./pages/member/dashboard/Network";
-import MemberEarnings from "./pages/member/dashboard/Earnings";
-import MemberProfile from "./pages/member/dashboard/Profile";
-import BusinessHome from "./pages/business/dashboard/Home";
 
 const queryClient = new QueryClient();
 
@@ -79,31 +72,21 @@ const HashHandler = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AppProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <HashHandler />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/faqs" element={<FAQ />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/onboarding" element={<Onboarding />} />
-            {/* Member Dashboard Routes */}
-            <Route path="/member/dashboard/home" element={<MemberHome />} />
-            <Route path="/member/dashboard/network" element={<MemberNetwork />} />
-            <Route path="/member/dashboard/earnings" element={<MemberEarnings />} />
-            <Route path="/member/dashboard/profile" element={<MemberProfile />} />
-            {/* Business Dashboard Routes */}
-            <Route path="/business/dashboard/home" element={<BusinessHome />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </AppProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <HashHandler />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/faqs" element={<FAQ />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
