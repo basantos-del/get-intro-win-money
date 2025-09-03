@@ -66,10 +66,10 @@ const MemberHome = () => {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case "job_posting": return "bg-blue-500/10 text-blue-600 border-blue-500/20";
-      case "product_testing": return "bg-green-500/10 text-green-600 border-green-500/20";
-      case "new_customer": return "bg-purple-500/10 text-purple-600 border-purple-500/20";
-      default: return "bg-gray-500/10 text-gray-600 border-gray-500/20";
+      case "job_posting": return "bg-primary/10 text-primary border-primary/20";
+      case "product_testing": return "bg-accent/10 text-accent-foreground border-accent/20";
+      case "new_customer": return "bg-secondary/10 text-secondary-foreground border-secondary/20";
+      default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }
   };
 
@@ -95,7 +95,7 @@ const MemberHome = () => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
-                <DollarSign className="h-5 w-5 text-green-600" />
+                <DollarSign className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-2xl font-bold text-foreground">${stats.totalEarnings}</p>
                   <p className="text-xs text-muted-foreground">Total Earned</p>
@@ -107,7 +107,7 @@ const MemberHome = () => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
-                <Clock className="h-5 w-5 text-yellow-600" />
+                <Clock className="h-5 w-5 text-accent" />
                 <div>
                   <p className="text-2xl font-bold text-foreground">${stats.pendingEarnings}</p>
                   <p className="text-xs text-muted-foreground">Pending</p>
@@ -119,7 +119,7 @@ const MemberHome = () => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
-                <TrendingUp className="h-5 w-5 text-blue-600" />
+                <TrendingUp className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-2xl font-bold text-foreground">{stats.successfulMatches}</p>
                   <p className="text-xs text-muted-foreground">Matches</p>
@@ -131,7 +131,7 @@ const MemberHome = () => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5 text-purple-600" />
+                <Users className="h-5 w-5 text-accent" />
                 <div>
                   <p className="text-2xl font-bold text-foreground">{stats.networkSize}</p>
                   <p className="text-xs text-muted-foreground">Network</p>
@@ -163,7 +163,7 @@ const MemberHome = () => {
                     <p className="text-sm text-muted-foreground">{opportunity.company}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-bold text-green-600">${opportunity.payout}</p>
+                    <p className="text-lg font-bold text-primary">${opportunity.payout}</p>
                     <Badge variant="outline" className={getTypeColor(opportunity.type)}>
                       {formatType(opportunity.type)}
                     </Badge>

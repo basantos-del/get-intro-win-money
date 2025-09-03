@@ -85,10 +85,10 @@ const MemberNetwork = () => {
   ];
 
   const connectionStrengths = [
-    { value: "best friend", label: "Best Friend", icon: Heart, color: "text-red-600" },
-    { value: "close friend", label: "Close Friend", icon: UserCheck, color: "text-blue-600" },
-    { value: "colleague", label: "Colleague", icon: Briefcase, color: "text-green-600" },
-    { value: "relative", label: "Relative", icon: User, color: "text-purple-600" }
+    { value: "best friend", label: "Best Friend", icon: Heart, color: "text-accent" },
+    { value: "close friend", label: "Close Friend", icon: UserCheck, color: "text-primary" },
+    { value: "colleague", label: "Colleague", icon: Briefcase, color: "text-secondary-foreground" },
+    { value: "relative", label: "Relative", icon: User, color: "text-muted-foreground" }
   ];
 
   const getStrengthConfig = (strength: string) => {
