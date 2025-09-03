@@ -12,12 +12,7 @@ export const CompletionStep = () => {
 
   const handleGetStarted = () => {
     updateUser({ onboardingCompleted: true });
-    
-    if (user?.accountType === 'member') {
-      navigate('/member/dashboard/home');
-    } else {
-      navigate('/business/dashboard/home');
-    }
+    navigate('/dashboard');
   };
 
   return (

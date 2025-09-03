@@ -9,6 +9,9 @@ import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
 import Onboarding from "./pages/onboarding/Onboarding";
+import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import MemberHome from "./pages/dashboard/MemberHome";
+import MemberNetwork from "./pages/dashboard/MemberNetwork";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -86,6 +89,10 @@ const App = () => (
             <Route path="/faqs" element={<FAQ />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<MemberHome />} />
+              <Route path="network" element={<MemberNetwork />} />
+            </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

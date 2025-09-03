@@ -16,12 +16,11 @@ const profileSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  dateOfBirth: z.date({
-    required_error: 'Date of birth is required',
-  }).refine((date) => {
-    const age = new Date().getFullYear() - date.getFullYear();
-    return age >= 21;
-  }, 'You must be at least 21 years old'),
+  dateOfBirth: z.date()
+    .refine((date) => {
+      const age = new Date().getFullYear() - date.getFullYear();
+      return age >= 21;
+    }, 'You must be at least 21 years old'),
 });
 
 type ProfileFormData = z.infer<typeof profileSchema>;
