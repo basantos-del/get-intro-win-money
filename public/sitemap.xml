@@ -1,33 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://useintro.co/</loc>
-    <lastmod>2024-08-31</lastmod>
+    <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://useintro.lovable.app/lovable-uploads/6329e638-4181-45fb-a380-468c5fb1ee43.png</image:loc>
+      <image:title>Intro - Referral Marketplace Logo</image:title>
+      <image:caption>Turn your network into income with Intro referral marketplace</image:caption>
+    </image:image>
   </url>
+  
+  <!-- About Us Page -->
   <url>
-    <loc>https://useintro.co/#about</loc>
-    <lastmod>2024-08-31</lastmod>
+    <loc>https://useintro.co/about-us</loc>
+    <lastmod>2025-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://useintro.lovable.app/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png</image:loc>
+      <image:title>Referral marketplace for people who know people</image:title>
+    </image:image>
   </url>
+  
+  <!-- FAQ Page -->
   <url>
-    <loc>https://useintro.co/#features</loc>
-    <lastmod>2024-08-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://useintro.co/#earn</loc>
-    <lastmod>2024-08-31</lastmod>
+    <loc>https://useintro.co/faqs</loc>
+    <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://useintro.lovable.app/lovable-uploads/c87dab29-5f64-49aa-bd17-0040b75b0c38.png</image:loc>
+      <image:title>Frequently Asked Questions about Intro</image:title>
+    </image:image>
   </url>
+  
+  <!-- Onboarding Page -->
   <url>
-    <loc>https://useintro.co/#waitlist</loc>
-    <lastmod>2024-08-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>https://useintro.co/onboarding</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
+  <!-- Dashboard Pages -->
+  <url>
+    <loc>https://useintro.co/dashboard</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://useintro.co/dashboard/network</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
 </urlset>

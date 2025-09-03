@@ -11,7 +11,88 @@ import { supabase } from '@/integrations/supabase/client';
 import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import React from 'react';
+
 const FAQ = () => {
+  // SEO meta tags for FAQ page
+  React.useEffect(() => {
+    document.title = "FAQ - Intro | Frequently Asked Questions about Referral Marketplace";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get answers to frequently asked questions about Intro referral marketplace. Learn about opportunities, earnings, network building, and how our platform works.');
+    }
+    
+    // Add canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement('link') as HTMLLinkElement;
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://useintro.co/faqs';
+    
+    // Add FAQ structured data
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": "Intro FAQ - Frequently Asked Questions",
+      "description": "Answers to common questions about Intro referral marketplace",
+      "url": "https://useintro.co/faqs",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is intro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Intro is a referral marketplace that connects opportunities with people who know people. Companies that are on intro post opportunities. Members who have signed up can see them and refer a friend from their network."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Is intro free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "intro is completely free for its Members."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a match?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A match is a completed/converted referral. When you submit a referral, that referral will undergo a screening process and eventually be converted. Cheers, you've got a match."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much money will I earn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are no limits to what you can earn on intro. However, do not expect this to be your first source of income."
+          }
+        }
+      ]
+    };
+    
+    let script = document.querySelector('script[data-page="faq"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script') as HTMLScriptElement;
+      script.type = 'application/ld+json';
+      script.setAttribute('data-page', 'faq');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(faqStructuredData);
+    
+    return () => {
+      // Cleanup
+      document.title = "Intro - Referral Marketplace | Earn Money Referring Friends for Jobs";
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Join the #1 referral marketplace. Earn up to $5,000 referring friends for jobs, products, and opportunities. Turn your network into passive income with daily referral opportunities.');
+      }
+    };
+  }, []);
   const [activeCategory, setActiveCategory] = useState('about-intro');
   const [cityInput, setCityInput] = useState('');
   const [opportunityInput, setOpportunityInput] = useState('');

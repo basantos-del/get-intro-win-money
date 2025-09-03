@@ -1,8 +1,14 @@
+# Robots.txt for Intro - Referral Marketplace
+# https://useintro.co
+
+# Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +16,28 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Disallow admin areas and temporary files
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /api/
+
+# Allow important static resources
+Allow: /assets/
+Allow: /images/
+Allow: /lovable-uploads/
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://useintro.co/sitemap.xml
+
+# Host declaration
+Host: https://useintro.co

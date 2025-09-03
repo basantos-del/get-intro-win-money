@@ -3,9 +3,61 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import React from 'react';
 
 const AboutUs = () => {
   const navigate = useNavigate();
+  
+  // SEO meta tags for About Us page
+  React.useEffect(() => {
+    document.title = "About Us - Intro | The Referral Marketplace";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about Intro, the referral marketplace connecting opportunities with people who know people. Discover how we help you earn money through successful referrals.');
+    }
+    
+    // Add canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement('link') as HTMLLinkElement;
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://useintro.co/about-us';
+    
+    // Add structured data for About page
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Intro - The Referral Marketplace",
+      "description": "Learn about Intro, the referral marketplace connecting opportunities with people who know people.",
+      "url": "https://useintro.co/about-us",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Intro",
+        "description": "A referral marketplace that connects opportunities with people who know people."
+      }
+    };
+    
+    let script = document.querySelector('script[data-page="about"]') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script') as HTMLScriptElement;
+      script.type = 'application/ld+json';
+      script.setAttribute('data-page', 'about');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
+    
+    return () => {
+      // Cleanup
+      document.title = "Intro - Referral Marketplace | Earn Money Referring Friends for Jobs";
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Join the #1 referral marketplace. Earn up to $5,000 referring friends for jobs, products, and opportunities. Turn your network into passive income with daily referral opportunities.');
+      }
+    };
+  }, []);
   const { elementRef, isVisible } = useIntersectionObserver({
     threshold: 0.3,
     triggerOnce: true
