@@ -7,13 +7,21 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { CheckCircle, User } from 'lucide-react';
 
 export const CompletionStep = () => {
-  const { user, updateUser } = useApp();
+  const { user, session, updateUser } = useApp();
   const navigate = useNavigate();
 
   const handleGetStarted = async () => {
+    console.log('CompletionStep - handleGetStarted called');
+    console.log('Current user:', user);
+    console.log('Current session:', session);
+    
     try {
       await updateUser({ onboardingCompleted: true });
-      navigate('/dashboard');
+      console.log('User updated, navigating to dashboard...');
+      // Small delay to ensure state is updated
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 100);
     } catch (error) {
       console.error('Error completing onboarding:', error);
     }

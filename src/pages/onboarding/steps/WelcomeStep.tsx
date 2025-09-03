@@ -43,22 +43,11 @@ export const WelcomeStep = () => {
           variant: "destructive",
         });
       } else {
-        // Create a temporary user object to proceed with onboarding
-        setUser({
-          id: 'temp-' + Date.now(),
-          email,
-          firstName: '',
-          lastName: '',
-          selectedBrands: [],
-          selectedCategories: [],
-          accountType: selectedType,
-          onboardingCompleted: false
-        });
-        
         toast({
-          title: "Success",
-          description: "Account created! Complete your profile to get started.",
+          title: "Success", 
+          description: "Account created! Please check your email to verify, then complete your profile.",
         });
+        // The user will be set automatically when the auth state changes
         setCurrentStep(2);
       }
     } catch (error) {
