@@ -16,11 +16,21 @@ const profileSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  dateOfBirth: z.date()
-    .refine((date) => {
-      const age = new Date().getFullYear() - date.getFullYear();
+  dateOfBirth: z.string()
+    .regex(/^\d{2}\/\d{2}\/\d{4}$/, 'Please enter date in MM/DD/YYYY format')
+    .refine((dateString) => {
+      const [month, day, year] = dateString.split('/').map(Number);
+      const date = new Date(year, month - 1, day);
+      
+      // Check if the date is valid
+      if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) {
+        return false;
+      }
+      
+      // Check age requirement
+      const age = new Date().getFullYear() - year;
       return age >= 21;
-    }, 'You must be at least 21 years old'),
+    }, 'You must be at least 21 years old and enter a valid date'),
 });
 
 type ProfileFormData = z.infer<typeof profileSchema>;
@@ -34,16 +44,20 @@ export const ProfileInfoStep = () => {
       firstName: user?.firstName || '',
       lastName: user?.lastName || '',
       email: user?.email || '',
-      dateOfBirth: user?.dateOfBirth,
+      dateOfBirth: user?.dateOfBirth ? format(user.dateOfBirth, 'MM/dd/yyyy') : '',
     },
   });
 
   const onSubmit = (data: ProfileFormData) => {
+    // Convert string date to Date object
+    const [month, day, year] = data.dateOfBirth.split('/').map(Number);
+    const dateOfBirth = new Date(year, month - 1, day);
+    
     updateUser({
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      dateOfBirth: data.dateOfBirth,
+      dateOfBirth: dateOfBirth,
     });
     setCurrentStep(currentStep + 1);
   };
@@ -111,38 +125,24 @@ export const ProfileInfoStep = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Date of Birth</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant="outline"
-                        className={cn(
-                          'w-full pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, 'PPP')
-                        ) : (
-                          <span>Pick your date of birth</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date('1900-01-01')
+                <FormControl>
+                  <Input 
+                    placeholder="MM/DD/YYYY" 
+                    {...field}
+                    maxLength={10}
+                    onChange={(e) => {
+                      // Auto-format the input as user types
+                      let value = e.target.value.replace(/\D/g, '');
+                      if (value.length >= 2) {
+                        value = value.substring(0, 2) + '/' + value.substring(2);
                       }
-                      initialFocus
-                      className={cn('p-3 pointer-events-auto')}
-                    />
-                  </PopoverContent>
-                </Popover>
+                      if (value.length >= 5) {
+                        value = value.substring(0, 5) + '/' + value.substring(5, 9);
+                      }
+                      field.onChange(value);
+                    }}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
