@@ -28,6 +28,9 @@ interface AppContextType {
   signUp: (email: string, password: string, userData: Partial<User>) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   logout: () => Promise<void>;
+  enableTestMode: () => void;
+  disableTestMode: () => void;
+  isTestMode: boolean;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -49,6 +52,56 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentStep, setCurrentStep] = useState(1);
+
+  // Test mode detection - check URL params or localStorage
+  const isTestModeActive = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('test') === 'true' || localStorage.getItem('intro-test-mode') === 'true';
+  };
+
+  // Create test user and session
+  const createTestSession = () => {
+    const testUser: User = {
+      id: '00000000-0000-0000-0000-000000000001',
+      email: 'test@intro.dev',
+      firstName: 'Test',
+      lastName: 'User',
+      dateOfBirth: new Date('1990-01-01'),
+      selectedBrands: ['Nike', 'Apple', 'Google'],
+      selectedCategories: ['Technology', 'Sports', 'Business'],
+      accountType: 'member',
+      onboardingCompleted: true
+    };
+
+    const testSession = {
+      user: {
+        id: '00000000-0000-0000-0000-000000000001',
+        email: 'test@intro.dev'
+      },
+      access_token: 'test-token',
+      refresh_token: 'test-refresh',
+      expires_in: 3600,
+      expires_at: Date.now() / 1000 + 3600,
+      token_type: 'bearer'
+    } as Session;
+
+    return { testUser, testSession };
+  };
+
+  // Enable test mode
+  const enableTestMode = () => {
+    localStorage.setItem('intro-test-mode', 'true');
+    const { testUser, testSession } = createTestSession();
+    setUser(testUser);
+    setSession(testSession);
+  };
+
+  // Disable test mode
+  const disableTestMode = () => {
+    localStorage.removeItem('intro-test-mode');
+    setUser(null);
+    setSession(null);
+  };
 
   // Convert database profile to user format
   const profileToUser = (profile: any): User => ({
@@ -195,6 +248,15 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   // Initialize auth state
   useEffect(() => {
+    // Check if in test mode first
+    if (isTestModeActive()) {
+      const { testUser, testSession } = createTestSession();
+      setUser(testUser);
+      setSession(testSession);
+      setLoading(false);
+      return;
+    }
+
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
@@ -239,7 +301,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     isAuthenticated,
     signUp,
     signIn,
-    logout
+    logout,
+    enableTestMode,
+    disableTestMode,
+    isTestMode: isTestModeActive()
   };
 
   return (
