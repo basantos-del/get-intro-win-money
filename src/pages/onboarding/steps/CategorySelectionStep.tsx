@@ -31,9 +31,13 @@ export const CategorySelectionStep = () => {
     );
   };
 
-  const handleContinue = () => {
-    updateUser({ selectedCategories });
-    setCurrentStep(currentStep + 1);
+  const handleContinue = async () => {
+    try {
+      await updateUser({ selectedCategories });
+      setCurrentStep(currentStep + 1);
+    } catch (error) {
+      console.error('Error updating categories:', error);
+    }
   };
 
   const handleBack = () => {

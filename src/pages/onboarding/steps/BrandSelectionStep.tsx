@@ -31,9 +31,13 @@ export const BrandSelectionStep = () => {
     );
   };
 
-  const handleContinue = () => {
-    updateUser({ selectedBrands });
-    setCurrentStep(currentStep + 1);
+  const handleContinue = async () => {
+    try {
+      await updateUser({ selectedBrands });
+      setCurrentStep(currentStep + 1);
+    } catch (error) {
+      console.error('Error updating brands:', error);
+    }
   };
 
   const handleBack = () => {

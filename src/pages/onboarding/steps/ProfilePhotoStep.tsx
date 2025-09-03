@@ -67,9 +67,13 @@ export const ProfilePhotoStep = () => {
     setIsUsingCamera(false);
   };
 
-  const handleContinue = () => {
-    updateUser({ profilePhoto: previewUrl });
-    setCurrentStep(currentStep + 1);
+  const handleContinue = async () => {
+    try {
+      await updateUser({ profilePhoto: previewUrl });
+      setCurrentStep(currentStep + 1);
+    } catch (error) {
+      console.error('Error updating profile photo:', error);
+    }
   };
 
   const handleSkip = () => {

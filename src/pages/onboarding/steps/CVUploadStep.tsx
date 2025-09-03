@@ -41,11 +41,15 @@ export const CVUploadStep = () => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
-  const handleContinue = () => {
-    if (selectedFile) {
-      updateUser({ cvFile: selectedFile });
+  const handleContinue = async () => {
+    try {
+      if (selectedFile) {
+        await updateUser({ cvFile: selectedFile });
+      }
+      setCurrentStep(currentStep + 1);
+    } catch (error) {
+      console.error('Error updating CV:', error);
     }
-    setCurrentStep(currentStep + 1);
   };
 
   const handleSkip = () => {

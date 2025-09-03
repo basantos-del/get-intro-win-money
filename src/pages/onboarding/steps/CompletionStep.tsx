@@ -10,9 +10,13 @@ export const CompletionStep = () => {
   const { user, updateUser } = useApp();
   const navigate = useNavigate();
 
-  const handleGetStarted = () => {
-    updateUser({ onboardingCompleted: true });
-    navigate('/dashboard');
+  const handleGetStarted = async () => {
+    try {
+      await updateUser({ onboardingCompleted: true });
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error completing onboarding:', error);
+    }
   };
 
   return (

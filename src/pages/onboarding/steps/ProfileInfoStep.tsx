@@ -48,18 +48,22 @@ export const ProfileInfoStep = () => {
     },
   });
 
-  const onSubmit = (data: ProfileFormData) => {
-    // Convert string date to Date object
-    const [month, day, year] = data.dateOfBirth.split('/').map(Number);
-    const dateOfBirth = new Date(year, month - 1, day);
-    
-    updateUser({
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      dateOfBirth: dateOfBirth,
-    });
-    setCurrentStep(currentStep + 1);
+  const onSubmit = async (data: ProfileFormData) => {
+    try {
+      // Convert string date to Date object
+      const [month, day, year] = data.dateOfBirth.split('/').map(Number);
+      const dateOfBirth = new Date(year, month - 1, day);
+      
+      await updateUser({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        dateOfBirth: dateOfBirth,
+      });
+      setCurrentStep(currentStep + 1);
+    } catch (error) {
+      console.error('Error updating profile:', error);
+    }
   };
 
   const handleBack = () => {
