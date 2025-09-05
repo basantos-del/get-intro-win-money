@@ -149,7 +149,7 @@ const NewCustomers = () => {
         {/* Maria Photo Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <img
-            src="/lovable-uploads/c2917f6a-2df9-4b28-a186-83786aef70ae.png"
+            src="/lovable-uploads/de0437b6-8cfe-409f-804b-44ee5e67dae6.png"
             alt="Maria - Intro Member who knows people"
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
