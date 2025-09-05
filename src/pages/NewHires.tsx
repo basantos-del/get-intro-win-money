@@ -107,7 +107,7 @@ const NewHires = () => {
 
         {/* Video Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
-          <video src="/intro-website-v2.mp4" autoPlay loop muted controls preload="auto" className="w-full h-auto object-cover scale-95 -mb-8" style={{
+          <video src="/intro-website-v2.mp4" autoPlay loop muted playsInline controls preload="auto" className="w-full h-auto object-cover scale-95 -mb-8" style={{
           maxHeight: '600px'
         }} onError={e => {
           console.error('Video failed to load:', e.currentTarget.error);

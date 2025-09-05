@@ -119,6 +119,7 @@ const NewCustomers = () => {
             autoPlay
             loop
             muted
+            playsInline
             controls
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
