@@ -127,6 +127,47 @@ const NewCustomers = () => {
           </video>
         </div>
 
+        {/* Second Content Section */}
+        <div 
+          ref={secondElementRef}
+          className={`max-w-2xl mx-auto text-left pt-16 pb-8 transition-all duration-1000 ${
+            secondIsVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="space-y-6">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              What you know is that the chances of Mark really buying the shoes today are low. He has stuff to do. And you also know that even though he saw Maria's, what he needs are new shoes. And there are a lot of other shoemakers out there.
+            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              That's where Maria can step in for your brand. Maria is an intro Member. She knows people. A lot of people.
+            </p>
+          </div>
+        </div>
+
+        {/* Maria Photo Section */}
+        <div className="mt-16 w-full animate-fade-in overflow-hidden">
+          <img
+            src="/lovable-uploads/c2917f6a-2df9-4b28-a186-83786aef70ae.png"
+            alt="Maria - Intro Member who knows people"
+            className="w-full h-auto object-cover scale-95 -mb-8"
+            style={{ maxHeight: '600px' }}
+          />
+        </div>
+
+        {/* Third Content Section */}
+        <div className="max-w-2xl mx-auto text-left pt-16 pb-8">
+          <div className="space-y-6">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              When she arrives home that day, she'll be reminded of some refer-a-friend opportunities. One of them is her favorite shoe brand, your brand. Since the opportunity expires soon, Maria sends her referral link to Mark.
+            </p>
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
+              Bang, Mark is your new customer. Treat him well.
+            </p>
+          </div>
+        </div>
+
         {/* Join Waitlist CTA */}
         <div className="mt-8 text-center animate-bounce">
           <Button 
