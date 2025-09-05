@@ -9,7 +9,6 @@ import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
 import NewCustomers from "./pages/NewCustomers";
-import NewHires from "./pages/NewHires";
 import Onboarding from "./pages/onboarding/Onboarding";
 import DashboardLayout from "./pages/dashboard/DashboardLayout";
 import MemberHome from "./pages/dashboard/MemberHome";
@@ -91,7 +90,6 @@ const App = () => (
             <Route path="/faqs" element={<FAQ />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/for-business/newcustomers" element={<NewCustomers />} />
-            <Route path="/for-business/newhires" element={<NewHires />} />
             <Route path="/onboarding" element={<Onboarding />} />
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<MemberHome />} />
