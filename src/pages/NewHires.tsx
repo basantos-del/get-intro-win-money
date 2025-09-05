@@ -118,19 +118,23 @@ const NewHires = () => {
         {/* Video Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <video
-            src="/Intro-website%20(1).mp4"
+            src="/intro-website-v2.mp4"
             autoPlay
             loop
             muted
             controls
-            preload="metadata"
+            preload="auto"
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
             onError={(e) => {
-              console.error('Video failed to load:', e);
+              console.error('Video failed to load:', e.currentTarget.error);
+              console.error('Video src:', e.currentTarget.src);
             }}
             onLoadStart={() => {
               console.log('Video load started');
+            }}
+            onLoadedData={() => {
+              console.log('Video data loaded successfully');
             }}
             onCanPlay={() => {
               console.log('Video can play');
