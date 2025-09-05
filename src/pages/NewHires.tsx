@@ -100,9 +100,7 @@ const NewHires = () => {
               "We need to backfill this position fast. Find me solutions", says your HR Manager.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"God, we have run out of LinkedIn's budget", says Lisa.</p>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              "I mean, we have it in our referral's page forever", says Taylor.
-            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"I mean, we can boost it in our referrals page...", says Taylor.</p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"Yeah, give me a break… YOU have done zero referrals this year, Taylor".</p>
           </div>
         </div>
