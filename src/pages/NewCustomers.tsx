@@ -232,6 +232,86 @@ const NewCustomers = () => {
           </div>
         </section>
 
+        {/* How It Works Section */}
+        <section className="intro-section bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                How it works
+              </h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-8">
+                {/* Step 1 */}
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-accent-foreground font-bold text-lg">1</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">Open an opportunity</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Define your program's budget and expiry date, as well as the Payout amount and conditions
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-accent-foreground font-bold text-lg">2</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">Market your opportunity on intro</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Your opportunity gets promoted to our community of engaged members
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-accent-foreground font-bold text-lg">3</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">Reach targeted Members</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The opportunity will arrive to Members that have registered as your customers through a unique ID
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-accent-foreground font-bold text-lg">4</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">Members share with friends</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Members share your product with their friends through personal recommendations
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-accent-foreground font-bold text-lg">5</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">Members get rewarded</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      If friends meet your T&Cs, the Member gets paid and you gain a new customer
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Join Waitlist CTA */}
         <div className="mt-8 text-center animate-bounce">
           <Button 
