@@ -285,7 +285,7 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">5</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Hire faster and save money</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Save money and earn a reputation</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       If the person is hired, the Member gets paid and you have earned a reputation with your Manager
                     </p>
