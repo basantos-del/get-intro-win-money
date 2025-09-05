@@ -249,9 +249,7 @@ const NewHires = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-foreground mb-2">Market your opportunity</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Intro taps intro Members who know people that match the criteria. It highlights which friends can have higher chance of matchmaking
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed">Intro taps Members who know people that match your criteria. We highlight which friends have a higher chance of matchmaking</p>
                   </div>
                 </div>
 
