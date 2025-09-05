@@ -13,9 +13,10 @@ const Navigation = () => {
   const navigate = useNavigate();
   const isFAQPage = location.pathname === '/faqs';
   const isAboutUsPage = location.pathname === '/about-us';
+  const isNewCustomersPage = location.pathname === '/for-business/newcustomers';
   
-  // Always show scrolled state on FAQ and About Us pages for better readability
-  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isScrolled;
+  // Always show scrolled state on FAQ, About Us, and New Customers pages for better readability
+  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isNewCustomersPage || isScrolled;
 
   useEffect(() => {
     let ticking = false;
@@ -52,8 +53,8 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on FAQ or About Us page, navigate to main page first then scroll
-    if (isFAQPage || isAboutUsPage) {
+    // If we're on FAQ, About Us, or New Customers page, navigate to main page first then scroll
+    if (isFAQPage || isAboutUsPage || isNewCustomersPage) {
       navigate('/', { replace: true });
       setTimeout(() => {
         const element = document.getElementById(sectionId);
