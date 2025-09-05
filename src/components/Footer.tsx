@@ -36,7 +36,7 @@ const Footer = () => {
   };
   return <footer className="bg-accent py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-5 gap-8">
+        <div className="grid md:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="text-3xl font-bold text-accent-foreground mb-4">intro</h3>
@@ -81,6 +81,25 @@ const Footer = () => {
               >
                 FAQs
               </button>
+            </div>
+          </div>
+
+          {/* For Business */}
+          <div>
+            <h4 className="text-lg font-semibold text-accent-foreground mb-4">For Business</h4>
+            <div className="space-y-2">
+              <Link 
+                to="/for-business/new-customers"
+                className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
+                Find new customers
+              </Link>
+              <Link 
+                to="/for-business/new-hires"
+                className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
+                Find new hires
+              </Link>
             </div>
           </div>
 
