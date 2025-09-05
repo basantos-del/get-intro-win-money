@@ -254,7 +254,7 @@ const NewHires = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-foreground mb-2">Open an opportunity</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Define your program's budget and expiry date, as well as the Payout amount and conditions
+                      Define specific tags and integrate with your LinkedIn or ATS account
                     </p>
                   </div>
                 </div>
@@ -265,9 +265,9 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Market your opportunity on intro</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Market your opportunity</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Your opportunity gets promoted to our community of engaged members
+                      Intro taps intro Members who know people that match the criteria. It highlights which friends can have higher chance of matchmaking
                     </p>
                   </div>
                 </div>
@@ -278,9 +278,9 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">3</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Reach targeted Members</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Reach hidden leads</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      The opportunity will arrive to Members that have registered as your customers through a unique ID
+                      Members share the opportunity link with that friend
                     </p>
                   </div>
                 </div>
@@ -291,9 +291,9 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">4</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Members share with friends</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Do your thing</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Members share your product with their friends through personal recommendations
+                      Start receiving applications coming from intro directly on your ATS platform
                     </p>
                   </div>
                 </div>
@@ -304,9 +304,9 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">5</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Members get rewarded</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Hire faster and save money</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      If friends meet your T&Cs, the Member gets paid and you gain a new hire
+                      If the person is hired, the Member gets paid and you have earned a reputation with your Manager
                     </p>
                   </div>
                 </div>
