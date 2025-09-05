@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Badge } from '@/components/ui/badge';
 
 const EarnSection = () => {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
+  const [activeCategory, setActiveCategory] = useState('refer');
   const sectionRef = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef, isVisible: titleVisible } = useIntersectionObserver({ threshold: 0.3 });
 
@@ -56,43 +58,96 @@ const EarnSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Earn for every match
           </h2>
-          <p className="text-xl text-muted-foreground max-w-5xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-5xl mx-auto mb-8">
             Turn your match-making skills into income with diverse referral opportunities
           </p>
+          
+          {/* Badge Filters */}
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            <Badge
+              variant={activeCategory === 'refer' ? "default" : "outline"}
+              className={`cursor-pointer transition-all hover:shadow-md px-4 py-2 ${
+                activeCategory === 'refer' 
+                  ? 'bg-primary text-primary-foreground shadow-lg' 
+                  : 'hover:bg-accent'
+              }`}
+              onClick={() => setActiveCategory('refer')}
+            >
+              Refer
+            </Badge>
+            <Badge
+              variant={activeCategory === 'promote' ? "default" : "outline"}
+              className={`cursor-pointer transition-all hover:shadow-md px-4 py-2 ${
+                activeCategory === 'promote' 
+                  ? 'bg-primary text-primary-foreground shadow-lg' 
+                  : 'hover:bg-accent'
+              }`}
+              onClick={() => setActiveCategory('promote')}
+            >
+              Promote <span className="ml-1 text-xs opacity-70">soon</span>
+            </Badge>
+            <Badge
+              variant={activeCategory === 'save' ? "default" : "outline"}
+              className={`cursor-pointer transition-all hover:shadow-md px-4 py-2 ${
+                activeCategory === 'save' 
+                  ? 'bg-primary text-primary-foreground shadow-lg' 
+                  : 'hover:bg-accent'
+              }`}
+              onClick={() => setActiveCategory('save')}
+            >
+              Save <span className="ml-1 text-xs opacity-70">soon</span>
+            </Badge>
+          </div>
         </div>
 
-        <div className="flex overflow-x-auto gap-3 pb-4 px-4 -mx-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 md:snap-none">
-          {earnCards.map((card, index) => (
-            <div
-              key={index}
-              className={`intro-card overflow-hidden transition-all duration-700 flex-shrink-0 w-64 snap-center md:w-auto md:flex-shrink md:snap-align-none ${
-                visibleCards[index] 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-4 left-4 right-4 text-foreground">
-                  <div className="text-lg font-bold mb-1 text-white">{card.earning}</div>
+        {/* Content based on active category */}
+        {activeCategory === 'refer' && (
+          <div className="flex overflow-x-auto gap-3 pb-4 px-4 -mx-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 md:snap-none">
+            {earnCards.map((card, index) => (
+              <div
+                key={index}
+                className={`intro-card overflow-hidden transition-all duration-700 flex-shrink-0 w-64 snap-center md:w-auto md:flex-shrink md:snap-align-none ${
+                  visibleCards[index] 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 text-foreground">
+                    <div className="text-lg font-bold mb-1 text-white">{card.earning}</div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {card.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </p>
                 </div>
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {card.description}
-                </p>
-              </div>
+            ))}
+          </div>
+        )}
+
+        {(activeCategory === 'promote' || activeCategory === 'save') && (
+          <div className="flex justify-center">
+            <div className="intro-card p-12 max-w-md mx-auto text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Coming soon to intro
+              </h3>
+              <p className="text-muted-foreground">
+                This feature is currently in development and will be available soon.
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
 
         <div className="mt-16 text-center">
           <div className="intro-card p-8 max-w-2xl mx-auto">
