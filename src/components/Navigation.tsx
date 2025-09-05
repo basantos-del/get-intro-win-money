@@ -199,6 +199,15 @@ const Navigation = () => {
                     >
                       New Customers
                     </button>
+                    <button
+                      onClick={() => {
+                        navigate('/for-business/newhires');
+                        setIsBusinessDropdownOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      New Hires
+                    </button>
                   </div>
                 </div>
               )}
