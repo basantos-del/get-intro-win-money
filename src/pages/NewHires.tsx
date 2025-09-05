@@ -118,13 +118,23 @@ const NewHires = () => {
         {/* Video Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <video
-            src="/Intro-website (1).mp4"
+            src="/Intro-website%20(1).mp4"
             autoPlay
             loop
             muted
             controls
+            preload="metadata"
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
+            onError={(e) => {
+              console.error('Video failed to load:', e);
+            }}
+            onLoadStart={() => {
+              console.log('Video load started');
+            }}
+            onCanPlay={() => {
+              console.log('Video can play');
+            }}
           >
             Your browser does not support the video tag.
           </video>
