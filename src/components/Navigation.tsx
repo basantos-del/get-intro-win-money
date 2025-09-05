@@ -143,42 +143,6 @@ const Navigation = () => {
                   </div>
                 )}
               </div>
-
-              {/* For Business Dropdown */}
-              <div className="relative" ref={businessDropdownRef}>
-                <button
-                  onClick={() => setIsBusinessDropdownOpen(!isBusinessDropdownOpen)}
-                  className={`flex items-center gap-1 transition-colors duration-300 font-medium ${
-                    shouldShowScrolledState 
-                      ? 'text-foreground hover:text-accent-foreground' 
-                      : 'text-white hover:text-white/80'
-                  }`}
-                >
-                  For Business
-                  <ChevronDown 
-                    className={`h-4 w-4 transition-transform duration-200 ${
-                      isBusinessDropdownOpen ? 'rotate-180' : ''
-                    }`} 
-                  />
-                </button>
-                
-                {/* Dropdown Menu */}
-                {isBusinessDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-intro-card z-50">
-                    <div className="py-2">
-                      <button
-                        onClick={() => {
-                          navigate('/for-business/newcustomers');
-                          setIsBusinessDropdownOpen(false);
-                        }}
-                        className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        New Customers
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
               <button
                 onClick={() => scrollToSection('features')}
                 className={`transition-colors duration-300 font-medium ${
@@ -203,6 +167,41 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-4">
+            {/* For Business Dropdown - positioned closer to CTA */}
+            <div className="relative" ref={businessDropdownRef}>
+              <button
+                onClick={() => setIsBusinessDropdownOpen(!isBusinessDropdownOpen)}
+                className={`flex items-center gap-1 transition-colors duration-300 font-medium ${
+                  shouldShowScrolledState 
+                    ? 'text-foreground hover:text-accent-foreground' 
+                    : 'text-white hover:text-white/80'
+                }`}
+              >
+                For Business
+                <ChevronDown 
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isBusinessDropdownOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isBusinessDropdownOpen && (
+                <div className="absolute top-full right-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-intro-card z-50">
+                  <div className="py-2">
+                    <button
+                      onClick={() => {
+                        navigate('/for-business/newcustomers');
+                        setIsBusinessDropdownOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      New Customers
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
             <Button
               onClick={() => scrollToSection('waitlist')}
               className={`px-6 py-2 transition-colors duration-300 ${
