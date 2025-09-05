@@ -101,9 +101,27 @@ const NewCustomers = () => {
         >
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Content will be provided later.
+              "Oh, I love your shoes, they look so cool", says Mark.
+            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              "They're this new brand, and fit really nice", says Maria S.
+            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              Mark is looking for a new par of shoes. But your brand does not know that yet.
             </p>
           </div>
+        </div>
+
+        {/* Video Section */}
+        <div className="mt-16 w-full animate-fade-in overflow-hidden">
+          <video
+            src="/Intro-website.mp4"
+            controls
+            className="w-full h-auto object-cover scale-95 -mb-8"
+            style={{ maxHeight: '600px' }}
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         {/* Join Waitlist CTA */}
