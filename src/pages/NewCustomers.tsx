@@ -116,6 +116,9 @@ const NewCustomers = () => {
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <video
             src="/Intro-website.mp4"
+            autoPlay
+            loop
+            muted
             controls
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
