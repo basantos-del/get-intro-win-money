@@ -313,13 +313,18 @@ const NewCustomers = () => {
         </section>
 
         {/* Join Waitlist CTA */}
-        <div className="mt-8 text-center animate-bounce">
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto">
           <Button 
             onClick={handleJoinWaitlist}
-            className="intro-button-cta text-lg px-8 py-4"
+            className="intro-button-cta text-lg px-8 py-4 flex-shrink-0"
           >
             Join the Waitlist
           </Button>
+          <div className="text-left max-w-md">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Set up an opportunity in minutes. Tap into our network of Members to market it. Find new leads in hours.
+            </p>
+          </div>
         </div>
       </div>
       
