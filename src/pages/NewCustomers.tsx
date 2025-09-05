@@ -168,6 +168,70 @@ const NewCustomers = () => {
           </div>
         </div>
 
+        {/* Referral Value Section */}
+        <section className="intro-section bg-muted/20 mt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Referrals hold a powerful value:
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              {/* More likely to buy */}
+              <div className="p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-full bg-accent">
+                    <svg className="w-6 h-6 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">
+                    More likely to buy
+                  </h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Referral leads are 4x more likely to buy when referred by a friend (source: Nielsen)
+                </p>
+              </div>
+
+              {/* Spend more */}
+              <div className="p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-full bg-accent">
+                    <svg className="w-6 h-6 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">
+                    Spend more
+                  </h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Referral leads spend 16-25% more during their lifetime (source: Wharton)
+                </p>
+              </div>
+
+              {/* Stay longer */}
+              <div className="p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-full bg-accent">
+                    <svg className="w-6 h-6 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">
+                    Stay longer
+                  </h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Referred customers have a 37% higher retention rate (source: Deloitte)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Join Waitlist CTA */}
         <div className="mt-8 text-center animate-bounce">
           <Button 
