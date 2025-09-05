@@ -14,9 +14,10 @@ const Navigation = () => {
   const isFAQPage = location.pathname === '/faqs';
   const isAboutUsPage = location.pathname === '/about-us';
   const isNewCustomersPage = location.pathname === '/for-business/newcustomers';
+  const isNewHiresPage = location.pathname === '/for-business/newhires';
   
-  // Always show scrolled state on FAQ, About Us, and New Customers pages for better readability
-  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isNewCustomersPage || isScrolled;
+  // Always show scrolled state on FAQ, About Us, New Customers and New Hires pages for better readability
+  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage || isScrolled;
 
   useEffect(() => {
     let ticking = false;
@@ -53,8 +54,8 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on FAQ, About Us, or New Customers page, navigate to main page first then scroll
-    if (isFAQPage || isAboutUsPage || isNewCustomersPage) {
+    // If we're on FAQ, About Us, New Customers or New Hires page, navigate to main page first then scroll
+    if (isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage) {
       navigate('/', { replace: true });
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -198,6 +199,15 @@ const Navigation = () => {
                       className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       New Customers
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigate('/for-business/newhires');
+                        setIsBusinessDropdownOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      New Hires
                     </button>
                   </div>
                 </div>
