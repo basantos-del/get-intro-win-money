@@ -272,7 +272,7 @@ const NewHires = () => {
                     <span className="text-accent-foreground font-bold text-lg">4</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">Do your thing</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Hire faster</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Start receiving applications coming from intro directly on your ATS platform
                     </p>
