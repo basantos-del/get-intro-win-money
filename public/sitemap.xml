@@ -39,6 +39,22 @@
       <image:title>Frequently Asked Questions about Intro</image:title>
     </image:image>
   </url>
+
+  <!-- New Customers Page -->
+  <url>
+    <loc>https://useintro.co/new-customers</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- New Hires Page -->
+  <url>
+    <loc>https://useintro.co/new-hires</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Onboarding Page -->
   <url>
