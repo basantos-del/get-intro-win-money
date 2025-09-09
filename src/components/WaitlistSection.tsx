@@ -123,7 +123,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Start earning extra income through completed matchmaking
+              Start earning extra income, join intro
             </p>
             
             <div className="text-center mb-6">
@@ -152,7 +152,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Connect with qualified referrals from vetted Members
+              Connect with qualified consumers from vetted Members
             </p>
             
             <div className="text-center mb-6">
