@@ -28,7 +28,7 @@ const AboutSection = () => {
           <div className={`animate-on-scroll animate-fade-left ${isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl font-bold text-foreground mb-8 leading-tight md:text-5xl">You're an intro away from making the money you needed</h2>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">The place where referral programs meet people who know people</p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">Where referral and loyalty programs meet regular people</p>
           </div>
           
           <div className="mt-16 grid md:grid-cols-3 gap-8">
