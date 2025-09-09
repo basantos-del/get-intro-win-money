@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Badge } from '@/components/ui/badge';
 import React from 'react';
 
 const AboutUs = () => {
   const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = React.useState('referral');
   
   // SEO meta tags for About Us page
   React.useEffect(() => {
@@ -85,72 +87,138 @@ const AboutUs = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            the referral marketplace
+            {selectedCategory === 'referral' ? 'the referral marketplace' : 'the loyalty marketplace'}
           </h1>
         </div>
 
-        {/* About Content with Scroll Reveal */}
-        <div 
-          ref={elementRef}
-          className={`max-w-2xl mx-auto text-left pt-16 pb-8 transition-all duration-1000 ${
-            isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="space-y-6">
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
-            </p>
-            
-            <div className="space-y-4">
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Companies post <strong> earning opportunities</strong>. Members can tap on them either through referrals or joing themselves. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
-              </p>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
-              </p>
+        {/* Main Layout with Sidebar */}
+        <div className="flex gap-8 mb-16">
+          {/* Sidebar */}
+          <div className="w-64 flex-shrink-0">
+            <div className="bg-card rounded-lg p-4 border sticky top-24">
+              <h3 className="font-semibold text-foreground mb-4">Categories</h3>
+              <div className="space-y-3">
+                <button
+                  onClick={() => setSelectedCategory('referral')}
+                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    selectedCategory === 'referral'
+                      ? 'bg-foreground text-background'
+                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <span>Referral marketplace</span>
+                    <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                      4
+                    </Badge>
+                  </div>
+                </button>
+                
+                <button
+                  onClick={() => setSelectedCategory('loyalty')}
+                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    selectedCategory === 'loyalty'
+                      ? 'bg-foreground text-background'
+                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <span>Loyalty marketplace</span>
+                    <Badge variant="destructive">
+                      In Development
+                    </Badge>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Image Section */}
-        <div className="mt-16 w-full animate-fade-in overflow-hidden">
-          <img
-            src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
-            alt="A referral marketplace for people who know people"
-            className="w-full h-auto object-cover scale-95 -mb-8"
-          />
-        </div>
+          {/* Main Content */}
+          <div className="flex-1">
+            {selectedCategory === 'referral' ? (
+              <>
+                {/* Referral Marketplace Content */}
+                <div 
+                  ref={elementRef}
+                  className={`transition-all duration-1000 ${
+                    isVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                >
+                  <div className="space-y-6 mb-16">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        Companies post <strong> earning opportunities</strong>. Members can tap on them either through referrals or joing themselves. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                      </p>
+                      
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
+                      </p>
+                    </div>
+                  </div>
 
-        {/* Second Text Section with Scroll Reveal */}
-        <div 
-          ref={secondElementRef}
-          className={`max-w-2xl mx-auto text-left py-16 transition-all duration-1000 ${
-            secondIsVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="space-y-6">
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
-            </p>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan.
-            </p>
+                  {/* Image Section */}
+                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                    <img
+                      src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
+                      alt="A referral marketplace for people who know people"
+                      className="w-full h-auto object-cover scale-95"
+                    />
+                  </div>
+
+                  {/* Second Text Section */}
+                  <div 
+                    ref={secondElementRef}
+                    className={`transition-all duration-1000 ${
+                      secondIsVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-8'
+                    }`}
+                  >
+                    <div className="space-y-6 mb-16">
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
+                      </p>
+                      
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
+                      </p>
+                    </div>
+
+                    {/* New Image Section */}
+                    <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                      <img
+                        src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
+                        alt="Your network is your net worth"
+                        className="w-full h-auto object-cover scale-95"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Loyalty Marketplace Content */}
+                <div className="text-center py-16">
+                  <div className="max-w-2xl mx-auto">
+                    <div className="mb-8">
+                      <Badge variant="destructive" className="text-lg px-4 py-2 mb-4">
+                        In Development
+                      </Badge>
+                    </div>
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Our loyalty marketplace is currently under development. Stay tuned for exciting opportunities to earn through brand loyalty programs and promotional collaborations.
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-
-        {/* New Image Section */}
-        <div className="mt-16 w-full animate-fade-in overflow-hidden">
-          <img
-            src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
-            alt="Your network is your net worth"
-            className="w-full h-auto object-cover scale-95 -mb-8"
-          />
         </div>
 
         {/* Additional Content Sections */}
