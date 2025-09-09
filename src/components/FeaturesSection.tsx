@@ -35,7 +35,7 @@ const FeaturesSection = () => {
             Making an intro has never been so easy
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Intro is designed to make referrals effortless and rewarding
+            Intro is designed to make referrals and loyalty programs effortless and rewarding
           </p>
         </div>
 
