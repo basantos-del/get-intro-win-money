@@ -85,7 +85,11 @@ const FeaturesSection = () => {
               <img
                 src={features[activeFeature].image}
                 alt={features[activeFeature].title}
-                className="max-w-[80%] lg:max-w-[50%] h-auto transition-all duration-500 ease-in-out"
+                className={`h-auto transition-all duration-500 ease-in-out ${
+                  activeFeature === 1 || activeFeature === 2 
+                    ? 'max-w-[80%] lg:max-w-[70%]' 
+                    : 'max-w-[80%] lg:max-w-[50%]'
+                }`}
               />
             </div>
             
