@@ -23,7 +23,7 @@ const FeaturesSection = () => {
       icon: Zap,
       title: 'Fast Referral',
       description: 'Submit referrals in seconds. No complicated forms or lengthy procedures',
-      image: '/Fast_referral.png',
+      image: '/lovable-uploads/ba0e1f00-b25e-476e-b81c-f4fc77b4a4a4.png',
     },
   ];
 
