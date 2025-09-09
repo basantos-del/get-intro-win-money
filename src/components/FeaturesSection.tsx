@@ -17,7 +17,7 @@ const FeaturesSection = () => {
       icon: Calendar,
       title: 'Daily Opportunities',
       description: 'Fresh referral opportunities delivered daily. Never miss a chance to earn',
-      image: '/lovable-uploads/9421df9c-0b08-43b8-939e-2e26ad4ea2d2.png',
+      image: '/lovable-uploads/ad1668b5-3b2f-4f03-9230-e14844ae8ea0.png',
     },
     {
       icon: Zap,
