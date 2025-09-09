@@ -56,10 +56,10 @@ const EarnSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 animate-on-scroll animate-fade-right ${titleVisible ? 'visible' : ''}`} ref={titleRef}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Earn for every match
+            Earn for every completed opportunity
           </h2>
           <p className="text-xl text-muted-foreground max-w-5xl mx-auto mb-8">
-            Turn your match-making skills into income with diverse referral opportunities
+            Earn extra income through referral programs and save money through dozens of loyalty programs 
           </p>
           
           {/* Badge Filters */}
