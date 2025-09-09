@@ -5,21 +5,20 @@ import Navigation from '@/components/Navigation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Badge } from '@/components/ui/badge';
 import React from 'react';
-
 const AboutUs = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = React.useState('referral');
-  
+
   // SEO meta tags for About Us page
   React.useEffect(() => {
     document.title = "About Us - Intro | The Referral Marketplace";
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Learn about Intro, the referral marketplace connecting opportunities with people who know people. Discover how we help you earn money through successful referrals.');
     }
-    
+
     // Add canonical URL
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
@@ -28,7 +27,7 @@ const AboutUs = () => {
       document.head.appendChild(canonical);
     }
     canonical.href = 'https://useintro.co/about-us';
-    
+
     // Add structured data for About page
     const structuredData = {
       "@context": "https://schema.org",
@@ -42,7 +41,6 @@ const AboutUs = () => {
         "description": "A referral marketplace that connects opportunities with people who know people."
       }
     };
-    
     let script = document.querySelector('script[data-page="about"]') as HTMLScriptElement;
     if (!script) {
       script = document.createElement('script') as HTMLScriptElement;
@@ -51,7 +49,6 @@ const AboutUs = () => {
       document.head.appendChild(script);
     }
     script.textContent = JSON.stringify(structuredData);
-    
     return () => {
       // Cleanup
       document.title = "Intro - Referral Marketplace | Earn Money Referring Friends for Jobs";
@@ -60,28 +57,35 @@ const AboutUs = () => {
       }
     };
   }, []);
-  const { elementRef, isVisible } = useIntersectionObserver({
+  const {
+    elementRef,
+    isVisible
+  } = useIntersectionObserver({
     threshold: 0.3,
     triggerOnce: true
   });
-  const { elementRef: secondElementRef, isVisible: secondIsVisible } = useIntersectionObserver({
+  const {
+    elementRef: secondElementRef,
+    isVisible: secondIsVisible
+  } = useIntersectionObserver({
     threshold: 0.3,
     triggerOnce: true
   });
-
   const handleJoinWaitlist = () => {
-    navigate('/', { replace: true });
+    navigate('/', {
+      replace: true
+    });
     // Small delay to ensure navigation completes before scrolling
     setTimeout(() => {
       const element = document.getElementById('waitlist');
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     }, 100);
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
         {/* Header */}
@@ -94,25 +98,11 @@ const AboutUs = () => {
         {/* Mobile Tabs */}
         <div className="block lg:hidden mb-8">
           <div className="flex bg-muted rounded-lg p-1">
-            <button
-              onClick={() => setSelectedCategory('referral')}
-              className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${
-                selectedCategory === 'referral'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
+            <button onClick={() => setSelectedCategory('referral')} className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${selectedCategory === 'referral' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
               Referral marketplace
             </button>
             
-            <button
-              onClick={() => setSelectedCategory('loyalty')}
-              className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${
-                selectedCategory === 'loyalty'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
+            <button onClick={() => setSelectedCategory('loyalty')} className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${selectedCategory === 'loyalty' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
               Loyalty marketplace
             </button>
           </div>
@@ -120,8 +110,7 @@ const AboutUs = () => {
 
         {/* Mobile/Tablet Content */}
         <div className="block lg:hidden mb-16">
-          {selectedCategory === 'referral' ? (
-            <>
+          {selectedCategory === 'referral' ? <>
               {/* Referral Marketplace Content */}
               <div className="animate-fade-in">
                 <div className="space-y-6 mb-16">
@@ -142,11 +131,7 @@ const AboutUs = () => {
 
                 {/* Image Section */}
                 <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                  <img
-                    src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
-                    alt="A referral marketplace for people who know people"
-                    className="w-full h-auto object-cover scale-95"
-                  />
+                  <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
                 </div>
 
                 {/* Second Text Section */}
@@ -163,17 +148,11 @@ const AboutUs = () => {
 
                   {/* New Image Section */}
                   <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                    <img
-                      src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
-                      alt="Your network is your net worth"
-                      className="w-full h-auto object-cover scale-95"
-                    />
+                    <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
                   </div>
                 </div>
               </div>
-            </>
-          ) : (
-            <>
+            </> : <>
               {/* Loyalty Marketplace Content */}
               <div className="text-center py-16 animate-fade-in">
                 <div className="max-w-2xl mx-auto">
@@ -182,8 +161,7 @@ const AboutUs = () => {
                   </p>
                 </div>
               </div>
-            </>
-          )}
+            </>}
         </div>
 
         {/* Desktop Layout with Sidebar */}
@@ -191,27 +169,13 @@ const AboutUs = () => {
           {/* Sidebar */}
           <div className="w-64 flex-shrink-0">
             <div className="bg-card rounded-lg p-4 border sticky top-24">
-              <h3 className="font-semibold text-foreground mb-4">Categories</h3>
+              <h3 className="font-semibold text-foreground mb-4">Explore the</h3>
               <div className="space-y-3">
-                <button
-                  onClick={() => setSelectedCategory('referral')}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                    selectedCategory === 'referral'
-                      ? 'bg-foreground text-background'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
-                >
+                <button onClick={() => setSelectedCategory('referral')} className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === 'referral' ? 'bg-foreground text-background' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>
                   Referral marketplace
                 </button>
                 
-                <button
-                  onClick={() => setSelectedCategory('loyalty')}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                    selectedCategory === 'loyalty'
-                      ? 'bg-foreground text-background'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
-                >
+                <button onClick={() => setSelectedCategory('loyalty')} className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === 'loyalty' ? 'bg-foreground text-background' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>
                   Loyalty marketplace
                 </button>
               </div>
@@ -220,17 +184,9 @@ const AboutUs = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            {selectedCategory === 'referral' ? (
-              <>
+            {selectedCategory === 'referral' ? <>
                 {/* Referral Marketplace Content */}
-                <div 
-                  ref={elementRef}
-                  className={`transition-all duration-1000 ${
-                    isVisible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                >
+                <div ref={elementRef} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                   <div className="space-y-6 mb-16">
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                       Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
@@ -249,22 +205,11 @@ const AboutUs = () => {
 
                   {/* Image Section */}
                   <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                    <img
-                      src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
-                      alt="A referral marketplace for people who know people"
-                      className="w-full h-auto object-cover scale-95"
-                    />
+                    <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
                   </div>
 
                   {/* Second Text Section */}
-                  <div 
-                    ref={secondElementRef}
-                    className={`transition-all duration-1000 ${
-                      secondIsVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-8'
-                    }`}
-                  >
+                  <div ref={secondElementRef} className={`transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="space-y-6 mb-16">
                       <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                         You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
@@ -277,17 +222,11 @@ const AboutUs = () => {
 
                     {/* New Image Section */}
                     <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                      <img
-                        src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
-                        alt="Your network is your net worth"
-                        className="w-full h-auto object-cover scale-95"
-                      />
+                      <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
                     </div>
                   </div>
                 </div>
-              </>
-            ) : (
-              <>
+              </> : <>
                 {/* Loyalty Marketplace Content */}
                 <div className="text-center py-16">
                   <div className="max-w-2xl mx-auto">
@@ -301,8 +240,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </div>
-              </>
-            )}
+              </>}
           </div>
         </div>
 
@@ -347,10 +285,7 @@ const AboutUs = () => {
             <p className="text-muted-foreground mb-6">
               We know we're just getting to know each other
             </p>
-            <Button 
-              onClick={() => navigate('/faqs')}
-              className="intro-button-primary"
-            >
+            <Button onClick={() => navigate('/faqs')} className="intro-button-primary">
               Check our FAQs
             </Button>
           </div>
@@ -358,19 +293,12 @@ const AboutUs = () => {
 
         {/* Full Width Image Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
-          <img
-            src="/lovable-uploads/e10e4128-0adb-4523-a77d-116d7c8103d4.png"
-            alt="Where matchmaking earns you money"
-            className="w-full h-auto object-cover scale-95 -mb-8"
-          />
+          <img src="/lovable-uploads/e10e4128-0adb-4523-a77d-116d7c8103d4.png" alt="Where matchmaking earns you money" className="w-full h-auto object-cover scale-95 -mb-8" />
         </div>
         
         {/* Join Waitlist CTA */}
         <div className="mt-8 text-center animate-bounce">
-          <Button 
-            onClick={handleJoinWaitlist}
-            className="intro-button-cta text-lg px-8 py-4"
-          >
+          <Button onClick={handleJoinWaitlist} className="intro-button-cta text-lg px-8 py-4">
             Join the Waitlist
           </Button>
         </div>
@@ -380,8 +308,6 @@ const AboutUs = () => {
       <div className="fixed bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/80 to-transparent pointer-events-none z-10"></div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutUs;
