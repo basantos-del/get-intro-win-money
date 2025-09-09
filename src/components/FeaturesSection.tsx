@@ -83,9 +83,10 @@ const FeaturesSection = () => {
           <div className="relative min-h-[400px] lg:min-h-[500px] flex flex-col items-center justify-center">
             <div className="relative flex justify-center">
               <img
+                key={activeFeature}
                 src={features[activeFeature].image}
                 alt={features[activeFeature].title}
-                className={`h-auto transition-all duration-500 ease-in-out ${
+                className={`h-auto animate-fade-in transition-all duration-300 ease-out ${
                   activeFeature === 1 || activeFeature === 2 
                     ? 'max-w-[80%] lg:max-w-[80%]' 
                     : 'max-w-[80%] lg:max-w-[50%]'
