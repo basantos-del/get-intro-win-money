@@ -170,7 +170,7 @@ const AboutUs = () => {
                     
                     <div className="space-y-4">
                       <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        Companies post <strong> earning opportunities</strong>. Members can tap on them either through referrals or joing themselves. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                        Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
                       </p>
                       
                       <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
