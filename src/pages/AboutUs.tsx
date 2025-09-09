@@ -100,16 +100,16 @@ const AboutUs = () => {
         >
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Intro is a referral marketplace that connects opportunities with people who know people.
+              Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
             </p>
             
             <div className="space-y-4">
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Companies post <strong>opportunities</strong>. Members can follow up and refer a friend. If the referral is a success, we call it a <strong>match</strong>. Matches are what pay you good money.
+                Companies post <strong> earning opportunities</strong>. Members can tap on them either through referrals or joing themselves. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
               </p>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. Level up your networking game. No AI-talk nonsense, just real earning opportunities.
+                Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ const AboutUs = () => {
             </p>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              But we're not any kind of referral marketplace. <strong>We're not just easy money</strong>. A reference is not of any worth if it does not make a match. That's why your Referrals must make a match. Once that happens, you're paid.
+              But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan.
             </p>
           </div>
         </div>
@@ -161,7 +161,7 @@ const AboutUs = () => {
                 Our Mission
               </h3>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                We're on a mission to <strong>reimagine how referrals work</strong> for both members and businesses. Our goal is to create the top referral marketplace, offering tons of opportunities for members to earn and new ways for businesses to leverage referral programs.
+                We're on a mission to <strong>reimagine how referrals and loyalty programs work</strong>, both for members and businesses. Our goal is to create the top referral and loyalty marketplace, offering tons of opportunities for members to earn and new ways for businesses to leverage referral and loyalty programs.
               </p>
             </div>
             
@@ -179,7 +179,7 @@ const AboutUs = () => {
                 Why join Us?
               </h3>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                intro is designed to help you build <strong>the future you want</strong>. We know chasing your goals isn't easy, so we've built a platform that not only helps you earn cash through referrals but also opens doors to new possibilities. You join intro because you're social; you stay because you have <strong>bigger plans for yourself</strong>.
+                intro is designed to help you build <strong>the future you want</strong>. We know chasing your goals isn't easy, so we've built a platform that not only helps you earn cash through referrals but also opens doors to new collaborations. You join intro because you're social; you stay because you have <strong>bigger plans for yourself</strong>.
               </p>
             </div>
           </div>
