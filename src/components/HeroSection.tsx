@@ -114,7 +114,7 @@ const HeroSection = () => {
       
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ zIndex: 20 }}>
         <div className="fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 md:mb-16 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 md:mb-16 leading-tight">
             You know brands and people.<br />
             <span className="text-white">We know opportunities</span>
           </h1>
