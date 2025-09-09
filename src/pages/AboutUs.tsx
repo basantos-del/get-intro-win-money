@@ -123,14 +123,7 @@ const AboutUs = () => {
           {selectedCategory === 'referral' ? (
             <>
               {/* Referral Marketplace Content */}
-              <div 
-                ref={elementRef}
-                className={`transition-all duration-1000 ${
-                  isVisible 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
-                }`}
-              >
+              <div className="animate-fade-in">
                 <div className="space-y-6 mb-16">
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                     Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
@@ -157,14 +150,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Second Text Section */}
-                <div 
-                  ref={secondElementRef}
-                  className={`transition-all duration-1000 ${
-                    secondIsVisible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                >
+                <div className="animate-fade-in">
                   <div className="space-y-6 mb-16">
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                       You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
@@ -189,7 +175,7 @@ const AboutUs = () => {
           ) : (
             <>
               {/* Loyalty Marketplace Content */}
-              <div className="text-center py-16">
+              <div className="text-center py-16 animate-fade-in">
                 <div className="max-w-2xl mx-auto">
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                     Our loyalty marketplace is currently under development. Stay tuned for exciting opportunities to earn through brand loyalty programs and promotional collaborations.
