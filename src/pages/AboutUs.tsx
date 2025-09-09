@@ -91,8 +91,35 @@ const AboutUs = () => {
           </h1>
         </div>
 
-        {/* Main Layout with Sidebar */}
-        <div className="flex gap-8 mb-16">
+        {/* Mobile Tabs */}
+        <div className="block lg:hidden mb-8">
+          <div className="flex bg-muted rounded-lg p-1">
+            <button
+              onClick={() => setSelectedCategory('referral')}
+              className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${
+                selectedCategory === 'referral'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              Referral marketplace
+            </button>
+            
+            <button
+              onClick={() => setSelectedCategory('loyalty')}
+              className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${
+                selectedCategory === 'loyalty'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              Loyalty marketplace
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Layout with Sidebar */}
+        <div className="hidden lg:flex gap-8 mb-16">
           {/* Sidebar */}
           <div className="w-64 flex-shrink-0">
             <div className="bg-card rounded-lg p-4 border sticky top-24">
@@ -106,12 +133,7 @@ const AboutUs = () => {
                       : 'bg-muted text-muted-foreground hover:bg-muted/80'
                   }`}
                 >
-                  <div className="flex justify-between items-center">
-                    <span>Referral marketplace</span>
-                    <Badge variant="secondary" className="bg-accent text-accent-foreground">
-                      4
-                    </Badge>
-                  </div>
+                  Referral marketplace
                 </button>
                 
                 <button
@@ -122,12 +144,7 @@ const AboutUs = () => {
                       : 'bg-muted text-muted-foreground hover:bg-muted/80'
                   }`}
                 >
-                  <div className="flex justify-between items-center">
-                    <span>Loyalty marketplace</span>
-                    <Badge variant="destructive">
-                      In Development
-                    </Badge>
-                  </div>
+                  Loyalty marketplace
                 </button>
               </div>
             </div>
