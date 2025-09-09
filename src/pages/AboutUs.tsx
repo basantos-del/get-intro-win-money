@@ -118,6 +118,88 @@ const AboutUs = () => {
           </div>
         </div>
 
+        {/* Mobile/Tablet Content */}
+        <div className="block lg:hidden mb-16">
+          {selectedCategory === 'referral' ? (
+            <>
+              {/* Referral Marketplace Content */}
+              <div 
+                ref={elementRef}
+                className={`transition-all duration-1000 ${
+                  isVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <div className="space-y-6 mb-16">
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                    </p>
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                  <img
+                    src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png"
+                    alt="A referral marketplace for people who know people"
+                    className="w-full h-auto object-cover scale-95"
+                  />
+                </div>
+
+                {/* Second Text Section */}
+                <div 
+                  ref={secondElementRef}
+                  className={`transition-all duration-1000 ${
+                    secondIsVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                >
+                  <div className="space-y-6 mb-16">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
+                    </p>
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
+                    </p>
+                  </div>
+
+                  {/* New Image Section */}
+                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                    <img
+                      src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png"
+                      alt="Your network is your net worth"
+                      className="w-full h-auto object-cover scale-95"
+                    />
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Loyalty Marketplace Content */}
+              <div className="text-center py-16">
+                <div className="max-w-2xl mx-auto">
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    Our loyalty marketplace is currently under development. Stay tuned for exciting opportunities to earn through brand loyalty programs and promotional collaborations.
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
         {/* Desktop Layout with Sidebar */}
         <div className="hidden lg:flex gap-8 mb-16">
           {/* Sidebar */}
