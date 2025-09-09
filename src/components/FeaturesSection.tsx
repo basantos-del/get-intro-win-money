@@ -11,7 +11,7 @@ const FeaturesSection = () => {
       icon: Wallet,
       title: 'Easy Withdrawal',
       description: 'Instant payouts to your preferred method. Track your earnings real-time and be paid in your desired currency',
-      image: '/Easy_withdrawal.png',
+      image: '/lovable-uploads/fb151ec9-3415-4cd5-804d-e98e0b3a3747.png',
     },
     {
       icon: Calendar,
