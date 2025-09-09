@@ -88,7 +88,7 @@ const FeaturesSection = () => {
                 className={`h-auto transition-all duration-500 ease-in-out ${
                   activeFeature === 1 || activeFeature === 2 
                     ? 'max-w-[80%] lg:max-w-[80%]' 
-                    : 'max-w-[80%] lg:max-w-[50%]'
+                    : 'max-w-[80%] lg:max-w-[35%]'
                 }`}
               />
             </div>
