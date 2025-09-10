@@ -97,11 +97,11 @@ const NewHires = () => {
         <div ref={elementRef} className={`max-w-2xl mx-auto text-left pt-16 pb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              "We need to backfill this position fast. Find me solutions", says your HR Manager.
+              "We need to <strong>backfill this position</strong> fast. Find me solutions", says your HR Manager.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"God, we have run out of LinkedIn's budget", says Lisa.</p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"I mean, we can boost it in our referrals page...", says Taylor.</p>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"Yeah, give me a break… YOU have done zero referrals this year, Taylor".</p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">"Yeah, give me a break… YOU have done <strong>zero referrals</strong> this year, Taylor".</p>
           </div>
         </div>
 
@@ -127,10 +127,10 @@ const NewHires = () => {
         <div ref={secondElementRef} className={`max-w-2xl mx-auto text-left pt-16 pb-8 transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              You know Lisa and Taylor will have no good answers for their Manager. The referral page is on Confluence's basement. A Slack channel was a good idea, but just in paper.
+              You know Lisa and Taylor will have <strong>no good answers</strong>for their Manager. The referral page is on Confluence's basement. A Slack channel was a good idea, but just in paper.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              That's where Maria can step in as your ghost recruiter. Maria is an intro Member. She knows people. A lot of people.
+              That's where Maria can step in as your <strong>ghost recruiter.</strong> Maria is an intro Member. She knows people. A lot of people.
             </p>
           </div>
         </div>
@@ -146,7 +146,7 @@ const NewHires = () => {
         <div className="max-w-2xl mx-auto text-left pt-16 pb-8">
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              When Maria arrives home that afternoon, she'll be reminded of some refer-a-friend job opportunities. One of them is your job offer. Intro will also tell her who from her network might make a match. Since the opportunity expires soon and Maria can earn a nice reward, Maria sends her referral link to Mark.
+              When Maria arrives home that afternoon, she'll be reminded of some refer-a-friend job opportunities. One of them is your <strong>job offer.</strong> Intro will also tell her who from her network might make a match. Since the opportunity expires soon and Maria can earn a nice reward, Maria sends her referral link to Mark.
             </p>
             <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
               Bang, Mark is the backfill you've been looking to find. Treat him well.
