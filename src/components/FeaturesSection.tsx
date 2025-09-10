@@ -47,8 +47,8 @@ const FeaturesSection = () => {
                 key={index}
                 className={`p-3 lg:p-4 cursor-pointer transition-all duration-300 rounded-lg ${
                   activeFeature === index 
-                    ? 'bg-[#9D9D9D] text-black' 
-                    : 'hover:bg-[#9D9D9D]/50'
+                    ? 'bg-[#D9D9D9] text-black' 
+                    : 'hover:bg-[#D9D9D9]/50'
                 }`}
                 onMouseEnter={() => setActiveFeature(index)}
               >
@@ -60,7 +60,7 @@ const FeaturesSection = () => {
                   }`}>
                     <feature.icon className={`w-5 h-5 lg:w-6 lg:h-6 ${
                       activeFeature === index 
-                        ? 'text-black' 
+                        ? 'text-[#f9fd8f]' 
                         : 'text-accent-foreground'
                     }`} />
                   </div>
