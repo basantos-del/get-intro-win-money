@@ -47,30 +47,32 @@ const FeaturesSection = () => {
                 key={index}
                 className={`p-3 lg:p-4 cursor-pointer transition-all duration-300 rounded-lg ${
                   activeFeature === index 
-                    ? 'bg-accent text-accent-foreground' 
-                    : 'hover:bg-accent/10'
+                    ? 'bg-[#9D9D9D] text-black' 
+                    : 'hover:bg-[#9D9D9D]/50'
                 }`}
                 onMouseEnter={() => setActiveFeature(index)}
               >
                 <div className="flex items-center gap-3 lg:gap-4 mb-2 lg:mb-3">
                   <div className={`p-2 lg:p-3 rounded-full transition-all duration-300 ${
                     activeFeature === index 
-                      ? 'bg-accent-foreground/20' 
+                      ? 'bg-black/20' 
                       : 'bg-accent'
                   }`}>
                     <feature.icon className={`w-5 h-5 lg:w-6 lg:h-6 ${
                       activeFeature === index 
-                        ? 'text-accent-foreground' 
+                        ? 'text-black' 
                         : 'text-accent-foreground'
                     }`} />
                   </div>
-                  <h3 className="text-lg lg:text-xl font-bold">
+                  <h3 className={`text-lg lg:text-xl font-bold ${
+                    activeFeature === index ? 'text-black' : ''
+                  }`}>
                     {feature.title}
                   </h3>
                 </div>
-                <p className={`text-sm leading-relaxed ml-11 lg:ml-14 ${
+                <p className={`text-base lg:text-lg leading-relaxed ml-11 lg:ml-14 ${
                   activeFeature === index 
-                    ? 'text-accent-foreground/80' 
+                    ? 'text-black' 
                     : 'text-muted-foreground'
                 }`}>
                   {feature.description}
