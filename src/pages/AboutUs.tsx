@@ -167,14 +167,14 @@ const AboutUs = () => {
 
                 {/* First Photo Gallery Section */}
                 <div className="mb-16 w-full animate-fade-in">
-                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                    <div className="flex-shrink-0 w-80">
+                  <div className="flex gap-4 overflow-x-auto lg:overflow-x-visible lg:justify-center pb-4 scrollbar-hide">
+                    <div className="flex-shrink-0 w-80 lg:w-64">
                       <img src="/lovable-uploads/6a079f7b-6ef5-48c6-9676-8b29e29174e5.png" alt="Paloma Wool loyalty program offer" className="w-full h-auto object-cover rounded-lg" />
                     </div>
-                    <div className="flex-shrink-0 w-80">
+                    <div className="flex-shrink-0 w-80 lg:w-64">
                       <img src="/lovable-uploads/6704e094-96be-448d-b165-0afc942301e6.png" alt="Lovable credits reward program" className="w-full h-auto object-cover rounded-lg" />
                     </div>
-                    <div className="flex-shrink-0 w-80">
+                    <div className="flex-shrink-0 w-80 lg:w-64">
                       <img src="/lovable-uploads/108f417b-49f6-499c-b01c-fac38726f490.png" alt="Repsol discount program" className="w-full h-auto object-cover rounded-lg" />
                     </div>
                   </div>
@@ -186,20 +186,20 @@ const AboutUs = () => {
                   </p>
                 </div>
 
-                {/* Second Photo Gallery Section */}
-                <div className="mb-16 w-full animate-fade-in">
-                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                    <div className="flex-shrink-0 w-80">
-                      <img src="/lovable-uploads/85ef97b4-c2ee-4212-a5fc-f0fd48620de6.png" alt="Brand collaboration inbox messages" className="w-full h-auto object-cover rounded-lg" />
+                    {/* Second Photo Gallery Section */}
+                    <div className="mb-16 w-full animate-fade-in">
+                      <div className="flex gap-4 overflow-x-auto lg:overflow-x-visible lg:justify-center pb-4 scrollbar-hide">
+                        <div className="flex-shrink-0 w-80 lg:w-64">
+                          <img src="/lovable-uploads/85ef97b4-c2ee-4212-a5fc-f0fd48620de6.png" alt="Brand collaboration inbox messages" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-80 lg:w-64">
+                          <img src="/lovable-uploads/5b5850f3-738c-4e4c-b4dd-92ad940e4c38.png" alt="Tesla Model Y exclusive test drive opportunity" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-80 lg:w-64">
+                          <img src="/lovable-uploads/e1ac336b-1b89-4aa2-af9a-887692e14777.png" alt="EA Sports backstage tour opportunity" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex-shrink-0 w-80">
-                      <img src="/lovable-uploads/5b5850f3-738c-4e4c-b4dd-92ad940e4c38.png" alt="Tesla Model Y exclusive test drive opportunity" className="w-full h-auto object-cover rounded-lg" />
-                    </div>
-                    <div className="flex-shrink-0 w-80">
-                      <img src="/lovable-uploads/e1ac336b-1b89-4aa2-af9a-887692e14777.png" alt="EA Sports backstage tour opportunity" className="w-full h-auto object-cover rounded-lg" />
-                    </div>
-                  </div>
-                </div>
 
                 <div className="text-center">
                   <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
@@ -287,14 +287,14 @@ const AboutUs = () => {
 
                   {/* First Photo Gallery Section */}
                   <div className="mb-16 w-full animate-fade-in">
-                    <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                      <div className="flex-shrink-0 w-80">
+                    <div className="flex gap-4 overflow-x-auto lg:overflow-x-visible lg:justify-center pb-4 scrollbar-hide">
+                      <div className="flex-shrink-0 w-80 lg:w-64">
                         <img src="/lovable-uploads/6a079f7b-6ef5-48c6-9676-8b29e29174e5.png" alt="Paloma Wool loyalty program offer" className="w-full h-auto object-cover rounded-lg" />
                       </div>
-                      <div className="flex-shrink-0 w-80">
+                      <div className="flex-shrink-0 w-80 lg:w-64">
                         <img src="/lovable-uploads/6704e094-96be-448d-b165-0afc942301e6.png" alt="Lovable credits reward program" className="w-full h-auto object-cover rounded-lg" />
                       </div>
-                      <div className="flex-shrink-0 w-80">
+                      <div className="flex-shrink-0 w-80 lg:w-64">
                         <img src="/lovable-uploads/108f417b-49f6-499c-b01c-fac38726f490.png" alt="Repsol discount program" className="w-full h-auto object-cover rounded-lg" />
                       </div>
                     </div>
@@ -309,14 +309,14 @@ const AboutUs = () => {
 
                     {/* Second Photo Gallery Section */}
                     <div className="mb-16 w-full animate-fade-in">
-                      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                        <div className="flex-shrink-0 w-80">
+                      <div className="flex gap-4 overflow-x-auto lg:overflow-x-visible lg:justify-center pb-4 scrollbar-hide">
+                        <div className="flex-shrink-0 w-80 lg:w-64">
                           <img src="/lovable-uploads/85ef97b4-c2ee-4212-a5fc-f0fd48620de6.png" alt="Brand collaboration inbox messages" className="w-full h-auto object-cover rounded-lg" />
                         </div>
-                        <div className="flex-shrink-0 w-80">
+                        <div className="flex-shrink-0 w-80 lg:w-64">
                           <img src="/lovable-uploads/5b5850f3-738c-4e4c-b4dd-92ad940e4c38.png" alt="Tesla Model Y exclusive test drive opportunity" className="w-full h-auto object-cover rounded-lg" />
                         </div>
-                        <div className="flex-shrink-0 w-80">
+                        <div className="flex-shrink-0 w-80 lg:w-64">
                           <img src="/lovable-uploads/e1ac336b-1b89-4aa2-af9a-887692e14777.png" alt="EA Sports backstage tour opportunity" className="w-full h-auto object-cover rounded-lg" />
                         </div>
                       </div>
