@@ -246,9 +246,49 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                {/* Image Section */}
-                <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                  <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
+                {/* Image Gallery Section */}
+                <div className="mb-16 w-full animate-fade-in">
+                  <div className="relative lg:flex lg:gap-4 lg:justify-center">
+                    {/* Mobile Gallery with Overlap */}
+                    <div className="lg:hidden relative">
+                      <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                        <div className="flex-shrink-0 w-72 snap-center">
+                          <img src="/lovable-uploads/3e973eee-3b02-42ec-b6ba-4e5b620a9a38.png" alt="Inmail conversation interface for referral opportunities" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-72 -ml-16 snap-center">
+                          <img src="/lovable-uploads/6e41af99-4285-4e14-ab68-b9bbfb7a1cc5.png" alt="Lovable referral program 200 credits bonus" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-72 -ml-16 snap-center">
+                          <img src="/lovable-uploads/0246df91-a737-4fd0-894c-0322b24a009a.png" alt="Tesla refer and earn 3500 credits program" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                      </div>
+                      
+                      {/* Scroll Indicators */}
+                      <div className="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+                        <div className="bg-background/80 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                          <ChevronLeft className="w-4 h-4 text-muted-foreground" />
+                        </div>
+                      </div>
+                      <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
+                        <div className="bg-background/80 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                          <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop Gallery */}
+                    <div className="hidden lg:flex gap-4">
+                      <div className="w-80">
+                        <img src="/lovable-uploads/3e973eee-3b02-42ec-b6ba-4e5b620a9a38.png" alt="Inmail conversation interface for referral opportunities" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="w-80">
+                        <img src="/lovable-uploads/6e41af99-4285-4e14-ab68-b9bbfb7a1cc5.png" alt="Lovable referral program 200 credits bonus" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="w-80">
+                        <img src="/lovable-uploads/0246df91-a737-4fd0-894c-0322b24a009a.png" alt="Tesla refer and earn 3500 credits program" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Second Text Section */}
@@ -368,9 +408,19 @@ const AboutUs = () => {
                     </div>
                   </div>
 
-                  {/* Image Section */}
-                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                    <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
+                  {/* Image Gallery Section */}
+                  <div className="mb-16 w-full animate-fade-in">
+                    <div className="flex gap-4 justify-center">
+                      <div className="w-80">
+                        <img src="/lovable-uploads/3e973eee-3b02-42ec-b6ba-4e5b620a9a38.png" alt="Inmail conversation interface for referral opportunities" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="w-80">
+                        <img src="/lovable-uploads/6e41af99-4285-4e14-ab68-b9bbfb7a1cc5.png" alt="Lovable referral program 200 credits bonus" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="w-80">
+                        <img src="/lovable-uploads/0246df91-a737-4fd0-894c-0322b24a009a.png" alt="Tesla refer and earn 3500 credits program" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                    </div>
                   </div>
 
                   {/* Second Text Section */}
