@@ -118,11 +118,11 @@ const WaitlistSection = () => {
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold text-center text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-left text-foreground mb-4">
               For Members
             </h3>
             
-            <p className="text-muted-foreground text-center mb-6">
+            <p className="text-muted-foreground text-left mb-6">
               Start earning extra income through referrals and loyalty programs
             </p>
             
@@ -147,15 +147,15 @@ const WaitlistSection = () => {
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold text-center text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-left text-foreground mb-4">
               For Companies
             </h3>
             
-            <p className="text-muted-foreground text-center mb-6">
-              Connect with qualified consumers from vetted Members
+            <p className="text-muted-foreground text-left mb-6">
+              Connect with thousands of superpower users to boost your marketing returns
             </p>
             
-            <div className="text-center mb-6">
+            <div className="text-left mb-6">
               <div className="text-3xl font-bold text-foreground">{counts.company_count.toLocaleString()}</div>
               <div className="text-sm text-muted-foreground">companies joined</div>
             </div>
