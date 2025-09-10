@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import CountdownTimer from './CountdownTimer';
-import { Users, Building2 } from 'lucide-react';
+import { Users, Building2, ArrowRight } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const WaitlistSection = () => {
@@ -133,8 +133,9 @@ const WaitlistSection = () => {
             
             <form onSubmit={handleMemberSubmit} className="space-y-4">
               <Input type="email" placeholder="Enter your email" value={memberEmail} onChange={e => setMemberEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="w-full font-semibold text-black" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
+              <Button type="submit" className="w-full font-semibold text-black inline-flex items-center justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
                 {isLoading.member ? 'Joining...' : 'Get Early Access'}
+                <ArrowRight className="h-4 w-4 text-black" />
               </Button>
             </form>
           </div>
@@ -162,8 +163,9 @@ const WaitlistSection = () => {
             
             <form onSubmit={handleCompanySubmit} className="space-y-4">
               <Input type="email" placeholder="Company email" value={companyEmail} onChange={e => setCompanyEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="w-full font-semibold text-black" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.company}>
+              <Button type="submit" className="w-full font-semibold text-black inline-flex items-center justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.company}>
                 {isLoading.company ? 'Joining...' : 'Get Early Access'}
+                <ArrowRight className="h-4 w-4 text-black" />
               </Button>
             </form>
           </div>

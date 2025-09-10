@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -215,13 +215,14 @@ const Navigation = () => {
             </div>
             <Button
               onClick={() => scrollToSection('waitlist')}
-              className={`px-6 py-2 transition-colors duration-300 ${
+              className={`px-6 py-2 transition-colors duration-300 inline-flex items-center gap-2 ${
                 shouldShowScrolledState 
                   ? 'bg-[#f9fd8f] text-black hover:bg-[#f9fd8f]/90' 
                   : 'intro-button-primary'
               }`}
             >
               Join Waitlist
+              <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
