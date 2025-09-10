@@ -106,7 +106,7 @@ const EarnSection = () => {
             {earnCards.map((card, index) => (
               <div
                 key={index}
-                className={`intro-card overflow-hidden transition-all duration-700 flex-shrink-0 w-64 snap-center md:w-auto md:flex-shrink md:snap-align-none ${
+                className={`intro-card-gray overflow-hidden transition-all duration-700 flex-shrink-0 w-64 snap-center md:w-auto md:flex-shrink md:snap-align-none ${
                   visibleCards[index] 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
@@ -124,10 +124,10 @@ const EarnSection = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl font-bold text-black mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -138,11 +138,11 @@ const EarnSection = () => {
 
         {(activeCategory === 'promote' || activeCategory === 'save') && (
           <div className="flex justify-center">
-            <div className="intro-card p-12 max-w-md mx-auto text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+            <div className="intro-card-gray p-12 max-w-md mx-auto text-center">
+              <h3 className="text-2xl font-bold text-black mb-4">
                 Coming soon to intro
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-black">
                 This feature is currently in development and will be available soon.
               </p>
             </div>
@@ -150,29 +150,29 @@ const EarnSection = () => {
         )}
 
         <div className="mt-16 text-center">
-          <div className="intro-card p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="intro-card-gray p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-black mb-4">
               Other daily opportunities
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-black mb-6">
               From tech startups to established businesses, discover new ways to earn every day through our growing marketplace of referral opportunities.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
-                <div className="text-lg font-bold text-foreground">Tech Jobs</div>
-                <div className="text-sm text-muted-foreground">$300-1500</div>
+                <div className="text-lg font-bold text-black">Tech Jobs</div>
+                <div className="text-sm text-black">$300-1500</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-foreground">SaaS Products</div>
-                <div className="text-sm text-muted-foreground">$50-300</div>
+                <div className="text-lg font-bold text-black">SaaS Products</div>
+                <div className="text-sm text-black">$50-300</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-foreground">Services</div>
-                <div className="text-sm text-muted-foreground">$100-500</div>
+                <div className="text-lg font-bold text-black">Services</div>
+                <div className="text-sm text-black">$100-500</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-foreground">User Testing</div>
-                <div className="text-sm text-muted-foreground">$20-200</div>
+                <div className="text-lg font-bold text-black">User Testing</div>
+                <div className="text-sm text-black">$20-200</div>
               </div>
             </div>
           </div>
