@@ -36,7 +36,7 @@ const Index = () => {
                     <div key={set} className="flex gap-4">
                       <div className="flex-shrink-0 w-72 transition-transform duration-300 hover:scale-105">
                         <img 
-                          src="/lovable-uploads/e2ecb914-0916-47bf-813a-f0cb03873e41.png" 
+                          src="/lovable-uploads/2af6d822-1285-4fab-b10e-878e04eaf5af.png" 
                           alt="EA FC London Studios tour opportunity"
                           className="w-full h-auto rounded-lg shadow-md"
                           loading="lazy"
