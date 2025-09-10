@@ -442,10 +442,10 @@ const AboutUs = () => {
                         <div className="lg:hidden relative">
                           <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                             <div className="flex-shrink-0 w-72 snap-center">
-                              <img src="/lovable-uploads/c33dff09-ab95-483d-9872-c03c6a2dd2d7.png" alt="Job opportunities overview with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
+                              <img src="/lovable-uploads/e00e160d-a9fa-45fd-b85f-bdcefa2a4399.png" alt="Overview of job opportunities with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
                             </div>
                             <div className="flex-shrink-0 w-72 -ml-16 snap-center">
-                              <img src="/lovable-uploads/c9c06929-0e89-464e-b835-f45c70e0399b.png" alt="Job opening details with top matches and referral options" className="w-full h-auto object-cover rounded-lg" />
+                              <img src="/lovable-uploads/45fe6c62-390b-42ac-a7f1-c7a7f9a7aa60.png" alt="Job openings with top matches and referral opportunities" className="w-full h-auto object-cover rounded-lg" />
                             </div>
                             <div className="flex-shrink-0 w-72 -ml-16 snap-center">
                               <img src="/lovable-uploads/c3d1d28c-72d4-4441-9b1e-7ac2dcddeaf4.png" alt="John M profile - Software Engineer for referral matching" className="w-full h-auto object-cover rounded-lg" />
@@ -468,10 +468,10 @@ const AboutUs = () => {
                         {/* Desktop Gallery */}
                         <div className="hidden lg:flex gap-4">
                           <div className="w-80">
-                            <img src="/lovable-uploads/c33dff09-ab95-483d-9872-c03c6a2dd2d7.png" alt="Job opportunities overview with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
+                            <img src="/lovable-uploads/e00e160d-a9fa-45fd-b85f-bdcefa2a4399.png" alt="Overview of job opportunities with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
                           </div>
                           <div className="w-80">
-                            <img src="/lovable-uploads/c9c06929-0e89-464e-b835-f45c70e0399b.png" alt="Job opening details with top matches and referral options" className="w-full h-auto object-cover rounded-lg" />
+                            <img src="/lovable-uploads/45fe6c62-390b-42ac-a7f1-c7a7f9a7aa60.png" alt="Job openings with top matches and referral opportunities" className="w-full h-auto object-cover rounded-lg" />
                           </div>
                           <div className="w-80">
                             <img src="/lovable-uploads/c3d1d28c-72d4-4441-9b1e-7ac2dcddeaf4.png" alt="John M profile - Software Engineer for referral matching" className="w-full h-auto object-cover rounded-lg" />
