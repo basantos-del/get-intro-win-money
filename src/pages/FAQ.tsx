@@ -46,7 +46,7 @@ const FAQ = () => {
           "name": "What is intro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Intro is a referral marketplace that connects opportunities with people who know people. Companies that are on intro post opportunities. Members who have signed up can see them and refer a friend from their network."
+            "text": "Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people. Companies that are on intro post opportunities. Opportunities can take the form of discounts, promo codes, collabs or referral rewards. Members who have signed up can see them and redeem, apply or get them."
           }
         },
         {
@@ -54,7 +54,7 @@ const FAQ = () => {
           "name": "Is intro free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "intro is completely free for its Members."
+            "text": "intro is completely free for its Members. We charge businesses a fee so we can continue free forever for our Members."
           }
         },
         {
@@ -209,33 +209,33 @@ const FAQ = () => {
   const faqs = {
     'about-intro': [{
       question: 'What is intro?',
-      answer: 'Intro is a referral marketplace that connects opportunities with people who know people. Companies that are on intro post opportunities. Members who have signed up can see them and refer a friend from their network.'
+      answer: 'Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people. Companies that are on intro post opportunities. These can be referral rewards, discounts, exclusive collaborations or promotions. Members who have signed up can see engage with them and earn money.'
     }, {
       question: 'In which cities operates?',
-      answer: 'intro is actively searching for its first few locations. Submit your location here.'
+      answer: 'intro is launching in Portugal and Spain. Submit your location here.'
     }, {
       question: 'Is intro free?',
       answer: 'intro is completely free for its Members.'
     }, {
       question: 'How does intro make money?',
-      answer: 'intro charges a referral fee to businesses for each match to keep its operation free for Members.'
+      answer: 'intro charges a small fee to businesses to keep its operation free for Members.'
     }],
     opportunities: [{
       question: 'What is an opportunity?',
-      answer: 'An opportunity is a business\' need, something a business is interested in closing. You can see it as a lead. Opportunities can be open jobs, new customers, product reviews, or anything else you can think of that a company builds referral programs for.'
+      answer: 'An opportunity is a business\' need, something a business is interested in closing or marketing. You can see it as a lead. Opportunities can be referral rewards, discounts, exclusive collaborations or promotions.'
     }, {
       question: 'What kind of opportunities can I discover in intro?',
       answer: 'intro is actively discovering which are the most relevant opportunity types for its members. Submit the kind of opportunities you would like to see on intro here.'
     }, {
       question: 'How will I discover opportunities to earn?',
-      answer: 'Businesses post opportunities on intro on a daily basis. By leveraging your profile, your network and businesses\' opportunities, we can notify you whenever we believe a powerful match is in your sight. All information is kept private and secure.'
+      answer: 'Businesses post opportunities on intro on a daily basis. By leveraging your profile, your network and businesses\' opportunities, we will notify you whenever we an opportunity in your sight. All information is kept private and secure.'
     }, {
       question: 'How easy is to apply to opportunities?',
-      answer: 'Once you tap into an opportunity, you can check its requirements. Then, you can submit your referral with a single push of a button. Different opportunities may require additional follow-ups.'
+      answer: 'Once you tap into an opportunity, you can check its requirements. You can claim the opportunity with a single push of a button. Different opportunities may require additional follow-ups.'
     }],
     'your-network': [{
       question: 'What is my network?',
-      answer: 'Your network is the people you know well and are on intro too. Just like LinkedIn, but way more data and future-oriented. If you increase it, your chances of matches will be higher.'
+      answer: 'Your network is the people you know well and you have logged to intro. They are not intro users and will not be asked to accept any invite. Like numbers in your address list, they don't know who have them on your intro network. If you increase it, your chances of matches will be higher.'
     }, {
       question: 'What do you know about my network?',
       answer: 'We take privacy really seriously. While intro leverages your and your network profiles\' data upon your agreement, that same data is not shared with the businesses intro operates, nor is publicly available.'
