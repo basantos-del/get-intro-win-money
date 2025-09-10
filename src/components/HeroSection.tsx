@@ -112,20 +112,20 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ zIndex: 20 }}>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left" style={{ zIndex: 20 }}>
         <div className="fade-in-up">
           <h1 className="text-4xl md:text-6xl text-white mb-6 md:mb-16 leading-relaxed">
             You know brands and people.<br />
             <span className="text-white font-bold">We know opportunities</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl mx-auto leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
+          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
           backgroundColor: '#f9fd8f'
         }}>
             Build extra income. <br className="md:hidden" />Earn and save more with <span className="font-bold">intro</span>
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 items-start">
             <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
               Join the Waitlist
               <ArrowRight className="h-5 w-5 text-white" />
