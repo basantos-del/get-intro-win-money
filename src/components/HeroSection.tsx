@@ -125,15 +125,21 @@ const HeroSection = () => {
             Build extra income. <br className="md:hidden" />Earn and save more with <span className="font-bold">intro</span>
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 items-start">
+          <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
               Join the Waitlist
               <ArrowRight className="h-5 w-5 text-white" />
             </Button>
             
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-white">2,588 people already joined</span>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-white">2,588 people already joined</span>
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-white">+200 companies posting opportunities</span>
+              </div>
             </div>
           </div>
         </div>
