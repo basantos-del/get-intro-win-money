@@ -345,3 +345,9 @@ All colors MUST be HSL for consistency.
     transform: translateX(-50%);
   }
 }
+
+@layer utilities {
+  .pause-animation:hover {
+    animation-play-state: paused !important;
+  }
+}

@@ -25,9 +25,9 @@ const Index = () => {
             <div className="relative mb-8">
               <div className="overflow-hidden rounded-card">
                 <div 
-                  className="flex gap-4 animate-scroll-left"
+                  className="flex gap-4 animate-scroll-left hover:pause-animation"
                   style={{
-                    animation: 'scroll-left 30s linear infinite',
+                    animation: 'scroll-left 60s linear infinite',
                     width: 'calc(300px * 20)', // Adjust based on number of images
                   }}
                 >
