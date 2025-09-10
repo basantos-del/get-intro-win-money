@@ -123,7 +123,7 @@ const FinalCTASection = () => {
         }}>
             Let's get social again
           </h2>
-          <p className="text-xl text-white max-w-5xl mx-auto">Follow your favourite brands and businesses and start earning tomorrow</p>
+          <p className="text-xl text-white max-w-5xl mx-auto">Follow your favourite brands and businesses and start earning today</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
