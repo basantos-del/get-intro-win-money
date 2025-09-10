@@ -154,10 +154,56 @@ const AboutUs = () => {
               </div>
             </> : <>
               {/* Loyalty Marketplace Content */}
-              <div className="text-center py-16 animate-fade-in">
-                <div className="max-w-2xl mx-auto">
+              <div className="animate-fade-in">
+                <div className="space-y-6 mb-16">
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    Our loyalty marketplace is currently under development. Stay tuned for exciting opportunities to earn through brand loyalty programs and promotional collaborations.
+                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                  </p>
+                  
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    Brands you love and are regular on intro. They post their loyalty programs here to engage with you: that "if you spend 50€ you earn 15€ on your next discount" kind of thing. If you're a consumer, you will be able to tap into these programs.
+                  </p>
+                </div>
+
+                {/* First Photo Gallery Section */}
+                <div className="mb-16 w-full animate-fade-in">
+                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/6a079f7b-6ef5-48c6-9676-8b29e29174e5.png" alt="Paloma Wool loyalty program offer" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/6704e094-96be-448d-b165-0afc942301e6.png" alt="Lovable credits reward program" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/108f417b-49f6-499c-b01c-fac38726f490.png" alt="Repsol discount program" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6 mb-16">
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    But there's more than savings opportunities. If you're a real brand ambassador, brands can engage with you for big-time rewards. Shooting a commercial, early access to new collections, special events, backstage access and other exclusive collabs.
+                  </p>
+                </div>
+
+                {/* Second Photo Gallery Section */}
+                <div className="mb-16 w-full animate-fade-in">
+                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/85ef97b4-c2ee-4212-a5fc-f0fd48620de6.png" alt="Brand collaboration inbox messages" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/5b5850f3-738c-4e4c-b4dd-92ad940e4c38.png" alt="Tesla Model Y exclusive test drive opportunity" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                    <div className="flex-shrink-0 w-80">
+                      <img src="/lovable-uploads/e1ac336b-1b89-4aa2-af9a-887692e14777.png" alt="EA Sports backstage tour opportunity" className="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
+                    Exciting isn't it?
                   </p>
                 </div>
               </div>
@@ -228,16 +274,59 @@ const AboutUs = () => {
                 </div>
               </> : <>
                 {/* Loyalty Marketplace Content */}
-                <div className="text-center py-16">
-                  <div className="max-w-2xl mx-auto">
-                    <div className="mb-8">
-                      <Badge variant="destructive" className="text-lg px-4 py-2 mb-4">
-                        In Development
-                      </Badge>
-                    </div>
+                <div ref={elementRef} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <div className="space-y-6 mb-16">
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Our loyalty marketplace is currently under development. Stay tuned for exciting opportunities to earn through brand loyalty programs and promotional collaborations.
+                      Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
                     </p>
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Brands you love and are regular on intro. They post their loyalty programs here to engage with you: that "if you spend 50€ you earn 15€ on your next discount" kind of thing. If you're a consumer, you will be able to tap into these programs.
+                    </p>
+                  </div>
+
+                  {/* First Photo Gallery Section */}
+                  <div className="mb-16 w-full animate-fade-in">
+                    <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                      <div className="flex-shrink-0 w-80">
+                        <img src="/lovable-uploads/6a079f7b-6ef5-48c6-9676-8b29e29174e5.png" alt="Paloma Wool loyalty program offer" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="flex-shrink-0 w-80">
+                        <img src="/lovable-uploads/6704e094-96be-448d-b165-0afc942301e6.png" alt="Lovable credits reward program" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                      <div className="flex-shrink-0 w-80">
+                        <img src="/lovable-uploads/108f417b-49f6-499c-b01c-fac38726f490.png" alt="Repsol discount program" className="w-full h-auto object-cover rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ref={secondElementRef} className={`transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                    <div className="space-y-6 mb-16">
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        But there's more than savings opportunities. If you're a real brand ambassador, brands can engage with you for big-time rewards. Shooting a commercial, early access to new collections, special events, backstage access and other exclusive collabs.
+                      </p>
+                    </div>
+
+                    {/* Second Photo Gallery Section */}
+                    <div className="mb-16 w-full animate-fade-in">
+                      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                        <div className="flex-shrink-0 w-80">
+                          <img src="/lovable-uploads/85ef97b4-c2ee-4212-a5fc-f0fd48620de6.png" alt="Brand collaboration inbox messages" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-80">
+                          <img src="/lovable-uploads/5b5850f3-738c-4e4c-b4dd-92ad940e4c38.png" alt="Tesla Model Y exclusive test drive opportunity" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-shrink-0 w-80">
+                          <img src="/lovable-uploads/e1ac336b-1b89-4aa2-af9a-887692e14777.png" alt="EA Sports backstage tour opportunity" className="w-full h-auto object-cover rounded-lg" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center">
+                      <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
+                        Exciting isn't it?
+                      </p>
+                    </div>
                   </div>
                 </div>
               </>}
