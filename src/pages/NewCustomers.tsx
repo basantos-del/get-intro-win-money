@@ -107,7 +107,7 @@ const NewCustomers = () => {
               "They're this new brand, and fit really nice", says Maria S.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Mark is looking for a new par of shoes. But your brand does not know that yet.
+              Mark is looking for a new par of shoes. But your brand <strong>can't know that yet.</strong>
             </p>
           </div>
         </div>
@@ -139,10 +139,10 @@ const NewCustomers = () => {
         >
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              What you know is that the chances of Mark really buying the shoes today are low. He has stuff to do. And you also know that even though he saw Maria's, what he needs are new shoes. And there are a lot of other shoemakers out there.
+              What you know is that the chances of Mark really buying the shoes today are low. He has stuff to do. And you also know that even though he saw Maria's, what he needs are new shoes. And <strong>there are a lot of other shoemakers</strong> out there.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              That's where Maria can step in for your brand. Maria is an intro Member. She knows people. A lot of people.
+              That's where Maria can step in for your brand. Maria is <strong>an intro Member</strong> and a big fan of yours. And she knows people. A lot of people.
             </p>
           </div>
         </div>
@@ -161,7 +161,7 @@ const NewCustomers = () => {
         <div className="max-w-2xl mx-auto text-left pt-16 pb-8">
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              When she arrives home that day, she'll be reminded of some refer-a-friend opportunities. One of them is her favorite shoe brand, your brand. Since the opportunity expires soon, Maria sends her referral link to Mark.
+              When she arrives home that day, she'll be reminded of some refer-a-friend opportunities. One of them is her favorite shoe brand, <strong>your brand</strong>. Since the opportunity expires soon, Maria sends her referral link to Mark.
             </p>
             <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
               Bang, Mark is your new customer. Treat him well.
