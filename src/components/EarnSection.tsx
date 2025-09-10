@@ -35,19 +35,19 @@ const EarnSection = () => {
       image: '/lovable-uploads/0b2da4f4-6a3a-49da-b829-08f0a205e2a0.png',
       title: 'Refer a friend for a job',
       description: 'Connect talented friends with cool opportunities',
-      earning: 'Earn up to $1,000',
+      earning: 'Earn up to €1,000',
     },
     {
       image: '/lovable-uploads/048b51f4-b332-4dfc-9157-eae58bafcc49.png',
       title: 'Refer a friend for a product',
       description: 'Share products you love with your network',
-      earning: 'Earn up to $200',
+      earning: 'Earn up to €200',
     },
     {
       image: '/lovable-uploads/019abdf9-55a1-4ec0-92c6-279b733cedf0.png',
       title: 'Refer home movers',
       description: 'Connect homeowners with trusted real estate professionals',
-      earning: 'Earn up to $250',
+      earning: 'Earn up to €250',
     },
   ];
 
@@ -56,10 +56,10 @@ const EarnSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 animate-on-scroll animate-fade-right ${titleVisible ? 'visible' : ''}`} ref={titleRef}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Earn for every completed opportunity
+            Connect with brands you love
           </h2>
           <p className="text-xl text-muted-foreground max-w-5xl mx-auto mb-8">
-            Earn extra income through referral programs and save money through dozens of loyalty programs 
+            Regular brands like regular people like you  
           </p>
           
           {/* Badge Filters */}
