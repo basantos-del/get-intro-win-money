@@ -123,10 +123,10 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-muted-foreground text-center mb-6">
-              Start earning extra income, join intro
+              Start earning extra income through referrals and loyalty programs
             </p>
             
-            <div className="text-center mb-6">
+            <div className="text-left mb-6">
               <div className="text-3xl font-bold text-foreground">{counts.member_count.toLocaleString()}</div>
               <div className="text-sm text-muted-foreground">members joined</div>
             </div>
