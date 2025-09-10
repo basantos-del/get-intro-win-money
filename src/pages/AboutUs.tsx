@@ -342,7 +342,7 @@ const AboutUs = () => {
                     </p>
                     
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Brands you love and are regular on intro. They post their loyalty programs here to engage with you: that "if you spend 50€ you earn 15€ on your next discount" kind of thing. If you're a consumer, you will be able to tap into these programs.
+                      Brands you love and are <strong>regular on intro.</strong> They post their loyalty programs here to engage with you: that "if you <strong>spend 50€ you earn 15€</strong> on your next purchase" kind of thing. If you're a consumer, you will be able to tap into these programs.
                     </p>
                   </div>
 
@@ -364,7 +364,7 @@ const AboutUs = () => {
                   <div ref={secondElementRef} className={`transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="space-y-6 mb-16">
                       <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        But there's more than savings opportunities. If you're a real brand ambassador, brands can engage with you for big-time rewards. Shooting a commercial, early access to new collections, special events, backstage access and other exclusive collabs.
+                        But there's <strong>more than savings</strong> opportunities. If you're a real brand ambassador, brands can engage with you for <strong>big-time unique experiences.</strong> Shooting a commercial, early access to new collections, special events, backstage access and other exclusive collabs.
                       </p>
                     </div>
 
