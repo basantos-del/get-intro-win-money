@@ -323,7 +323,7 @@ const AboutUs = () => {
                     </div>
 
                     <div className="text-center">
-                      <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
+                      <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold text-left">
                         Exciting isn't it?
                       </p>
                     </div>
