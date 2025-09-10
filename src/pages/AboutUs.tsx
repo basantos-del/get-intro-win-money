@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
 const AboutUs = () => {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = React.useState('referral');
+  const [selectedCategory, setSelectedCategory] = React.useState('loyalty');
 
   // SEO meta tags for About Us page
   React.useEffect(() => {
@@ -92,68 +92,27 @@ const AboutUs = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            {selectedCategory === 'referral' ? 'the referral marketplace' : 'the loyalty marketplace'}
+            {selectedCategory === 'loyalty' ? 'the loyalty marketplace' : 'the referral marketplace'}
           </h1>
         </div>
 
         {/* Mobile Tabs */}
         <div className="block lg:hidden mb-8">
           <div className="flex bg-muted rounded-lg p-1">
-            <button onClick={() => setSelectedCategory('referral')} className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${selectedCategory === 'referral' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
-              Referral marketplace
-            </button>
-            
             <button onClick={() => setSelectedCategory('loyalty')} className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${selectedCategory === 'loyalty' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
               Loyalty marketplace
+            </button>
+            
+            <button onClick={() => setSelectedCategory('referral')} className={`flex-1 px-4 py-3 rounded-md transition-colors text-center ${selectedCategory === 'referral' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
+              Referral marketplace
             </button>
           </div>
         </div>
 
         {/* Mobile/Tablet Content */}
         <div className="block lg:hidden mb-16">
-          {selectedCategory === 'referral' ? <>
+          {selectedCategory === 'loyalty' ? <>
               {/* Referral Marketplace Content */}
-              <div className="animate-fade-in">
-                <div className="space-y-6 mb-16">
-                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
-                    </p>
-                    
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Image Section */}
-                <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                  <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
-                </div>
-
-                {/* Second Text Section */}
-                <div className="animate-fade-in">
-                  <div className="space-y-6 mb-16">
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
-                    </p>
-                    
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
-                    </p>
-                  </div>
-
-                  {/* New Image Section */}
-                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                    <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
-                  </div>
-                </div>
-              </div>
-            </> : <>
               {/* Loyalty Marketplace Content */}
               <div className="animate-fade-in">
                 <div className="space-y-6 mb-16">
@@ -268,6 +227,48 @@ const AboutUs = () => {
                   </p>
                 </div>
               </div>
+            </> : <>
+              {/* Referral Marketplace Content */}
+              <div className="animate-fade-in">
+                <div className="space-y-6 mb-16">
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                    </p>
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                  <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
+                </div>
+
+                {/* Second Text Section */}
+                <div className="animate-fade-in">
+                  <div className="space-y-6 mb-16">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
+                    </p>
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
+                    </p>
+                  </div>
+
+                  {/* New Image Section */}
+                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                    <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
+                  </div>
+                </div>
+              </div>
             </>}
         </div>
 
@@ -278,12 +279,12 @@ const AboutUs = () => {
             <div className="bg-card rounded-lg p-4 border sticky top-24">
               <h3 className="font-semibold text-foreground mb-4">Explore the</h3>
               <div className="space-y-3">
-                <button onClick={() => setSelectedCategory('referral')} className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === 'referral' ? 'bg-foreground text-background' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>
-                  Referral marketplace
-                </button>
-                
                 <button onClick={() => setSelectedCategory('loyalty')} className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === 'loyalty' ? 'bg-foreground text-background' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>
                   Loyalty marketplace
+                </button>
+                
+                <button onClick={() => setSelectedCategory('referral')} className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === 'referral' ? 'bg-foreground text-background' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>
+                  Referral marketplace
                 </button>
               </div>
             </div>
@@ -291,49 +292,7 @@ const AboutUs = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            {selectedCategory === 'referral' ? <>
-                {/* Referral Marketplace Content */}
-                <div ref={elementRef} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <div className="space-y-6 mb-16">
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
-                      </p>
-                      
-                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Image Section */}
-                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                    <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
-                  </div>
-
-                  {/* Second Text Section */}
-                  <div ref={secondElementRef} className={`transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                    <div className="space-y-6 mb-16">
-                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
-                      </p>
-                      
-                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
-                      </p>
-                    </div>
-
-                    {/* New Image Section */}
-                    <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                      <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
-                    </div>
-                  </div>
-                </div>
-              </> : <>
+            {selectedCategory === 'loyalty' ? <>
                 {/* Loyalty Marketplace Content */}
                 <div ref={elementRef} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                   <div className="space-y-6 mb-16">
@@ -387,6 +346,48 @@ const AboutUs = () => {
                       <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold text-left">
                         Exciting isn't it?
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </> : <>
+                {/* Referral Marketplace Content */}
+                <div ref={elementRef} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                  <div className="space-y-6 mb-16">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                      Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                      </p>
+                      
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        Intro was born to provide everyone with a chance to <strong>earn extra money</strong>. No AI-talk nonsense, just real earning opportunities.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Image Section */}
+                  <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                    <img src="/lovable-uploads/d1ed0041-d93a-45b9-b66b-5cce96f195f3.png" alt="A referral marketplace for people who know people" className="w-full h-auto object-cover scale-95" />
+                  </div>
+
+                  {/* Second Text Section */}
+                  <div ref={secondElementRef} className={`transition-all duration-1000 ${secondIsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                    <div className="space-y-6 mb-16">
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        You've done dozen of intros before. You've always been that kind of <strong>matchmaker friend</strong>. Seeing through the connections. Building bridges and opening doors. Intro has been built so that personality of yours starts to <strong>pay off</strong>.
+                      </p>
+                      
+                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                        But we're not any kind of marketplace. <strong>We're not just easy money</strong>. A referral is not of any worth if it does not make a match. And loyalty programs or promotional collaborations only happen if you're a loyal brand fan. Once that happens, you're paid.
+                      </p>
+                    </div>
+
+                    {/* New Image Section */}
+                    <div className="mb-16 w-full animate-fade-in overflow-hidden">
+                      <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
                     </div>
                   </div>
                 </div>
