@@ -111,58 +111,58 @@ const WaitlistSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Members Waitlist */}
-          <div id="members-waitlist" className="intro-card-accent p-8 stagger-animation">
+          <div id="members-waitlist" className="intro-card-gray p-8 stagger-animation">
             <div className="flex items-center justify-center mb-6">
               <div className="p-3 bg-accent rounded-full">
                 <Users className="w-8 h-8 text-accent-foreground" />
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold text-left text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-left text-black mb-4">
               For Members
             </h3>
             
-            <p className="text-muted-foreground text-left mb-6">
+            <p className="text-black text-left mb-6">
               Start earning extra income through referrals and loyalty programs
             </p>
             
             <div className="text-left mb-6">
-              <div className="text-3xl font-bold text-foreground">{counts.member_count.toLocaleString()}</div>
-              <div className="text-sm text-muted-foreground">members joined</div>
+              <div className="text-3xl font-bold text-black">{counts.member_count.toLocaleString()}</div>
+              <div className="text-sm text-black">members joined</div>
             </div>
             
             <form onSubmit={handleMemberSubmit} className="space-y-4">
               <Input type="email" placeholder="Enter your email" value={memberEmail} onChange={e => setMemberEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="intro-button-primary w-full" disabled={isLoading.member}>
+              <Button type="submit" className="w-full font-semibold text-black" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
                 {isLoading.member ? 'Joining...' : 'Get Early Access'}
               </Button>
             </form>
           </div>
 
           {/* Companies Waitlist */}
-          <div className="intro-card-accent p-8 stagger-animation">
+          <div className="intro-card-gray p-8 stagger-animation">
             <div className="flex items-center justify-center mb-6">
               <div className="p-3 bg-accent rounded-full">
                 <Building2 className="w-8 h-8 text-accent-foreground" />
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold text-left text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-left text-black mb-4">
               For Companies
             </h3>
             
-            <p className="text-muted-foreground text-left mb-6">
+            <p className="text-black text-left mb-6">
               Connect with thousands of superpower users to boost your marketing returns
             </p>
             
             <div className="text-left mb-6">
-              <div className="text-3xl font-bold text-foreground">{counts.company_count.toLocaleString()}</div>
-              <div className="text-sm text-muted-foreground">companies joined</div>
+              <div className="text-3xl font-bold text-black">{counts.company_count.toLocaleString()}</div>
+              <div className="text-sm text-black">companies joined</div>
             </div>
             
             <form onSubmit={handleCompanySubmit} className="space-y-4">
               <Input type="email" placeholder="Company email" value={companyEmail} onChange={e => setCompanyEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="intro-button-primary w-full" disabled={isLoading.company}>
+              <Button type="submit" className="w-full font-semibold text-black" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.company}>
                 {isLoading.company ? 'Joining...' : 'Get Early Access'}
               </Button>
             </form>

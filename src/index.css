@@ -170,6 +170,13 @@ All colors MUST be HSL for consistency.
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
   }
+
+  .intro-card-gray {
+    background-color: #D9D9D9;
+    @apply border border-card-border rounded-card;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
   
   .intro-card:hover {
     box-shadow: var(--shadow-card-hover);
