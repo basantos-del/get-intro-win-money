@@ -435,9 +435,49 @@ const AboutUs = () => {
                       </p>
                     </div>
 
-                    {/* New Image Section */}
-                    <div className="mb-16 w-full animate-fade-in overflow-hidden">
-                      <img src="/lovable-uploads/6127873d-beb8-4d00-9b7d-0f357d136165.png" alt="Your network is your net worth" className="w-full h-auto object-cover scale-95" />
+                    {/* New Image Gallery Section */}
+                    <div className="mb-16 w-full animate-fade-in">
+                      <div className="relative lg:flex lg:gap-4 lg:justify-center">
+                        {/* Mobile Gallery with Overlap */}
+                        <div className="lg:hidden relative">
+                          <div className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                            <div className="flex-shrink-0 w-72 snap-center">
+                              <img src="/lovable-uploads/c33dff09-ab95-483d-9872-c03c6a2dd2d7.png" alt="Job opportunities overview with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
+                            </div>
+                            <div className="flex-shrink-0 w-72 -ml-16 snap-center">
+                              <img src="/lovable-uploads/c9c06929-0e89-464e-b835-f45c70e0399b.png" alt="Job opening details with top matches and referral options" className="w-full h-auto object-cover rounded-lg" />
+                            </div>
+                            <div className="flex-shrink-0 w-72 -ml-16 snap-center">
+                              <img src="/lovable-uploads/c3d1d28c-72d4-4441-9b1e-7ac2dcddeaf4.png" alt="John M profile - Software Engineer for referral matching" className="w-full h-auto object-cover rounded-lg" />
+                            </div>
+                          </div>
+                          
+                          {/* Scroll Indicators */}
+                          <div className="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+                            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                              <ChevronLeft className="w-4 h-4 text-muted-foreground" />
+                            </div>
+                          </div>
+                          <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
+                            <div className="bg-background/80 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                              <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Desktop Gallery */}
+                        <div className="hidden lg:flex gap-4">
+                          <div className="w-80">
+                            <img src="/lovable-uploads/c33dff09-ab95-483d-9872-c03c6a2dd2d7.png" alt="Job opportunities overview with Sword Health and Microsoft positions" className="w-full h-auto object-cover rounded-lg" />
+                          </div>
+                          <div className="w-80">
+                            <img src="/lovable-uploads/c9c06929-0e89-464e-b835-f45c70e0399b.png" alt="Job opening details with top matches and referral options" className="w-full h-auto object-cover rounded-lg" />
+                          </div>
+                          <div className="w-80">
+                            <img src="/lovable-uploads/c3d1d28c-72d4-4441-9b1e-7ac2dcddeaf4.png" alt="John M profile - Software Engineer for referral matching" className="w-full h-auto object-cover rounded-lg" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
