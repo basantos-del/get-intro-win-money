@@ -154,7 +154,7 @@ const EarnSection = () => {
             {/* First Image - FC 26 Rewards */}
             <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
               <img
-                src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
+                src="/lovable-uploads/205c4241-dc2e-432a-86ab-35f8bbaa602c.png"
                 alt="FC 26 Rewards - EA Sports loyalty campaign"
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -163,7 +163,7 @@ const EarnSection = () => {
             {/* Second Image - You champion walking */}
             <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-30' : 'translate-x-0 z-20'}`}>
               <img
-                src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
+                src="/lovable-uploads/5581149f-8301-4243-b935-cee6e911f5e7.png"
                 alt="You champion walking - Pompeii Brand loyalty campaign"
                 className="w-full h-full object-cover rounded-lg"
               />
