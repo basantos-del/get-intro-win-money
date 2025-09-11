@@ -12,12 +12,12 @@ const AboutUs = () => {
 
   // SEO meta tags for About Us page
   React.useEffect(() => {
-    document.title = "About Us - Intro | The Referral Marketplace";
+    document.title = "About Us - Earn extra income by engaging with brands you love";
 
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about Intro, the referral marketplace connecting opportunities with people who know people. Discover how we help you earn money through successful referrals.');
+      metaDescription.setAttribute('content', 'Learn about Intro, the referral and loyalty marketplace engaging brands with their customers. Discover how we help Members earn extra income and rewards on intro.');
     }
 
     // Add canonical URL
@@ -33,13 +33,13 @@ const AboutUs = () => {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About Intro - The Referral Marketplace",
-      "description": "Learn about Intro, the referral marketplace connecting opportunities with people who know people.",
+      "name": "About Intro - The Referral and Loyalty Marketplace",
+      "description": "Learn about Intro, the referral and loyalty marketplace engaging brands with their customers. Discover how we help Members earn extra income and rewards on intro.",
       "url": "https://useintro.co/about-us",
       "mainEntity": {
         "@type": "Organization",
         "name": "Intro",
-        "description": "A referral marketplace that connects opportunities with people who know people."
+        "description": "The marketplace that earns you extra income."
       }
     };
     let script = document.querySelector('script[data-page="about"]') as HTMLScriptElement;
@@ -52,9 +52,9 @@ const AboutUs = () => {
     script.textContent = JSON.stringify(structuredData);
     return () => {
       // Cleanup
-      document.title = "Intro - Referral Marketplace | Earn Money Referring Friends for Jobs";
+      document.title = "Intro - Referral and Loyalty Marketplace| Earn extra income by engaging with brands you love";
       if (metaDescription) {
-        metaDescription.setAttribute('content', 'Join the #1 referral marketplace. Earn up to $5,000 referring friends for jobs, products, and opportunities. Turn your network into passive income with daily referral opportunities.');
+        metaDescription.setAttribute('content', 'Join the #1 referral and loyalty marketplace. Earn extra income by engaging with brands you love');
       }
     };
   }, []);
@@ -117,11 +117,11 @@ const AboutUs = () => {
               <div className="animate-fade-in">
                 <div className="space-y-6 mb-16">
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                    Intro is a referral and loyalty marketplace that engages you with the brands you love.
                   </p>
                   
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    Brands you love and are regular on intro. They post their loyalty programs here to engage with you: that "if you spend 50€ you earn 15€ on your next discount" kind of thing. If you're a consumer, you will be able to tap into these programs.
+                    Brands you use and are regular on intro. They post their loyalty programs here: that "if you spend 50€ you earn 15€ on your next discount" kind of thing. If you're a customer, you will be able to tap into these programs.
                   </p>
                 </div>
 
@@ -232,12 +232,12 @@ const AboutUs = () => {
               <div className="animate-fade-in">
                 <div className="space-y-6 mb-16">
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    Intro is a referral and loyalty marketplace that connects opportunities with people who know brands and people.
+                    Intro is a referral and loyalty marketplace that engages you with the brands you love.
                   </p>
                   
                   <div className="space-y-4">
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Companies post <strong> referral opportunities</strong>. Members can refer a friend by checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
+                      Companies post <strong> referral opportunities</strong>: that "refer my brand to a friend and you earn 100€ to use on your next purchase" kind of thing. Members can refer a friend after checking matchmaking conditions. If the referral is a success, we call it a <strong>match</strong>. Matches pay you good money.
                     </p>
                     
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
