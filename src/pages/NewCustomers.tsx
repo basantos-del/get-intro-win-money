@@ -152,7 +152,7 @@ const NewCustomers = () => {
           <img
             src="/lovable-uploads/27f6706f-71d7-483f-8e69-ca3b73a84d01.png"
             alt="Dashboard of a referral campaign in intro platform. The business can see power referrers, new customers daily and performance metrics for this campaign."
-            className="w-full h-auto object-cover scale-95 -mb-8"
+            className="w-full h-auto object-contain scale-95 md:scale-100 md:object-cover -mb-8"
             style={{ maxHeight: '600px' }}
           />
         </div>
