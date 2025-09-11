@@ -65,21 +65,55 @@ const EarnSection = () => {
     const handleWheel = (e: WheelEvent) => {
       if (!isCarouselActive || !carouselRef.current) return;
 
+      const scrollingDown = e.deltaY > 0;
+
+      // If at ends, release control and allow normal page scroll
+      if ((carouselProgress >= 1 && scrollingDown) || (carouselProgress <= 0 && !scrollingDown)) {
+        setIsCarouselActive(false);
+        document.body.style.overflow = 'auto';
+        return; // do not prevent default
+      }
+
       e.preventDefault();
-      
-      const delta = e.deltaY > 0 ? 0.02 : -0.02;
+      const delta = scrollingDown ? 0.05 : -0.05;
+      setCarouselProgress(prev => Math.max(0, Math.min(1, prev + delta)));
+    };
+
+    // Touch handlers for mobile
+    let touchStartY = 0;
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isCarouselActive || !carouselRef.current) return;
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY; // positive when swiping up (scrolling down)
+      const scrollingDown = deltaY > 0;
+
+      if ((carouselProgress >= 1 && scrollingDown) || (carouselProgress <= 0 && !scrollingDown)) {
+        setIsCarouselActive(false);
+        document.body.style.overflow = 'auto';
+        return; // allow default
+      }
+
+      e.preventDefault();
+      const delta = scrollingDown ? 0.05 : -0.05;
       setCarouselProgress(prev => Math.max(0, Math.min(1, prev + delta)));
     };
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
       document.body.style.overflow = 'auto';
     };
-  }, [isCarouselActive]);
+  }, [isCarouselActive, carouselProgress]);
 
   const earnCards = [
     {
@@ -201,7 +235,7 @@ const EarnSection = () => {
         )}
 
         <div className="mt-16 w-full" ref={carouselRef}>
-          <div className="relative w-full h-[600px] flex items-center justify-center perspective-1000">
+          <div className="relative w-full h-[600px] flex items-center justify-center" style={{ perspective: '1000px' }}>
             {/* 3D Carousel Container */}
             <div className="relative w-full max-w-4xl h-full transform-gpu" style={{ transformStyle: 'preserve-3d' }}>
               {/* First Image - Front */}
