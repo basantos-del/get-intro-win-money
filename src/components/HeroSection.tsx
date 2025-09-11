@@ -114,31 +114,65 @@ const HeroSection = () => {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ zIndex: 20 }}>
         <div className="fade-in-up text-left">
-          <h1 className="text-4xl md:text-6xl text-white mb-6 md:mb-16 leading-relaxed">
-            You know brands and people.<br />
-            <span className="text-white font-bold">We know opportunities</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
-          backgroundColor: '#f9fd8f'
-        }}>
-            Build extra income. <br className="md:hidden" />Earn and save more with <span className="font-bold">intro</span>
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-            <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
-              Join the Waitlist
-              <ArrowRight className="h-5 w-5 text-white" />
-            </Button>
+          {/* Mobile version */}
+          <div className="md:hidden">
+            <h1 className="text-4xl text-white font-bold mb-6 leading-relaxed">
+              Earn on intro
+            </h1>
             
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-white">2,588 people already joined</span>
+            <p className="text-xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
+            backgroundColor: '#f9fd8f'
+          }}>
+              The brands you love in one wallet
+            </p>
+            
+            <div className="flex flex-col gap-6 items-start">
+              <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
+                Join the Waitlist
+                <ArrowRight className="h-5 w-5 text-white" />
+              </Button>
+              
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-white">earn through referrals</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-white">save on loyalty discounts</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-white">+200 companies posting opportunities</span>
+            </div>
+          </div>
+
+          {/* Desktop and iPad version */}
+          <div className="hidden md:block">
+            <h1 className="text-4xl md:text-6xl text-white mb-6 md:mb-16 leading-relaxed">
+              You know brands and people.<br />
+              <span className="text-white font-bold">We know opportunities</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
+            backgroundColor: '#f9fd8f'
+          }}>
+              Build extra income. <br className="md:hidden" />Earn and save more with <span className="font-bold">intro</span>
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+              <Button onClick={scrollToWaitlist} size="lg" className="intro-button-primary px-12 py-4 text-lg font-semibold inline-flex items-center gap-6">
+                Join the Waitlist
+                <ArrowRight className="h-5 w-5 text-white" />
+              </Button>
+              
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-white">2,588 people already joined</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-white">+200 companies posting opportunities</span>
+                </div>
               </div>
             </div>
           </div>
