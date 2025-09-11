@@ -5,7 +5,10 @@ import { Badge } from '@/components/ui/badge';
 const EarnSection = () => {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
   const [activeCategory, setActiveCategory] = useState('refer');
+  const [carouselProgress, setCarouselProgress] = useState(0); // 0 = first image, 1 = second image
+  const [isCarouselActive, setIsCarouselActive] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef, isVisible: titleVisible } = useIntersectionObserver({ threshold: 0.3 });
 
   useEffect(() => {
@@ -29,6 +32,54 @@ const EarnSection = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Carousel scroll control
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!carouselRef.current) return;
+
+      const rect = carouselRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Check if carousel is in view
+      if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.7) {
+        setIsCarouselActive(true);
+        
+        // Calculate scroll progress within the carousel section
+        const scrollProgress = Math.max(0, Math.min(1, (windowHeight * 0.3 - rect.top) / (windowHeight * 0.4)));
+        setCarouselProgress(scrollProgress);
+        
+        // Prevent default scrolling when carousel is active
+        if (scrollProgress < 1) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      } else {
+        setIsCarouselActive(false);
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    // Custom wheel event handler for carousel control
+    const handleWheel = (e: WheelEvent) => {
+      if (!isCarouselActive || !carouselRef.current) return;
+
+      e.preventDefault();
+      
+      const delta = e.deltaY > 0 ? 0.02 : -0.02;
+      setCarouselProgress(prev => Math.max(0, Math.min(1, prev + delta)));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleWheel);
+      document.body.style.overflow = 'auto';
+    };
+  }, [isCarouselActive]);
 
   const earnCards = [
     {
@@ -149,25 +200,55 @@ const EarnSection = () => {
           </div>
         )}
 
-        <div className="mt-16 w-full">
-          <div className="relative w-full h-[600px] flex items-center justify-center p-4">
-            {/* First Image - FC 26 Rewards */}
-            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
-              <img
-                src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
-                alt="FC 26 Rewards - EA Sports loyalty campaign"
-                className="w-full h-full object-contain rounded-lg"
-              />
+        <div className="mt-16 w-full" ref={carouselRef}>
+          <div className="relative w-full h-[600px] flex items-center justify-center perspective-1000">
+            {/* 3D Carousel Container */}
+            <div className="relative w-full max-w-4xl h-full transform-gpu" style={{ transformStyle: 'preserve-3d' }}>
+              {/* First Image - Front */}
+              <div 
+                className="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
+                style={{
+                  transform: `translateZ(${50 - carouselProgress * 100}px) rotateY(${carouselProgress * -15}deg)`,
+                  opacity: 1 - carouselProgress * 0.3
+                }}
+              >
+                <img
+                  src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
+                  alt="FC 26 Rewards - EA Sports loyalty campaign"
+                  className="w-full h-full object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+              
+              {/* Second Image - Behind, coming forward */}
+              <div 
+                className="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
+                style={{
+                  transform: `translateZ(${-50 + carouselProgress * 100}px) rotateY(${15 - carouselProgress * 15}deg)`,
+                  opacity: 0.7 + carouselProgress * 0.3
+                }}
+              >
+                <img
+                  src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
+                  alt="You champion walking - Pompeii Brand loyalty campaign"
+                  className="w-full h-full object-contain rounded-lg shadow-2xl"
+                />
+              </div>
             </div>
             
-            {/* Second Image - You champion walking */}
-            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-30' : 'translate-x-0 z-20'}`}>
-              <img
-                src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
-                alt="You champion walking - Pompeii Brand loyalty campaign"
-                className="w-full h-full object-contain rounded-lg"
-              />
-            </div>
+            {/* Progress indicator */}
+            {isCarouselActive && (
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <div className={`w-3 h-3 rounded-full transition-all duration-300 ${carouselProgress < 0.5 ? 'bg-white' : 'bg-white/40'}`} />
+                <div className={`w-3 h-3 rounded-full transition-all duration-300 ${carouselProgress >= 0.5 ? 'bg-white' : 'bg-white/40'}`} />
+              </div>
+            )}
+            
+            {/* Scroll hint */}
+            {isCarouselActive && carouselProgress < 0.1 && (
+              <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-white text-sm animate-pulse">
+                Scroll to explore
+              </div>
+            )}
           </div>
         </div>
       </div>
