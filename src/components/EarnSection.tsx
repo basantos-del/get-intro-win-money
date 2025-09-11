@@ -149,31 +149,24 @@ const EarnSection = () => {
           </div>
         )}
 
-        <div className="mt-16 text-center">
-          <div className="intro-card-gray p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-black mb-4">
-              Other daily opportunities
-            </h3>
-            <p className="text-black mb-6">
-              From tech startups to established businesses, discover new ways to earn every day through our growing marketplace of referral opportunities.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-lg font-bold text-black">Tech Jobs</div>
-                <div className="text-sm text-black">$300-1500</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-black">SaaS Products</div>
-                <div className="text-sm text-black">$50-300</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-black">Services</div>
-                <div className="text-sm text-black">$100-500</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-black">User Testing</div>
-                <div className="text-sm text-black">$20-200</div>
-              </div>
+        <div className="mt-16 w-full">
+          <div className="relative w-full h-[600px] overflow-hidden">
+            {/* First Image - FC 26 Rewards */}
+            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
+              <img
+                src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
+                alt="FC 26 Rewards - EA Sports loyalty campaign"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            
+            {/* Second Image - You champion walking */}
+            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-30' : 'translate-x-0 z-20'}`}>
+              <img
+                src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
+                alt="You champion walking - Pompeii Brand loyalty campaign"
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
