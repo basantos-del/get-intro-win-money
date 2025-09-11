@@ -149,11 +149,11 @@ const WaitlistSection = () => {
             </div>
             
             <h3 className="text-2xl font-bold text-left text-black mb-4">
-              For Companies
+              For Brands
             </h3>
             
             <p className="text-black text-left mb-6">
-              Connect with thousands of superpower users to boost your marketing returns
+              Connect with your customers avoiding spam and boost your marketing returns
             </p>
             
             <div className="text-left mb-6">
