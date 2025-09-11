@@ -150,7 +150,7 @@ const NewCustomers = () => {
         {/* Maria Photo Section */}
         <div className="mt-16 w-full animate-fade-in overflow-hidden">
           <img
-            src="/lovable-uploads/27f6706f-71d7-483f-8e69-ca3b73a84d01.png"
+            src="/lovable-uploads/5a901f0b-21da-477e-9883-391cc95c9656.png"
             alt="Dashboard of a referral campaign in intro platform. The business can see power referrers, new customers daily and performance metrics for this campaign."
             className="w-full h-auto object-cover scale-95 -mb-8"
             style={{ maxHeight: '600px' }}
