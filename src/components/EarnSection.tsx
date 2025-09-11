@@ -150,9 +150,18 @@ const EarnSection = () => {
         )}
 
         <div className="mt-16 w-full">
-          <div className="relative w-full h-[600px] flex items-center justify-center p-4">
+          {/* Visual Hint for Desktop */}
+          <div className="hidden md:flex items-center justify-center mb-4 text-muted-foreground text-sm gap-2">
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <div className="w-2 h-2 bg-muted rounded-full"></div>
+            </div>
+            <span>Hover to reveal next image</span>
+          </div>
+
+          <div className="relative w-full h-[600px] flex items-center justify-center p-4 group cursor-pointer">
             {/* First Image - FC 26 Rewards */}
-            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
+            <div className="absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out z-20">
               <img
                 src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
                 alt="FC 26 Rewards - EA Sports loyalty campaign"
@@ -160,8 +169,17 @@ const EarnSection = () => {
               />
             </div>
             
-            {/* Second Image - You champion walking */}
-            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-30' : 'translate-x-0 z-20'}`}>
+            {/* Second Image - You champion walking with hover reveal */}
+            <div className="absolute inset-0 w-full h-full z-30 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[4000ms] ease-in-out">
+              <img
+                src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
+                alt="You champion walking - Pompeii Brand loyalty campaign"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </div>
+
+            {/* Mobile: Show both images stacked with different z-index */}
+            <div className="md:hidden absolute inset-0 w-full h-full z-10">
               <img
                 src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
                 alt="You champion walking - Pompeii Brand loyalty campaign"
