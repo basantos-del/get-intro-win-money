@@ -59,7 +59,7 @@ const EarnSection = () => {
             Connect with brands you love
           </h2>
           <p className="text-xl text-muted-foreground max-w-5xl mx-auto mb-8">
-            Earn by referring, promoting or saving. Earning is your next choice. 
+            Earn by referring, promoting or saving. Earning is your next choice 
           </p>
           
           {/* Badge Filters */}
