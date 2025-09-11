@@ -46,7 +46,7 @@ const FAQ = () => {
           "name": "What is intro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Intro is a referral marketplace that connects opportunities with people who know people. Companies that are on intro post opportunities. Members who have signed up can see them and refer a friend from their network."
+            "text": "Intro is a referral and loyalty marketplace where brands connect to consumers. Brands that are on intro post opportunities. Members who have signed up can see them and apply."
           }
         },
         {
@@ -209,40 +209,40 @@ const FAQ = () => {
   const faqs = {
     'about-intro': [{
       question: 'What is intro?',
-      answer: 'Intro is a referral marketplace that connects opportunities with people who know people. Companies that are on intro post opportunities. Members who have signed up can see them and refer a friend from their network.'
+      answer: 'Intro is a referral and loyalty marketplace where brands connect to consumers. Brands that are on intro post opportunities. Members who have signed up can see them and apply. '
     }, {
       question: 'In which cities operates?',
       answer: 'intro is actively searching for its first few locations. Submit your location here.'
     }, {
       question: 'Is intro free?',
-      answer: 'intro is completely free for its Members.'
+      answer: 'intro is free forever for its Members.'
     }, {
       question: 'How does intro make money?',
-      answer: 'intro charges a referral fee to businesses for each match to keep its operation free for Members.'
+      answer: 'intro charges a referral fee to businesses for each opportunity that is converted, to keep its operation free for Members.'
     }],
     opportunities: [{
       question: 'What is an opportunity?',
-      answer: 'An opportunity is a business\' need, something a business is interested in closing. You can see it as a lead. Opportunities can be open jobs, new customers, product reviews, or anything else you can think of that a company builds referral programs for.'
+      answer: 'An opportunity can take the form of a discount on your next purchase, a saving, an exclusive award, or a referral - anything you can think of that a brand builds referral and loyalty programs for.'
     }, {
       question: 'What kind of opportunities can I discover in intro?',
-      answer: 'intro is actively discovering which are the most relevant opportunity types for its members. Submit the kind of opportunities you would like to see on intro here.'
+      answer: 'intro is actively discovering which are the most relevant opportunity types and brands for its members. Submit the kind of opportunities and brands you would like to see on intro here.'
     }, {
       question: 'How will I discover opportunities to earn?',
-      answer: 'Businesses post opportunities on intro on a daily basis. By leveraging your profile, your network and businesses\' opportunities, we can notify you whenever we believe a powerful match is in your sight. All information is kept private and secure.'
+      answer: 'Brands post opportunities on intro on a daily basis. By leveraging your profile, your network and brands\' opportunities, we notify you whenever we believe you will benefit from it. All information is kept private and secure.'
     }, {
       question: 'How easy is to apply to opportunities?',
       answer: 'Once you tap into an opportunity, you can check its requirements. Then, you can submit your referral with a single push of a button. Different opportunities may require additional follow-ups.'
     }],
     'your-network': [{
       question: 'What is my network?',
-      answer: 'Your network is the people you know well and are on intro too. Just like LinkedIn, but way more data and future-oriented. If you increase it, your chances of matches will be higher.'
+      answer: 'Your network is the people you know well and that you add to your account address book. Just like an address book, they don\'t know they are there. But if you increase it, your chances of matching referral opportunities will be higher.'
     }, {
       question: 'What do you know about my network?',
       answer: 'We take privacy really seriously. While intro leverages your and your network profiles\' data upon your agreement, that same data is not shared with the businesses intro operates, nor is publicly available.'
     }],
     earnings: [{
       question: 'What is a match?',
-      answer: 'A match is a completed/converted referral. When you submit a referral, that referral will undergo a screening process and eventually be converted. Cheers, you\'ve got a match.'
+      answer: 'A match is a completed/converted referral opportunity. When you submit a referral for a brand you follow, that referral will undergo a screening process and eventually be converted. Cheers, you\'ve got a match.'
     }, {
       question: 'How much money will I earn?',
       answer: 'There are no limits to what you can earn on intro. However, do not expect this to be your first source of income.'
