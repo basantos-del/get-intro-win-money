@@ -17,9 +17,10 @@ const Navigation = () => {
   const isAboutUsPage = location.pathname === '/about-us';
   const isNewCustomersPage = location.pathname === '/for-business/newcustomers';
   const isNewHiresPage = location.pathname === '/for-business/newhires';
+  const isLoyaltyProgramsPage = location.pathname === '/for-business/loyalty-programs';
   
-  // Always show scrolled state on FAQ, About Us, New Customers and New Hires pages for better readability
-  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage || isScrolled;
+  // Always show scrolled state on FAQ, About Us, New Customers, New Hires and Loyalty Programs pages for better readability
+  const shouldShowScrolledState = isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage || isLoyaltyProgramsPage || isScrolled;
 
   useEffect(() => {
     let ticking = false;
@@ -59,8 +60,8 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on FAQ, About Us, New Customers or New Hires page, navigate to main page first then scroll
-    if (isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage) {
+    // If we're on FAQ, About Us, New Customers, New Hires or Loyalty Programs page, navigate to main page first then scroll
+    if (isFAQPage || isAboutUsPage || isNewCustomersPage || isNewHiresPage || isLoyaltyProgramsPage) {
       navigate('/', { replace: true });
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -214,6 +215,15 @@ const Navigation = () => {
                     >
                       New Hires
                     </button>
+                    <button
+                      onClick={() => {
+                        navigate('/for-business/loyalty-programs');
+                        setIsBusinessDropdownOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      Loyalty Programs
+                    </button>
                   </div>
                 </div>
               )}
@@ -317,6 +327,15 @@ const Navigation = () => {
                       className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       New Hires
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigate('/for-business/loyalty-programs');
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      Loyalty Programs
                     </button>
                   </div>
                 </div>
