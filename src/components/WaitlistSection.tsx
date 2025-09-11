@@ -153,7 +153,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-black text-left mb-6">
-              Connect with your customers avoiding spam and boost your marketing returns
+              Connect to your customers avoiding spam and boosting your marketing returns
             </p>
             
             <div className="text-left mb-6">
