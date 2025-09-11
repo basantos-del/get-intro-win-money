@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 const EarnSection = () => {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
   const [activeCategory, setActiveCategory] = useState('refer');
+  const [mobileImageIndex, setMobileImageIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef, isVisible: titleVisible } = useIntersectionObserver({ threshold: 0.3 });
 
@@ -149,7 +150,7 @@ const EarnSection = () => {
           </div>
         )}
 
-        <div className="mt-16 w-full">
+        <div className="mt-16 w-full md:mt-16">
           {/* Visual Hint for Desktop */}
           <div className="hidden md:flex items-center justify-center mb-4 text-muted-foreground text-sm gap-2">
             <div className="flex items-center gap-1">
@@ -159,31 +160,51 @@ const EarnSection = () => {
             <span>Hover to reveal next image</span>
           </div>
 
-          <div className="relative w-full h-[600px] flex items-center justify-center p-4 group cursor-pointer">
+          <div className="relative w-full h-[400px] md:h-[600px] flex items-center justify-center md:p-4 group cursor-pointer">
+            {/* Mobile Navigation Arrows */}
+            <button 
+              className="md:hidden absolute left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white"
+              onClick={() => setMobileImageIndex(mobileImageIndex === 0 ? 1 : 0)}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <button 
+              className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white"
+              onClick={() => setMobileImageIndex(mobileImageIndex === 0 ? 1 : 0)}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
+            {/* Mobile Image Indicators */}
+            <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-40 flex gap-2">
+              <div className={`w-2 h-2 rounded-full transition-all ${mobileImageIndex === 0 ? 'bg-white' : 'bg-white/40'}`}></div>
+              <div className={`w-2 h-2 rounded-full transition-all ${mobileImageIndex === 1 ? 'bg-white' : 'bg-white/40'}`}></div>
+            </div>
+
             {/* First Image - FC 26 Rewards */}
-            <div className="absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out z-20">
+            <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out z-20 ${
+              mobileImageIndex === 1 ? 'md:block opacity-0 md:opacity-100' : 'opacity-100'
+            }`}>
               <img
                 src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
                 alt="FC 26 Rewards - EA Sports loyalty campaign"
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain md:rounded-lg"
               />
             </div>
             
             {/* Second Image - You champion walking with hover reveal */}
-            <div className="absolute inset-0 w-full h-full z-30 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[4000ms] ease-out">
+            <div className={`absolute inset-0 w-full h-full z-30 transition-all duration-1000 ease-out ${
+              mobileImageIndex === 0 ? 'md:block opacity-0 md:group-hover:opacity-100' : 'opacity-100'
+            }`}>
               <img
                 src="/lovable-uploads/263d5b74-e072-4219-8e01-ef2294a89f11.png"
                 alt="You champion walking - Pompeii Brand loyalty campaign"
-                className="w-full h-full object-contain rounded-lg"
-              />
-            </div>
-
-            {/* Mobile: Show both images stacked with different z-index */}
-            <div className="md:hidden absolute inset-0 w-full h-full z-10">
-              <img
-                src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
-                alt="You champion walking - Pompeii Brand loyalty campaign"
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain md:rounded-lg"
               />
             </div>
           </div>
