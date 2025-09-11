@@ -6,6 +6,8 @@ import CountdownTimer from './CountdownTimer';
 import { Users, Building2, ArrowRight } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Link } from 'react-router-dom';
 const WaitlistSection = () => {
   const [memberEmail, setMemberEmail] = useState('');
   const [companyEmail, setCompanyEmail] = useState('');
@@ -13,11 +15,51 @@ const WaitlistSection = () => {
     member: false,
     company: false
   });
+  
   // Static dummy counts
   const counts = {
     member_count: 2588,
     company_count: 232
   };
+
+  const carouselImages = [
+    {
+      src: "/lovable-uploads/0853bc53-f00e-4ea9-81f7-d00057e2ab4f.png",
+      alt: "EA FC London Studios tour opportunity"
+    },
+    {
+      src: "/lovable-uploads/f50eb74c-b5bb-42cb-a420-ffd966ce2fd5.png",
+      alt: "Paloma Wool loyalty reward - 15€ discount"
+    },
+    {
+      src: "/lovable-uploads/8342e09d-0631-482b-ada6-6dc9ed02fd51.png",
+      alt: "Lovable credits bonus - 200 credits reward"
+    },
+    {
+      src: "/lovable-uploads/929c57b6-9db2-474c-88d4-47cebe65ef80.png",
+      alt: "John M - Software Engineer profile"
+    },
+    {
+      src: "/lovable-uploads/020f5297-c1d9-4f4e-ae0b-d3417da2d05b.png",
+      alt: "Job openings with Sword Health Software Engineer position"
+    },
+    {
+      src: "/lovable-uploads/5a87d000-5698-4b6a-9bad-52f3ae63c916.png",
+      alt: "Overview with Sword Health and Microsoft opportunities"
+    },
+    {
+      src: "/lovable-uploads/4a603bc7-2612-485b-97be-5b4f63b2071b.png",
+      alt: "Repsol discount - 8,99€ off next charge"
+    },
+    {
+      src: "/lovable-uploads/b202c432-1f32-4cde-b605-067625804c48.png",
+      alt: "EA Sports backstage tour London studios"
+    },
+    {
+      src: "/lovable-uploads/f5840f56-7ae4-4008-b9db-4d417d012aa7.png",
+      alt: "Tesla Model Y launch - Free test drive opportunity"
+    }
+  ];
   const {
     toast
   } = useToast();
@@ -107,6 +149,73 @@ const WaitlistSection = () => {
 
         <div className="mb-16">
           <CountdownTimer />
+        </div>
+
+        {/* Carousel Section */}
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <div className="relative mb-8">
+            
+            {/* Desktop Auto-Scroll Carousel */}
+            <div className="hidden sm:block overflow-hidden rounded-card">
+              <div 
+                className="flex gap-4 animate-scroll-left hover:pause-animation"
+                style={{
+                  animation: 'scroll-left 60s linear infinite',
+                  width: 'calc(300px * 18)', // Adjust based on number of images
+                }}
+              >
+                {/* Repeat images for seamless loop */}
+                {[1, 2].map((set) => (
+                  <div key={set} className="flex gap-4">
+                    {carouselImages.map((image, index) => (
+                      <div key={`${set}-${index}`} className="flex-shrink-0 w-72 transition-transform duration-300 hover:scale-105">
+                        <img 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="w-full h-auto rounded-lg shadow-md"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile User-Scrollable Carousel */}
+            <div className="sm:hidden">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {carouselImages.map((image, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5">
+                      <div className="transition-transform duration-300 hover:scale-105">
+                        <img 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="w-full h-auto rounded-lg shadow-md"
+                          loading="lazy"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
+
+          </div>
+          
+          <Link to="/about-us">
+            <Button className="intro-button-primary inline-flex items-center gap-2">
+              Know more
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
