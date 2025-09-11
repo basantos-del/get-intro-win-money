@@ -172,7 +172,7 @@ const EarnSection = () => {
             {/* Second Image - You champion walking with hover reveal */}
             <div className="absolute inset-0 w-full h-full z-30 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[4000ms] ease-out">
               <img
-                src="/lovable-uploads/14faf5a5-d3af-47f6-8a46-7eafd5c84698.png"
+                src="/lovable-uploads/263d5b74-e072-4219-8e01-ef2294a89f11.png"
                 alt="You champion walking - Pompeii Brand loyalty campaign"
                 className="w-full h-full object-contain rounded-lg"
               />
