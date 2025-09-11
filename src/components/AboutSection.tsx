@@ -24,7 +24,7 @@ const AboutSection = () => {
   });
   return <section id="about" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div>
           <div className={`animate-on-scroll animate-fade-left ${isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl font-bold text-foreground mb-8 leading-tight md:text-5xl text-left">Regular brands like regular people</h2>
             
