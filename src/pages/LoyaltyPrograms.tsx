@@ -109,7 +109,7 @@ const LoyaltyPrograms = () => {
               Ben has bought from your before. Two summers ago. That awesome collection.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              But Ben has been targeted by all kind of new awesome brands.
+              But Ben has been <strong>targeted by all kind of new awesome brands</strong>.
             </p>
           </div>
         </div>
@@ -141,13 +141,13 @@ const LoyaltyPrograms = () => {
         >
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Influencer marketing and ads budget has gone through the roof. Loyalty efforts are your best bet, but your email marketing spend is stuck on Ben's promotions Gmail tab. And because of that, chances of Ben buying from you again are low.
+              Influencer marketing and ads budget has gone through the roof. Loyalty efforts are your best bet, but your email marketing spend is <strong>stuck on Ben's promotions Gmail</strong> tab. And because of that, <strong>chances of Ben buying from you again are low.</strong>
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               That's where intro comes in. When buying first time from you, Ben gets on intro because he knows he's going to find earning and saving opportunities. A wallet for all things shopping.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              And it's because of intro that Ben gets to hear about your loyalty program.
+              And it's because of intro that Ben <strong>gets to hear about your loyalty campaign.</strong>
             </p>
           </div>
         </div>
