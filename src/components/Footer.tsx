@@ -4,11 +4,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const isMainPage = location.pathname === '/';
   const isFAQPage = location.pathname === '/faqs';
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on FAQ page, navigate to main page first then scroll
-    if (isFAQPage) {
+    // If we're not on the main page, navigate to main page first then scroll
+    if (!isMainPage) {
       navigate('/', { replace: true });
       setTimeout(() => {
         const element = document.getElementById(sectionId);
