@@ -38,7 +38,7 @@ const HeroSection = () => {
   const borderRadius = scrollProgress * 24; // Border radius from 0 to 24px
   const containerPadding = scrollProgress * 20; // Padding from 0 to 20px
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#f8f7f5' }}>
+    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden" style={{ backgroundColor: '#f8f7f5' }}>
       {/* Video container with dynamic padding and background */}
       <div 
         className="absolute inset-0 transition-all duration-500 ease-out"
@@ -113,7 +113,7 @@ const HeroSection = () => {
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ zIndex: 20 }}>
-        <div className="fade-in-up">
+        <div className="fade-in-up text-left">
           <h1 className="text-4xl md:text-6xl text-white mb-6 md:mb-16 leading-relaxed">
             You know brands and people.<br />
             <span className="text-white font-bold">We know opportunities</span>
