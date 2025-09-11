@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Expand } from 'lucide-react';
 import React from 'react';
 
 const NewCustomers = () => {
@@ -150,7 +151,7 @@ const NewCustomers = () => {
 
         {/* Maria Photo Section */}
         <div 
-          className="mt-16 w-full animate-fade-in overflow-hidden cursor-pointer md:cursor-default"
+          className="mt-16 w-full animate-fade-in overflow-hidden cursor-pointer md:cursor-default relative"
           onClick={() => setIsFullscreen(true)}
         >
           <img
@@ -159,6 +160,10 @@ const NewCustomers = () => {
             className="w-full h-auto object-contain scale-95 md:scale-100 md:object-cover -mb-8"
             style={{ maxHeight: '800px' }}
           />
+          {/* Fullscreen icon for mobile */}
+          <div className="absolute top-4 right-4 md:hidden bg-black/50 rounded-full p-2">
+            <Expand className="w-5 h-5 text-white" />
+          </div>
         </div>
 
         {/* Fullscreen Modal */}
