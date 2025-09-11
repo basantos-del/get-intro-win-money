@@ -123,7 +123,7 @@ const HeroSection = () => {
             <p className="text-xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
             backgroundColor: '#f9fd8f'
           }}>
-              The brands you love in one wallet
+              The brands you use. <span className="font-bold">One place</span>
             </p>
             
             <div className="flex flex-col gap-6 items-start">
