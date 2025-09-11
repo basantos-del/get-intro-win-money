@@ -150,13 +150,13 @@ const EarnSection = () => {
         )}
 
         <div className="mt-16 w-full">
-          <div className="relative w-full h-[800px] overflow-hidden">
+          <div className="relative w-full h-[600px] flex items-center justify-center p-4">
             {/* First Image - FC 26 Rewards */}
             <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
               <img
                 src="/lovable-uploads/9debbedf-4688-4718-acf2-e57d93796bb7.png"
                 alt="FC 26 Rewards - EA Sports loyalty campaign"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-contain rounded-lg"
               />
             </div>
             
@@ -165,7 +165,7 @@ const EarnSection = () => {
               <img
                 src="/lovable-uploads/717ede88-68ed-4b67-bf19-e5b3135b1f09.png"
                 alt="You champion walking - Pompeii Brand loyalty campaign"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-contain rounded-lg"
               />
             </div>
           </div>
