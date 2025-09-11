@@ -98,8 +98,8 @@ const WaitlistSection = () => {
   };
   return <section id="waitlist" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-left">
+        <div className={`text-center mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
             Join intro, it's free 
           </h2>
           
@@ -133,7 +133,9 @@ const WaitlistSection = () => {
             
             <form onSubmit={handleMemberSubmit} className="space-y-4">
               <Input type="email" placeholder="Enter your email" value={memberEmail} onChange={e => setMemberEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="w-full font-semibold text-black inline-flex items-left justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
+              <Button type="submit" className="w-full font-semibold text-black inline-flex items-left justify-center gap-2" style={{
+              backgroundColor: '#f9fd8f'
+            }} disabled={isLoading.member}>
                 {isLoading.member ? 'Joining...' : 'Get Early Access'}
                 <ArrowRight className="h-4 w-4 text-black" />
               </Button>
@@ -163,7 +165,9 @@ const WaitlistSection = () => {
             
             <form onSubmit={handleCompanySubmit} className="space-y-4">
               <Input type="email" placeholder="Company email" value={companyEmail} onChange={e => setCompanyEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="w-full font-semibold text-black inline-flex items-center justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.company}>
+              <Button type="submit" className="w-full font-semibold text-black inline-flex items-center justify-center gap-2" style={{
+              backgroundColor: '#f9fd8f'
+            }} disabled={isLoading.company}>
                 {isLoading.company ? 'Joining...' : 'Get Early Access'}
                 <ArrowRight className="h-4 w-4 text-black" />
               </Button>
