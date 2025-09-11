@@ -7,6 +7,7 @@ import React from 'react';
 
 const NewCustomers = () => {
   const navigate = useNavigate();
+  const [isFullscreen, setIsFullscreen] = React.useState(false);
   
   // SEO meta tags for New Customers page
   React.useEffect(() => {
@@ -148,7 +149,10 @@ const NewCustomers = () => {
         </div>
 
         {/* Maria Photo Section */}
-        <div className="mt-16 w-full animate-fade-in overflow-hidden">
+        <div 
+          className="mt-16 w-full animate-fade-in overflow-hidden cursor-pointer md:cursor-default"
+          onClick={() => setIsFullscreen(true)}
+        >
           <img
             src="/lovable-uploads/27f6706f-71d7-483f-8e69-ca3b73a84d01.png"
             alt="Dashboard of a referral campaign in intro platform. The business can see power referrers, new customers daily and performance metrics for this campaign."
@@ -156,6 +160,32 @@ const NewCustomers = () => {
             style={{ maxHeight: '800px' }}
           />
         </div>
+
+        {/* Fullscreen Modal */}
+        {isFullscreen && (
+          <div 
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 md:hidden"
+            onClick={() => setIsFullscreen(false)}
+          >
+            <div className="relative max-w-full max-h-full">
+              <button
+                onClick={() => setIsFullscreen(false)}
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 z-10"
+                aria-label="Close fullscreen"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <img
+                src="/lovable-uploads/27f6706f-71d7-483f-8e69-ca3b73a84d01.png"
+                alt="Dashboard of a referral campaign in intro platform. The business can see power referrers, new customers daily and performance metrics for this campaign."
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </div>
+        )}
 
         {/* Third Content Section */}
         <div className="max-w-2xl mx-auto text-left pt-16 pb-8">
