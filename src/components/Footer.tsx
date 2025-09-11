@@ -100,6 +100,12 @@ const Footer = () => {
               >
                 Find new hires
               </Link>
+              <Link 
+                to="/for-business/loyalty-programs"
+                className="block text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-200"
+              >
+                Drive sales up
+              </Link>
             </div>
           </div>
 
