@@ -133,7 +133,7 @@ const WaitlistSection = () => {
             
             <form onSubmit={handleMemberSubmit} className="space-y-4">
               <Input type="email" placeholder="Enter your email" value={memberEmail} onChange={e => setMemberEmail(e.target.value)} className="w-full" required />
-              <Button type="submit" className="w-full font-semibold text-black inline-flex items-center justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
+              <Button type="submit" className="w-full font-semibold text-black inline-flex items-left justify-center gap-2" style={{backgroundColor: '#f9fd8f'}} disabled={isLoading.member}>
                 {isLoading.member ? 'Joining...' : 'Get Early Access'}
                 <ArrowRight className="h-4 w-4 text-black" />
               </Button>
