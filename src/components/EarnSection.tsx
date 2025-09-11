@@ -112,7 +112,7 @@ const EarnSection = () => {
                     : 'opacity-0 translate-y-8'
                 }`}
               >
-                <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden">
+                <div className="aspect-[3/4] sm:aspect-[4/3] relative overflow-hidden">
                   <img
                     src={card.image}
                     alt={card.title}
