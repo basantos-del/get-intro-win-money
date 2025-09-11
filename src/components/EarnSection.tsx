@@ -150,7 +150,7 @@ const EarnSection = () => {
         )}
 
         <div className="mt-16 w-full">
-          <div className="relative w-full h-[800px] overflow-hidden">
+          <div className="relative w-full h-[500px] overflow-hidden">
             {/* First Image - FC 26 Rewards */}
             <div className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${visibleCards[2] ? 'translate-x-0 z-20' : 'translate-x-0 z-30'}`}>
               <img
