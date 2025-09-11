@@ -202,7 +202,7 @@ const LoyaltyPrograms = () => {
               Ben will ask intro whether he has subscribed to any good clothing loyalty program. And indeed he has!
             </p>
             <p className="text-xl md:text-2xl text-foreground leading-relaxed font-bold">
-              Bang, Ben buying from you again.
+              Bang, Ben is buying from you again.
             </p>
           </div>
         </div>
