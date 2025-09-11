@@ -117,13 +117,13 @@ const FinalCTASection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 animate-on-scroll animate-slide-up ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl md:text-6xl mb-6 font-bold" style={{
+        <div className={`mb-16 animate-on-scroll animate-slide-up ${isVisible ? 'visible' : ''}`}>
+          <h2 className="text-4xl md:text-6xl mb-6 font-bold text-left" style={{
           color: '#f9fd8f'
         }}>
             Let's get social again
           </h2>
-          <p className="text-xl text-white max-w-5xl mx-auto">Follow your favourite brands and businesses and start earning today</p>
+          <p className="text-xl text-white max-w-5xl text-left">Follow your favourite brands and businesses and start earning today</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">

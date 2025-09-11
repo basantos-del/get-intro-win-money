@@ -24,11 +24,11 @@ const AboutSection = () => {
   });
   return <section id="about" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <div className={`animate-on-scroll animate-fade-left ${isVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl font-bold text-foreground mb-8 leading-tight md:text-5xl">Regular brands like regular people</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-8 leading-tight md:text-5xl text-left">Regular brands like regular people</h2>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">Where referral and loyalty programs meet people like you</p>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-left">Where referral and loyalty programs meet people like you</p>
           </div>
           
           <div className="mt-16 grid md:grid-cols-3 gap-8">

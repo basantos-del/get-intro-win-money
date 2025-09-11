@@ -30,11 +30,11 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="intro-section bg-muted/20" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 animate-on-scroll animate-scale ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className={`mb-16 animate-on-scroll animate-scale ${isVisible ? 'visible' : ''}`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-left">
             Forget vouchers, discount receipts and paper cards 
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl text-left">
             All your brand rewards and more is now on intro
           </p>
         </div>

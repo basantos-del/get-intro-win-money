@@ -54,16 +54,16 @@ const EarnSection = () => {
   return (
     <section id="earn" className="intro-section bg-background" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 animate-on-scroll animate-fade-right ${titleVisible ? 'visible' : ''}`} ref={titleRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className={`mb-16 animate-on-scroll animate-fade-right ${titleVisible ? 'visible' : ''}`} ref={titleRef}>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-left">
             Connect with brands you love
           </h2>
-          <p className="text-xl text-muted-foreground max-w-5xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-5xl mb-8 text-left">
             Earn by referring, promoting or saving. Earning is your next choice 
           </p>
           
           {/* Badge Filters */}
-          <div className="flex flex-wrap gap-2 justify-center mb-8">
+          <div className="flex flex-wrap gap-2 justify-start mb-8">
             <Badge
               variant={activeCategory === 'refer' ? "default" : "outline"}
               className={`cursor-pointer transition-all hover:shadow-md px-4 py-2 ${

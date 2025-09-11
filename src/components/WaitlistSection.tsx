@@ -98,8 +98,8 @@ const WaitlistSection = () => {
   };
   return <section id="waitlist" className="intro-section bg-background" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className={`mb-16 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-left">
             Join intro, it's free 
           </h2>
           
