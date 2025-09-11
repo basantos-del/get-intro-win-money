@@ -32,10 +32,10 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 animate-on-scroll animate-scale ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Making an intro has never been so easy
+            Forget vouchers, discount receipts and brand physical cards 
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Intro is designed to make referrals and loyalty programs effortless and rewarding
+            All your brand rewards and more is now on intro
           </p>
         </div>
 
