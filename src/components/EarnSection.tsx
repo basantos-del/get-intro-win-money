@@ -149,153 +149,30 @@ const EarnSection = () => {
           </div>
         )}
 
-        <div className="mt-16">
-          {/* Desktop: Stacked Cards */}
-          <div className="hidden md:block relative max-w-4xl mx-auto">
-            <div className="relative">
-              {/* First Card - Pompeii Brand */}
-              <div className={`intro-card-gray p-8 mb-8 transition-all duration-700 ${
-                visibleCards[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                <div className="flex flex-col lg:flex-row gap-6 items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-32 h-32 bg-accent rounded-lg flex items-center justify-center">
-                      <div className="text-black font-bold text-lg text-center">POMPEII<br/>BRAND</div>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="mb-2">
-                      <span className="text-sm text-black opacity-70">Name</span>
-                      <h3 className="text-2xl font-bold text-black">You champion walking</h3>
-                    </div>
-                    <div className="mb-4">
-                      <span className="text-sm text-black opacity-70">Prize</span>
-                      <p className="text-lg text-black">Backstage summer collection shooting</p>
-                    </div>
-                    <div className="mb-6">
-                      <span className="text-sm text-black opacity-70">Description</span>
-                      <p className="text-black leading-relaxed">
-                        Hey fashionistas, get ready to live out your wildest dreams because Pompeii is giving five of their top customers the chance to go behind the scenes of their summer collection shoot! This isn't just a golden ticket; it's a chance to witness the chaos and glamour up close.
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <button className="px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium">
-                        Redeem
-                      </button>
-                      <button className="px-6 py-2 bg-white text-black border border-gray-300 rounded-full font-medium">
-                        Send inmail
-                      </button>
-                    </div>
-                  </div>
-                </div>
+        <div className="mt-16 text-center">
+          <div className="intro-card-gray p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-black mb-4">
+              Other daily opportunities
+            </h3>
+            <p className="text-black mb-6">
+              From tech startups to established businesses, discover new ways to earn every day through our growing marketplace of referral opportunities.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-lg font-bold text-black">Tech Jobs</div>
+                <div className="text-sm text-black">$300-1500</div>
               </div>
-
-              {/* Second Card - EA Sports (slides up from behind) */}
-              <div className={`intro-card-gray p-8 relative transition-all duration-1000 bg-gradient-to-br from-green-400 to-blue-600 ${
-                visibleCards[1] ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-16 z-0'
-              }`}>
-                <div className="flex flex-col lg:flex-row gap-6 items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-32 h-32 bg-black rounded-lg flex items-center justify-center">
-                      <div className="text-white font-bold text-center">
-                        <div className="text-xs">EA</div>
-                        <div className="text-lg">FC26</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="mb-2">
-                      <span className="text-sm text-white opacity-80">Name</span>
-                      <h3 className="text-2xl font-bold text-white">FC 26 Rewards</h3>
-                    </div>
-                    <div className="mb-4">
-                      <span className="text-sm text-white opacity-80">Prize</span>
-                      <p className="text-lg text-white">Visit to EA SPORT London studios</p>
-                    </div>
-                    <div className="mb-6">
-                      <span className="text-sm text-white opacity-80">Description</span>
-                      <p className="text-white leading-relaxed">
-                        We're extending a special invitation to our most loyal players. Join us for an exclusive, behind-the-scenes tour of our London studios, where you'll get a firsthand look at the magic behind the game.
-                      </p>
-                    </div>
-                    <div className="flex gap-3">
-                      <button className="px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium">
-                        Redeem
-                      </button>
-                      <button className="px-6 py-2 bg-white text-black border border-gray-300 rounded-full font-medium">
-                        Send inmail
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <div className="text-lg font-bold text-black">SaaS Products</div>
+                <div className="text-sm text-black">$50-300</div>
               </div>
-            </div>
-          </div>
-
-          {/* Mobile/Tablet: Carousel */}
-          <div className="md:hidden">
-            <div className="flex overflow-x-auto gap-4 pb-4 px-4 -mx-4 snap-x snap-mandatory">
-              {/* First Card - Pompeii Brand */}
-              <div className="intro-card-gray p-6 flex-shrink-0 w-80 snap-center">
-                <div className="flex flex-col gap-4">
-                  <div className="w-20 h-20 bg-accent rounded-lg flex items-center justify-center">
-                    <div className="text-black font-bold text-sm text-center">POMPEII<br/>BRAND</div>
-                  </div>
-                  <div>
-                    <div className="mb-2">
-                      <span className="text-xs text-black opacity-70">Name</span>
-                      <h3 className="text-xl font-bold text-black">You champion walking</h3>
-                    </div>
-                    <div className="mb-3">
-                      <span className="text-xs text-black opacity-70">Prize</span>
-                      <p className="text-sm text-black">Backstage summer collection shooting</p>
-                    </div>
-                    <p className="text-sm text-black leading-relaxed mb-4">
-                      Hey fashionistas, get ready to live out your wildest dreams because Pompeii is giving five of their top customers the chance to go behind the scenes...
-                    </p>
-                    <div className="flex gap-2">
-                      <button className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium">
-                        Redeem
-                      </button>
-                      <button className="px-4 py-2 bg-white text-black border border-gray-300 rounded-full text-sm font-medium">
-                        Send inmail
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <div className="text-lg font-bold text-black">Services</div>
+                <div className="text-sm text-black">$100-500</div>
               </div>
-
-              {/* Second Card - EA Sports */}
-              <div className="intro-card-gray p-6 flex-shrink-0 w-80 snap-center bg-gradient-to-br from-green-400 to-blue-600">
-                <div className="flex flex-col gap-4">
-                  <div className="w-20 h-20 bg-black rounded-lg flex items-center justify-center">
-                    <div className="text-white font-bold text-center">
-                      <div className="text-xs">EA</div>
-                      <div className="text-sm">FC26</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="mb-2">
-                      <span className="text-xs text-white opacity-80">Name</span>
-                      <h3 className="text-xl font-bold text-white">FC 26 Rewards</h3>
-                    </div>
-                    <div className="mb-3">
-                      <span className="text-xs text-white opacity-80">Prize</span>
-                      <p className="text-sm text-white">Visit to EA SPORT London studios</p>
-                    </div>
-                    <p className="text-sm text-white leading-relaxed mb-4">
-                      We're extending a special invitation to our most loyal players. Join us for an exclusive, behind-the-scenes tour...
-                    </p>
-                    <div className="flex gap-2">
-                      <button className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium">
-                        Redeem
-                      </button>
-                      <button className="px-4 py-2 bg-white text-black border border-gray-300 rounded-full text-sm font-medium">
-                        Send inmail
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <div className="text-lg font-bold text-black">User Testing</div>
+                <div className="text-sm text-black">$20-200</div>
               </div>
             </div>
           </div>
