@@ -232,7 +232,7 @@ const WaitlistSection = () => {
             </h3>
             
             <p className="text-black text-left mb-6">
-              Start earning extra income through referrals and loyalty programs
+              Hundreds of opportunities from the brands you love. Earn, save and win through referrals and loyalty programs
             </p>
             
             <div className="text-left mb-6">
