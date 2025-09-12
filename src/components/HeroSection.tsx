@@ -155,7 +155,7 @@ const HeroSection = () => {
             <p className="text-xl md:text-2xl text-foreground mb-12 max-w-2xl leading-relaxed px-6 py-3 rounded-lg inline-block" style={{
             backgroundColor: '#f9fd8f'
           }}>
-              Build extra income. <br className="md:hidden" />Earn and save more with <span className="font-bold">intro</span>
+              Build extra income. <br className="md:hidden" />Earn, save and win on <span className="font-bold">intro</span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
