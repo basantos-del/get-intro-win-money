@@ -42,8 +42,8 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-3xl font-bold text-accent-foreground mb-4">intro</h3>
             <p className="text-accent-foreground/80 text-lg leading-relaxed max-w-md">
-              The marketplace where referral programs meet people who know people. 
-              Turn your matchmaking skills into extra income.
+              The place where you meet the brands you love for daily earning opportunities. 
+              Turn your matchmaking and saving skills into extra income.
             </p>
           </div>
 
