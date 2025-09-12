@@ -171,7 +171,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-white">+200 companies posting opportunities</span>
+                  <span className="text-sm font-medium text-white">+200 brands posting opportunities</span>
                 </div>
               </div>
             </div>
