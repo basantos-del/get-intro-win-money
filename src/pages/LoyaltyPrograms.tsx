@@ -106,7 +106,7 @@ const LoyaltyPrograms = () => {
               "Oh man, I need a new sweater..."
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Ben has bought from your before. Two summers ago. That awesome collection.
+              Ben has bought from you before. Two summers ago. That awesome collection.
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               But Ben has been <strong>targeted by all kind of new awesome brands</strong>.
